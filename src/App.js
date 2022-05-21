@@ -1,12 +1,13 @@
 import Footer from "../src/Components/Footer/Footer";
 import "./App.css";
-import Home from "./Pages/Home/Home";
+import Home from "./View/Home/Home";
+import React from "react";
 
 function App() {
   return (
     <>
-      <Home></Home>
-      <Footer></Footer>
+      <Home/>
+      <Footer/>
     </>
   );
 }
