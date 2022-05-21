@@ -25,17 +25,17 @@ function Navbar() {
                 </a>
               </li>
               <li className="navi-item">
-                <a className="navi-link" href="#">
+                <a className="navi-link" href="/tripplanner">
                   Trip Planner
                 </a>
               </li>
               <li className="navi-item">
-                <a className="navi-link" href="#">
+                <a className="navi-link" href="/location">
                   Location
                 </a>
               </li>
               <li className="navi-item">
-                <a className="navi-link" href="#">
+                <a className="navi-link" href="/accommodation">
                   Accommodation
                 </a>
               </li>
