@@ -1,0 +1,101 @@
+.buttonBar {
+  z-index: 1;
+  display: flex;
+  background-color: #e0e0e0;
+  border-radius: 22px;
+  margin: auto;
+  width: 922px;
+  height: 181px;
+  box-shadow: 4px 4px 40px #000000;
+}
+
+.button {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.button-icon img {
+  padding-bottom: 15px;
+  margin: auto;
+}
+
+.button-icon h5 {
+  font-size: 19px;
+  color: 000000;
+}
+
+.button-icon img:hover,
+.button-icon h5:hover {
+  cursor: pointer;
+}
+
+.buttonBar2 {
+  z-index: -1;
+  margin-top: -25px;
+  width: 617px;
+  height: 171px;
+}
+
+@media screen and (max-width: 1020px) and (min-width: 913px) {
+  .button-icon h5 {
+    font-size: 18px;
+  }
+
+  .buttonBar1 {
+    width: 100%;
+  }
+
+  .buttonBar2 {
+    width: 60%;
+  }
+
+  .button-icon img {
+    padding: auto;
+    width: 20%;
+    height: auto;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 913px) and (min-width: 700px) {
+  .button-icon h5 {
+    font-size: 15px;
+  }
+
+  .buttonBar1 {
+    width: 100%;
+  }
+
+  .buttonBar2 {
+    width: 60%;
+  }
+
+  .button-icon img {
+    padding: auto;
+    /* width: 20%; */
+    height: auto;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .button-icon h5 {
+    font-size: 15px;
+  }
+
+  .buttonBar1 {
+    width: 100%;
+  }
+
+  .buttonBar2 {
+    width: 80%;
+  }
+
+  .button-icon img {
+    padding: auto;
+    width: 30px;
+    height: auto;
+    margin: auto;
+  }
+}
