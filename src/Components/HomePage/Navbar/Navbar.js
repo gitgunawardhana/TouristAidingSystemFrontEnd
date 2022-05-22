@@ -20,7 +20,7 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="navi-item">
-                <a className="navi-link active" aria-current="page" href="#">
+                <a className="navi-link active" aria-current="page" href="/">
                   Home
                 </a>
               </li>
@@ -40,7 +40,7 @@ function Navbar() {
                 </a>
               </li>
               <li className="navi-item">
-                <a className="navi-link" href="#">
+                <a className="navi-link" href="/vehicle">
                   Vehicle
                 </a>
               </li>
