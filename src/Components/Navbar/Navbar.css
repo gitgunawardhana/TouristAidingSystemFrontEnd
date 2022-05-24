@@ -1,0 +1,10 @@
+.container-fluid {
+    background-color: rgba(30, 61, 62, 1);
+    padding-top: 10px;
+    
+  }
+  .nav-link{
+    padding-left: 30px;
+     color: #e20000;
+
+  }

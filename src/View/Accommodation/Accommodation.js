@@ -1,12 +1,15 @@
 import React from "react";
 import "./Accommodation.css";
+import Navbar from "../../Components/Navbar/Navbar";
 
-function Test() {
+function Accommodation() {
   return (
     <div>
-      <h1>Accommodation Page</h1>
+
+        <Navbar></Navbar>
+
     </div>
   );
 }
 
-export default Test;
+export default Accommodation;
