@@ -10,6 +10,7 @@ function App() {
       <Router>
         <Route path="/" exact component={Home} />
         <Route path="/accommodation" component={Accommodation} />
+        {/* <Route path="/vehicle" component={}></Route> */}
       </Router>
       <Footer></Footer>
     </>

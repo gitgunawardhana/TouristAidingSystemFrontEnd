@@ -1,15 +1,13 @@
 import React from "react";
+import Navbar from "../../Components/AccommodationPage/Navbar/Navbar";
 import "./Accommodation.css";
-import Navbar from "../../Components/Navbar/Navbar";
 
-function Accommodation() {
+function Test() {
   return (
-    <div>
-
-        <Navbar></Navbar>
-
-    </div>
+    <>
+      <Navbar></Navbar>
+    </>
   );
 }
 
-export default Accommodation;
+export default Test;
