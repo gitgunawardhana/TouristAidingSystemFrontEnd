@@ -1,0 +1,16 @@
+.bg-color {
+  background-color: #1e3d3e;
+}
+
+.item-color {
+  color: white !important;
+}
+
+.item-color:hover {
+  color: white !important;
+}
+
+.fa-shopping-cart,
+.fa-bell {
+  color: white;
+}

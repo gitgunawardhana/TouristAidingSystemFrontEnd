@@ -1,11 +1,12 @@
 import React from "react";
+import Navbar from "../../Components/AccommodationPage/Navbar/Navbar";
 import "./Accommodation.css";
 
 function Test() {
   return (
-    <div>
-      <h1>Accommodation Page</h1>
-    </div>
+    <>
+      <Navbar></Navbar>
+    </>
   );
 }
 
