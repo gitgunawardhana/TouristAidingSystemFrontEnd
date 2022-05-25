@@ -18,10 +18,17 @@ function Navbar() {
             <i className="fas fa-bars"></i>
           </button>
 
+
+
+              <a className="navbar-brand mt-2 mt-lg-0" href="/">
+                <img src={ROADSIGN} height="15" alt="MDB Logo" loading="lazy" />
+              </a>
+          <br/>
+
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <a className="navbar-brand mt-2 mt-lg-0" href="/">
-              <img src={ROADSIGN} height="15" alt="MDB Logo" loading="lazy" />
-            </a>
+            {/*<a className="navbar-brand mt-2 mt-lg-0" href="/">*/}
+            {/*  <img src={ROADSIGN} height="15" alt="MDB Logo" loading="lazy" />*/}
+            {/*</a>*/}
             {/* <!-- Left links --> */}
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
@@ -57,9 +64,9 @@ function Navbar() {
           {/* <!-- Right elements --> */}
           <div className="d-flex align-items-center">
             {/* <!-- Icon --> */}
-            <a className="text-reset me-3" href="#">
-              <i className="fas fa-shopping-cart"></i>
-            </a>
+            {/*<a className="text-reset me-3" href="#">*/}
+            {/*  <i className="fas fa-shopping-cart"></i>*/}
+            {/*</a>*/}
 
             {/* <!-- Notifications --> */}
             <div className="dropdown">
@@ -125,7 +132,7 @@ function Navbar() {
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href="/accountSettings">
                     Settings
                   </a>
                 </li>

@@ -14,7 +14,7 @@ function Home() {
     <div className="bg">
       <Navbar></Navbar>
       <Header></Header>
-      <h2>WE PROVIDE</h2>
+      <h2 className="home-page-we -provide">WE PROVIDE</h2>
       {matches ? (
         <ButtonBar></ButtonBar>
       ) : (
