@@ -3,6 +3,7 @@ import "./AccountSettings.css";
 import account from "../../Assets/AccountSettings/accpic.png"
 
 
+
 function Body() {
     return (
         <>
@@ -20,11 +21,28 @@ function Body() {
                 <br/>
                 <hr className="acc-set-hr"/>
 
+
+
                 {/*name*/}
                 <p className="details-title">Name
                     <a href="#" className="span-edit">Edit</a>
                 </p>
                 <p className="updated-details-para">John Andrew</p>
+
+                {/*Edit*/}
+                <form>
+                    <label>
+                        <span className="editable-text-box-name">First name:</span>
+                        <input type="text" name="lname" className="acc-text-box" />
+                        <span className="editable-text-box-name">Last name:</span>
+                        <input type="text" name="lname" className="acc-text-box"/>
+                    </label>
+
+                    <button className="name-save-btn save-btn">save</button>
+
+                </form>
+
+
                 <hr className="acc-set-hr"/>
 
                 {/*display name*/}
@@ -32,6 +50,15 @@ function Body() {
                     <a href="#" className="span-edit">Edit</a>
                 </p>
                 <p className="update-details-para">Choose a display name</p>
+
+                <form>
+                    <label>
+                        <span className="editable-text-box-name">Display name:</span>
+                        <input type="text" name="displayName" className="acc-text-box display-name-text-box" />
+                    </label>
+
+                    <button className="display-name-save-btn save-btn">save</button>
+                </form>
                 <hr className="acc-set-hr"/>
 
                 {/*email address*/}

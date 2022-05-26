@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../Components/AccommodationPage/Navbar/Navbar";
+import Navbar from "../../Components/NavigationBar/Navbar/Navbar";
 import "./Security.css";
 import account from "../../Assets/AccountSettings/accpic.png";
 
