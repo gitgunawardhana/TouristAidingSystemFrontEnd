@@ -1,9 +1,9 @@
-import colombo from "../../../Assets/TopLocation/colombo.png";
-import ella from "../../../Assets/TopLocation/ella.png";
-import galle from "../../../Assets/TopLocation/galle.png";
-import kandy from "../../../Assets/TopLocation/kandy.png";
-import mirissa from "../../../Assets/TopLocation/mirissa.png";
-import nilaveli from "../../../Assets/TopLocation/nilaveli.png";
+import colombo from "../../Assets/TopLocation/colombo.png";
+import ella from "../../Assets/TopLocation/ella.png";
+import galle from "../../Assets/TopLocation/galle.png";
+import kandy from "../../Assets/TopLocation/kandy.png";
+import mirissa from "../../Assets/TopLocation/mirissa.png";
+import nilaveli from "../../Assets/TopLocation/nilaveli.png";
 
 const locationData = [
   {

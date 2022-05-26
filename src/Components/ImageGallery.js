@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import locationData from "../TopLocation/Data";
-import "./TopLocation.css";
-function TopLocation() {
+import "./ImageGallery.css";
+
+function TopLocation(props) {
   // const [categories, setCategories] = useState(allCategoriesLink);
-  const [menuItems, setMenuItems] = useState(locationData);
+  const [menuItems, setMenuItems] = useState(props.dataList);
   // setMenuItems(locationData);
   return (
     <>
