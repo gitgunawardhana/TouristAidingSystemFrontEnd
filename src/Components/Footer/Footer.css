@@ -57,6 +57,15 @@
   margin-top: 20px;
 }
 
+.footer-navi-link {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-navi-link:hover {
+  color: aliceblue;
+}
+
 @media screen and (max-width: 390px) and (min-width: 412px) {
   .footer .footer-nav-link,
   .contact-us {

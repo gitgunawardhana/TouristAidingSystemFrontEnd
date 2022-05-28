@@ -26,11 +26,31 @@ function Footer() {
           <p>102/5, Test Road, Test City, Colombo 10</p>
         </div>
         <div className="footer-content footer-nav-link">
-          <p>Home</p>
-          <p>Trip Planner</p>
-          <p>Lacation</p>
-          <p>Accommodation</p>
-          <p>Vehicle</p>
+          <p>
+            <a href="/" className="footer-navi-link">
+              Home
+            </a>
+          </p>
+          <p>
+            <a href="/tripplanner" className="footer-navi-link">
+              Trip Planner
+            </a>
+          </p>
+          <p>
+            <a href="/lacation" className="footer-navi-link">
+              Lacation
+            </a>
+          </p>
+          <p>
+            <a href="/accommodation" className="footer-navi-link">
+              Accommodation
+            </a>
+          </p>
+          <p>
+            <a href="/vehicle" className="footer-navi-link">
+              Vehicle
+            </a>
+          </p>
         </div>
         {matches ? (
           ""
