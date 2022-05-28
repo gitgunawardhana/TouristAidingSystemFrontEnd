@@ -5,6 +5,8 @@ import Footer from "../src/Components/Footer/Footer";
 import "./App.css";
 import Home from "./View/Home/Home";
 import Location from "./View/Location/Location";
+import AccountSetting from "./View/AccountSettings/AccountSettings";
+import Security from "./View/Security/Security";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Router>
         <Route path="/" exact component={Home} />
         <Route path="/location" component={Location} />
+        <Route path="/accountSettings" component={AccountSetting}/>
+        <Route path="/Security" component={Security}/>
         {/* <Route path="/vehicle" component={}></Route> */}
       </Router>
       <Footer></Footer>

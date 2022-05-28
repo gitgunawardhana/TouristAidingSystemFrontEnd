@@ -2,7 +2,7 @@ import React from "react";
 import Carousel from "../../Components/Carousel/Carousel";
 import favoriteDataList from "../../Components/HomePage/favoriteDataList";
 import Favorite from "../../Components/ImageGallery";
-import Navbar from "../../Components/LocationPage/Navbar/Navbar";
+import Navbar from "../../Components/NavigationBar/Navbar/Navbar";
 import RecommendedDataList from "../../Components/LocationPage/RecommendedDataList";
 import SearchBar from "../../Components/LocationPage/SearchBar/SearchBar";
 import ThingsToDoDataList from "../../Components/LocationPage/ThingsToDoDataList";
