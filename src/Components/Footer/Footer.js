@@ -37,7 +37,7 @@ function Footer() {
             </a>
           </p>
           <p>
-            <a href="/lacation" className="footer-navi-link">
+            <a href="/location" className="footer-navi-link">
               Lacation
             </a>
           </p>

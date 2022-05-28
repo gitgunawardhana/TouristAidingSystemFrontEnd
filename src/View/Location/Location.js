@@ -1,12 +1,12 @@
 import React from "react";
-import Navbar from "../../Components/AccommodationPage/Navbar/Navbar";
-import RecommendedDataList from "../../Components/AccommodationPage/RecommendedDataList";
-import SearchBar from "../../Components/AccommodationPage/SearchBar/SearchBar";
-import ThingsToDoDataList from "../../Components/AccommodationPage/ThingsToDoDataList";
 import Carousel from "../../Components/Carousel/Carousel";
 import favoriteDataList from "../../Components/HomePage/favoriteDataList";
 import Favorite from "../../Components/ImageGallery";
-import "./Accommodation.css";
+import Navbar from "../../Components/LocationPage/Navbar/Navbar";
+import RecommendedDataList from "../../Components/LocationPage/RecommendedDataList";
+import SearchBar from "../../Components/LocationPage/SearchBar/SearchBar";
+import ThingsToDoDataList from "../../Components/LocationPage/ThingsToDoDataList";
+import "./Location.css";
 
 function Accommodation() {
   return (
