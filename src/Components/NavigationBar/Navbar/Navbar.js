@@ -9,15 +9,14 @@ function Navbar() {
           <button
             className="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <i className="fas fa-bars"></i>
           </button>
-
           <a className="navbar-brand mt-2 mt-lg-0" href="/">
             <img src={ROADSIGN} height="15" alt="MDB Logo" loading="lazy" />
           </a>
@@ -69,11 +68,11 @@ function Navbar() {
             {/* <!-- Notifications --> */}
             <div className="dropdown">
               <a
-                className="text-reset me-3 dropdown-toggle hidden-arrow"
+                className="text-reset me-3 dropdown-toggle align-items-center hidden-arrow"
                 href="#"
                 id="navbarDropdownMenuLink"
                 role="button"
-                data-bs-toggle="dropdown"
+                data-toggle="dropdown"
                 aria-expanded="false"
               >
                 <i className="fas fa-bell"></i>
@@ -109,7 +108,7 @@ function Navbar() {
                 href="#"
                 id="navbarDropdownMenuAvatar"
                 role="button"
-                data-bs-toggle="dropdown"
+                data-toggle="dropdown"
                 aria-expanded="false"
               >
                 <img
