@@ -15,13 +15,13 @@ function Home() {
     <div className="bg">
       <Navbar></Navbar>
       <Header></Header>
-      <h2>WE PROVIDE</h2>
+      <h2 className="headings-home">WE PROVIDE</h2>
       {matches ? (
         <ButtonBar></ButtonBar>
       ) : (
         <ButtonBarResponsive></ButtonBarResponsive>
       )}
-      <h2>TOP LOCATION</h2>
+      <h2 className="headings-home">TOP LOCATION</h2>
       <TopLocation dataList={topLocationDataList}></TopLocation>
       <div style={{ height: "200px" }}></div>
     </div>

@@ -18,12 +18,10 @@ function Navbar() {
             <i className="fas fa-bars"></i>
           </button>
 
-
-
-              <a className="navbar-brand mt-2 mt-lg-0" href="/">
-                <img src={ROADSIGN} height="15" alt="MDB Logo" loading="lazy" />
-              </a>
-          <br/>
+          <a className="navbar-brand mt-2 mt-lg-0" href="/">
+            <img src={ROADSIGN} height="15" alt="MDB Logo" loading="lazy" />
+          </a>
+          <br />
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             {/*<a className="navbar-brand mt-2 mt-lg-0" href="/">*/}
