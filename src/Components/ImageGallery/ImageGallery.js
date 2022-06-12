@@ -8,11 +8,11 @@ function TopLocation(props) {
   return (
     <>
       <div className="card-list">
-        {menuItems.map((items) => {
+        {menuItems.slice(0, props.visibleValue).map((items) => {
           const { id, category, image, title, link1, link2, text } = items;
           return (
             <div className="img-card">
-              <div className="title">
+              <div className="title text-left">
                 <h3>{title}</h3>
               </div>
               <img src={image} alt="" className="img-location" />

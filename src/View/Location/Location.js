@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Carousel from "../../Components/Carousel/Carousel";
-import favoriteDataList from "../../Components/HomePage/favoriteDataList";
-import Favorite from "../../Components/ImageGallery";
-import Navbar from "../../Components/NavigationBar/Navbar/Navbar";
+import Favorite from "../../Components/ImageGalleryWithDesc/ImageGalleryWithDesc";
+import favoriteDataList from "../../Components/LocationPage/favoriteDataList";
 import RecommendedDataList from "../../Components/LocationPage/RecommendedDataList";
 import SearchBar from "../../Components/LocationPage/SearchBar/SearchBar";
+import Test from "../../Components/LocationPage/Test/Test";
 import ThingsToDoDataList from "../../Components/LocationPage/ThingsToDoDataList";
+import Navbar from "../../Components/NavigationBar/Navbar/Navbar";
 import "./Location.css";
 
 function Accommodation() {
+  const [visible, setVisible] = useState(4);
+
+  const seeAll = () => {
+    setVisible((prevValue) => prevValue + 3);
+  };
+
   return (
     <>
       <Navbar></Navbar>
@@ -28,22 +35,31 @@ function Accommodation() {
         subHeading="Lorem ipsum dolor, sit amet consectetur adipisic."
         dataList={RecommendedDataList}
       ></Carousel>
-      <div className="container-md fv-location">
-        <div className="custom-head">
-          <h1
-            className="text-center"
-            style={{ color: "black", paddingTop: "50px", fontSize: "28px" }}
-          >
-            Favorite Places
-          </h1>
-        </div>
-        <Favorite dataList={favoriteDataList}></Favorite>
-        <div className="text-center">
-          <button type="button" class="btn btn-dark text-center btn-see-all">
-            See all
-          </button>
+      <div className="container-fluid" style={{ backgroundColor: "#1e3d3ed2" }}>
+        <div className="container-md fv-location">
+          <div className="custom-head text-center">
+            <h1
+              className="text-center"
+              style={{ color: "white", paddingTop: "50px", fontSize: "28px" }}
+            >
+              Top Attractions in Sri Lanka
+            </h1>
+            <Favorite
+              visibleValue={visible}
+              dataList={favoriteDataList}
+            ></Favorite>
+            <button
+              type="button"
+              class="btn btn-dark text-center btn-see-all"
+              onClick={seeAll}
+            >
+              See all
+            </button>
+          </div>
         </div>
       </div>
+
+      <Test></Test>
     </>
   );
 }

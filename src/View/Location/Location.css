@@ -10,10 +10,11 @@
   padding: 50px;
 }
 
-.container-md {
+.fv-location {
   border-radius: 10px;
   margin-top: 50px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+  /* box-shadow: #1e3d3ed2 0px 7px 29px 0px; */
 }
 
 .btn-see-all {
@@ -21,4 +22,5 @@
   border-radius: 50px;
   padding-right: 25px;
   padding-left: 25px;
+  /* background-color: transparent !important; */
 }

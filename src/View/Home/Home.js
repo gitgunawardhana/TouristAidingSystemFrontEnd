@@ -4,7 +4,7 @@ import ButtonBarResponsive from "../../Components/HomePage/ButtonBar/ButtonBarRe
 import Header from "../../Components/HomePage/Header/Header";
 import Navbar from "../../Components/HomePage/Navbar/Navbar";
 import topLocationDataList from "../../Components/HomePage/TopLocationDataList";
-import TopLocation from "../../Components/ImageGallery";
+import TopLocation from "../../Components/ImageGallery/ImageGallery";
 import useMediaQuery from "../../Components/useMediaQuery";
 import "./Home.css";
 
@@ -22,7 +22,10 @@ function Home() {
         <ButtonBarResponsive></ButtonBarResponsive>
       )}
       <h2 className="headings-home">TOP LOCATION</h2>
-      <TopLocation dataList={topLocationDataList}></TopLocation>
+      <TopLocation
+        visibleValue={topLocationDataList.length}
+        dataList={topLocationDataList}
+      ></TopLocation>
       <div style={{ height: "200px" }}></div>
     </div>
   );

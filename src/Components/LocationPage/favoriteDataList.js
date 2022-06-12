@@ -13,6 +13,7 @@ const favoriteDataList = [
     title: "Colombo",
     link1: "#",
     link2: "#",
+    favorite: 1256,
     text: "Lorem1 ipsum dolor sit amet consectetur.",
   },
   {
@@ -22,6 +23,7 @@ const favoriteDataList = [
     title: "Ella",
     link1: "#",
     link2: "#",
+    favorite: 1256,
     text: "Lorem2 ipsum dolor sit amet consectetur.",
   },
   {
@@ -31,6 +33,7 @@ const favoriteDataList = [
     title: "Kandy",
     link1: "#",
     link2: "#",
+    favorite: 1256,
     text: "Lorem2 ipsum dolor sit amet consectetur.",
   },
   {
@@ -40,6 +43,7 @@ const favoriteDataList = [
     title: "Nilaveli",
     link1: "#",
     link2: "#",
+    favorite: 1256,
     text: "Lorem2 ipsum dolor sit amet consectetur.",
   },
   {
@@ -49,6 +53,7 @@ const favoriteDataList = [
     title: "Galle",
     link1: "#",
     link2: "#",
+    favorite: 1256,
     text: "Lorem2 ipsum dolor sit amet consectetur.",
   },
   {
@@ -58,6 +63,7 @@ const favoriteDataList = [
     title: "Mirissa",
     link1: "#",
     link2: "#",
+    favorite: 1256,
     text: "Lorem2 ipsum dolor sit amet consectetur.",
   },
 ];

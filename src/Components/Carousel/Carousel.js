@@ -39,7 +39,6 @@ function Carousel(props) {
   };
   const [menuItems, setMenuItems] = useState(props.dataList);
 
-  console.log(menuItems);
   return (
     <>
       <div className="container">
