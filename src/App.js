@@ -1,24 +1,25 @@
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "./App.css";
-import Footer from "./Components/Footer/Footer";
-import AccountSetting from "./View/AccountSettings/AccountSettings";
+import Footer from "./Component/Footer/Footer";
+import Accommodation from "./View/Accommodation/Accommodation";
 import Home from "./View/Home/Home";
 import Location from "./View/Location/Location";
-import Security from "./View/Security/Security";
+import PageNotFound from "./View/PageNotFound/PageNotFound";
 
 function App() {
   return (
     <>
       <Router>
-        <Route path="/" exact component={Home} />
-        <Route path="/location" component={Location} />
-        <Route path="/accountSettings" component={AccountSetting} />
-        <Route path="/Security" component={Security} />
-        {/* <Route path="/vehicle" component={}></Route> */}
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/locations" element={<Location />} />
+          <Route path="/accommodations" element={<Accommodation />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+        <Footer></Footer>
       </Router>
-      <Footer></Footer>
     </>
   );
 }

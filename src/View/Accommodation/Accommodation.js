@@ -1,16 +1,12 @@
-import React from "react";
-import Navbar from "../../Components/NavigationBar/Navbar/Navbar";
-import "./Accommodation.css";
-import BackgroundImageSet from "../../Components/Accommodation/BackgroundImageSet/BackgroundImageSet";
+import Navbar from "../../Component/Navbar/Navbar";
 
-function Test() {
-    return (
-        <>
-            <Navbar></Navbar>
-            <BackgroundImageSet></BackgroundImageSet>
-
-        </>
-    );
+function Accommodation() {
+  return (
+    <>
+      <Navbar></Navbar>
+      <h1>Accommodation</h1>
+    </>
+  );
 }
 
-export default Test;
+export default Accommodation;

@@ -1,11 +1,10 @@
-import React from "react";
-import ButtonBar from "../../Components/HomePage/ButtonBar/ButtonBar";
-import ButtonBarResponsive from "../../Components/HomePage/ButtonBar/ButtonBarResponsive";
-import Header from "../../Components/HomePage/Header/Header";
-import Navbar from "../../Components/HomePage/Navbar/Navbar";
-import topLocationDataList from "../../Components/HomePage/TopLocationDataList";
-import TopLocation from "../../Components/ImageGallery/ImageGallery";
-import useMediaQuery from "../../Components/useMediaQuery";
+import ButtonBar from "../../Component/ButtonBar/ButtonBar";
+import ButtonBarResponsive from "../../Component/ButtonBar/ButtonBarResponsive";
+import HomePageHeader from "../../Component/HomePageHeader/HomePageHeader";
+import HomePageNavbar from "../../Component/HomePageNavbar/HomePageNavbar";
+import TopLocation from "../../Component/ImageGallery/ImageGallery";
+import topLocationDataList from "../../Component/TopLocationDataList";
+import useMediaQuery from "../../Component/useMediaQuery";
 import "./Home.css";
 
 function Home() {
@@ -13,9 +12,8 @@ function Home() {
 
   return (
     <div className="bg">
-      <Navbar></Navbar>
-      <Header></Header>
-      <h2 className="headings-home">WE PROVIDE</h2>
+      <HomePageNavbar></HomePageNavbar>
+      <HomePageHeader></HomePageHeader>
       {matches ? (
         <ButtonBar></ButtonBar>
       ) : (

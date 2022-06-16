@@ -1,23 +1,21 @@
-import React, { useState } from "react";
-import Carousel from "../../Components/Carousel/Carousel";
-import Favorite from "../../Components/ImageGalleryWithDesc/ImageGalleryWithDesc";
-import favoriteDataList from "../../Components/LocationPage/favoriteDataList";
-import RecommendedDataList from "../../Components/LocationPage/RecommendedDataList";
-import SearchBar from "../../Components/LocationPage/SearchBar/SearchBar";
-import Test from "../../Components/LocationPage/Test/Test";
-import ThingsToDoDataList from "../../Components/LocationPage/ThingsToDoDataList";
-import Navbar from "../../Components/NavigationBar/Navbar/Navbar";
+import { useState } from "react";
+import Carousel from "../../Component/Carousel/Carousel";
+import favoriteDataList from "../../Component/favoriteDataList";
+import Favorite from "../../Component/ImageGalleryWithDesc/ImageGalleryWithDesc";
+import Navbar from "../../Component/Navbar/Navbar";
+import RecommendedDataList from "../../Component/RecommendedDataList";
+import SearchBar from "../../Component/SearchBar/SearchBar";
+import ThingsToDoDataList from "../../Component/ThingsToDoDataList";
 import "./Location.css";
 
-function Accommodation() {
+function Location() {
   const [visible, setVisible] = useState(4);
 
   const seeAll = () => {
     setVisible((prevValue) => prevValue + 3);
   };
-
   return (
-    <>
+    <div className="loaction-page">
       <Navbar></Navbar>
       <h1 className="heading main-heading" style={{ "margin-top": "60px" }}>
         Places to Visit in <span className="sp-sri-lanka">Sri Lanka</span>
@@ -58,10 +56,8 @@ function Accommodation() {
           </div>
         </div>
       </div>
-
-      <Test></Test>
-    </>
+    </div>
   );
 }
 
-export default Accommodation;
+export default Location;
