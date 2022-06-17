@@ -23,3 +23,7 @@
   color: #1e3d3e !important;
   z-index: 1;
 }
+
+.card-text {
+  font-size: 13px;
+}

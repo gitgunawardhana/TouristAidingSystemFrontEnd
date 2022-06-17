@@ -26,4 +26,5 @@
 
 .pa {
   margin-bottom: 80px;
+  z-index: 10;
 }
