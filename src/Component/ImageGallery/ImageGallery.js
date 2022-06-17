@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { SiOpenstreetmap } from "react-icons/si";
 import "./ImageGallery.css";
 
 function TopLocation(props) {
@@ -13,9 +14,16 @@ function TopLocation(props) {
           return (
             <div className="img-card">
               <div className="title text-left">
-                <h3>{title}</h3>
+                <h4>{title}</h4>
               </div>
-              <img src={image} alt="" className="img-location" />
+              <img src={image} alt="" className="img-location hover-zoom" />
+              <div className="i text-center">
+                <h1 id="hover-title">{title}</h1>
+                <SiOpenstreetmap
+                  id="hover-title-icon"
+                  style={{ color: "white", fontSize: "35" }}
+                ></SiOpenstreetmap>
+              </div>
             </div>
           );
         })}
