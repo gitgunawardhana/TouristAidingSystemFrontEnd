@@ -1,3 +1,6 @@
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 import Accommodation from "../../Assets/Accommodation.png";
 import Calculator from "../../Assets/Calculator.png";
 import Date from "../../Assets/Date.png";
@@ -8,63 +11,67 @@ import Vehicle from "../../Assets/Vehicle.png";
 import "./ButtonBarResponsive.css";
 
 function ButtonBar() {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
     <>
       <div className="buttonBar buttonBar1">
         <div className="button" id="button1">
-          <div className="button-icon">
+          <div data-aos="fade" className="button-icon">
             <img src={Trip_Planner} alt="" />
-            <h5>
+            <h6>
               TRIP<br></br>PLANNER
-            </h5>
+            </h6>
           </div>
         </div>
-        <div className="button" id="button2">
+        <div data-aos="fade" className="button" id="button2">
           <div className="button-icon">
             <img src={Vehicle} alt="" />
-            <h5>
+            <h6>
               VEHICLE<br></br>RESERVATION
-            </h5>
+            </h6>
           </div>
         </div>
-        <div className="button" id="button3">
+        <div data-aos="fade" className="button" id="button3">
           <div className="button-icon">
             <img src={Accommodation} alt="" />
-            <h5>
+            <h6>
               ACCOMMODATION<br></br>RESERVATION
-            </h5>
+            </h6>
           </div>
         </div>
-        <div className="button" id="button4">
+        <div data-aos="fade" className="button" id="button4">
           <div className="button-icon">
             <img src={Location} alt="" />
-            <h5>
+            <h6>
               LOCATION<br></br>BROWSING
-            </h5>
+            </h6>
           </div>
         </div>
-        <div className="button" id="button1">
+        <div data-aos="fade" className="button" id="button1">
           <div className="button-icon">
             <img src={Placeholder} alt="" />
-            <h5>
+            <h6>
               Location Based<br></br>Planning
-            </h5>
+            </h6>
           </div>
         </div>
-        <div className="button" id="button2">
+        <div data-aos="fade" className="button" id="button2">
           <div className="button-icon">
             <img src={Calculator} alt="" />
-            <h5>
+            <h6>
               Budget Based<br></br>Planning
-            </h5>
+            </h6>
           </div>
         </div>
-        <div className="button" id="button3">
+        <div data-aos="fade" className="button" id="button3">
           <div className="button-icon">
             <img src={Date} alt="" />
-            <h5>
+            <h6>
               Date Based<br></br>Planning
-            </h5>
+            </h6>
           </div>
         </div>
       </div>

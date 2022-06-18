@@ -27,3 +27,32 @@
 .card-text {
   font-size: 13px;
 }
+
+.im {
+  transition: transform 0.2s;
+  margin: 0 auto;
+}
+
+.im:hover {
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.im img {
+  object-fit: cover;
+}
+.im:hover img {
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  transform: scale(1.025);
+  transition: all 0.5s ease;
+
+  /* object-fit: cover; */
+  cursor: pointer;
+}

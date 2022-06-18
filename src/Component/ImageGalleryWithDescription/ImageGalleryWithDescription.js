@@ -1,4 +1,6 @@
-import { useState } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect, useState } from "react";
 import { MdFavorite } from "react-icons/md";
 import "./ImageGalleryWithDescription.css";
 
@@ -6,15 +8,20 @@ function TopLocation(props) {
   // const [categories, setCategories] = useState(allCategoriesLink);
   const [menuItems, setMenuItems] = useState(props.dataList);
   // setMenuItems(locationData);
+
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
     <>
-      <div className="card-list-2">
+      <div className="card-list-2 container-fluid">
         {menuItems.slice(0, props.visibleValue).map((items) => {
           const { id, category, image, title, link1, link2, text, favorite } =
             items;
           return (
             <>
-              <div className="container-custom">
+              <div data-aos="fade-up" className="container-custom">
                 <div className="d-lg-flex">
                   <div className="card border-0 me-lg-4 mb-lg-0 mb-4 card-custom">
                     <div className="backgroundEffect"></div>

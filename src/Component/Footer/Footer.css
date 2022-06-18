@@ -50,6 +50,7 @@
 
 .footer-content p {
   cursor: pointer;
+  font-size: 14px;
 }
 
 .footer .contact-us {
@@ -60,6 +61,7 @@
 .footer-navi-link {
   color: white;
   text-decoration: none;
+  font-size: 14px;
 }
 
 .footer-navi-link:hover {

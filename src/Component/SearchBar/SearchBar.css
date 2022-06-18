@@ -26,3 +26,12 @@
   /* Microsoft Edge */
   color: #004145 !important;
 }
+
+.search-bar-custom {
+  z-index: 1;
+}
+
+.fa-search:hover,
+#search-addon:hover {
+  cursor: pointer;
+}
