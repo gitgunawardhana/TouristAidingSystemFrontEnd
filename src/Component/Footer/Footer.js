@@ -17,7 +17,9 @@ function Footer() {
     <>
       <div className="footer">
         <div className="footer-content footer-log">
-          <img src={ROADSIGN} alt="ROADSIGN" />
+          <Link to="/">
+            <img src={ROADSIGN} alt="ROADSIGN" />
+          </Link>
         </div>
         <div className="footer-content contact-us">
           <p>info@roadsign.lk</p>

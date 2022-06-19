@@ -1,7 +1,14 @@
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./HomePageNavbar.css";
 
 function NavbarHome() {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-fixed-top navbar-light">

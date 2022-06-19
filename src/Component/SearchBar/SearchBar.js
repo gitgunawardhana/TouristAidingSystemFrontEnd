@@ -1,10 +1,9 @@
-import React from "react";
 import "./SearchBar.css";
 
 function SearchBar() {
   return (
     <>
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center search-bar-custom">
         <div class="input-group rounded search-div-css">
           <input
             type="search"

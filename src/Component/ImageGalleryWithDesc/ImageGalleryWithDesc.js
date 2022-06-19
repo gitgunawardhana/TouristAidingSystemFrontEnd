@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { MdFavorite } from "react-icons/md";
 import "./ImageGalleryWithDesc.css";
 

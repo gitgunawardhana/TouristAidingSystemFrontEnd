@@ -1,4 +1,6 @@
-import { useState } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "./Carousel.css";
 
@@ -39,13 +41,27 @@ function Carousel(props) {
   };
   const [menuItems, setMenuItems] = useState(props.dataList);
 
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
     <>
       <div className="container">
-        <h2 className="text-center" style={{ color: "black" }}>
+        <h2
+          data-aos="flip-up"
+          className="text-center"
+          style={{
+            color: "black",
+            paddingTop: "0px",
+            marginTop: "25px",
+            fontSize: "28px",
+          }}
+        >
           {props.heading}
         </h2>
         <p
+          data-aos="flip-up"
           className="text-center"
           style={{ color: "black", marginTop: "-25px" }}
         >
@@ -55,9 +71,13 @@ function Carousel(props) {
           {menuItems.map((items) => {
             const { id, src, title, description } = items;
             return (
-              <div className="col-md-3 mb-3">
-                <div className="card">
-                  <img className="card img-fluid" alt="100%x280" src={src} />
+              <div data-aos="fade-right" className="col-md-3 mb-3">
+                <div className="card im" style={{ marginTop: "15px" }}>
+                  <img
+                    className="card img-fluid w-100 hover-shadow"
+                    alt="100%x280"
+                    src={src}
+                  />
                   <div className="card-body">
                     <h4 className="card-title">{title}</h4>
                     <p className="card-text">{description}</p>
