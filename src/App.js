@@ -10,7 +10,7 @@ import PageNotFound from "./View/PageNotFound/PageNotFound";
 import AccountSetting from "./View/AccountSettings/AccountSettings";
 import Security from "./View/Security/Security";
 import Profile from "./View/Profile/Profile";
-import SignIn from "./View/SignInOrCreateAccount/SignIn";
+import SignUp from "./View/SignInOrCreateAccount/SignUp";
 
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
                     <Route path="/accountSetting" element={<AccountSetting/>}/>
                     <Route path="/security" element={<Security/>}/>
                     <Route path="/profile" element={<Profile/>}/>
-                    <Route path="/signIn" element={<SignIn/>} />
+                    <Route path="/signUp" element={<SignUp/>}/>
                 </Routes>
                 <Footer></Footer>
             </Router>

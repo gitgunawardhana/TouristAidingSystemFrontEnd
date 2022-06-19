@@ -1,0 +1,23 @@
+.main-div {
+    margin-top: 100px !important;
+    width: 50% !important;
+    margin-left: 25%;
+
+}
+
+@media (max-width: 570px) {
+    .main-div {
+        width: 90% !important;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+}
+.nav-link:visited{
+    background-color: #004145 !important;
+
+}
+.nav-link{
+    color: #004145 ;
+    font-weight: bold;
+}

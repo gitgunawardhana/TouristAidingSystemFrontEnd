@@ -1,10 +1,10 @@
 import React from "react";
-import "./SignIn.css"
+import "./SignUp.css"
 import Navbar from "../../Component/Navbar/Navbar";
-import SignInComponent from "../../Component/SignInOrCreateAcconunt/SignIn";
+import SignInComponent from "../../Component/SignInOrCreateAcconunt/SignUp";
 
 
-function SignIn() {
+function SignUp() {
     return (
         <>
             <Navbar/>
@@ -13,4 +13,4 @@ function SignIn() {
     );
 }
 
-export default SignIn;
+export default SignUp;

@@ -21,10 +21,14 @@
   top: 0;
   width: 100%;
   z-index: 1;
-  position: relative;
+  position: absolute !important;
+  width: 100%;
 }
 
 .pa {
   margin-bottom: 80px;
-  z-index: 10;
+}
+.navbar{
+  position: fixed;
+  width: 100%;
 }
