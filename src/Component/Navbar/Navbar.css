@@ -20,8 +20,8 @@
 .customize-navbar {
   top: 0;
   width: 100%;
-  z-index: 10;
-  position: fixed;
+  z-index: 1;
+  position: relative;
 }
 
 .pa {
