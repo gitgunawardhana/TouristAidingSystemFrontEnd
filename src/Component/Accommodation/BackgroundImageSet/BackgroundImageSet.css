@@ -1,0 +1,12 @@
+.background-img-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.background-img {
+    position: relative;
+    width: 12.5%;
+    height: auto;
+    display: inline;
+}
