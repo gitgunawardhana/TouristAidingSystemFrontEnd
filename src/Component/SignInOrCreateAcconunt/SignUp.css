@@ -1,6 +1,6 @@
 .main-div {
     margin-top: 100px !important;
-    width: 50% !important;
+    width: 40% !important;
     margin-left: 25%;
 
 }
@@ -14,10 +14,14 @@
 
 }
 .nav-link:visited{
-    background-color: #004145 !important;
+    background-color: #ffffff ;
 
 }
 .nav-link{
     color: #004145 ;
     font-weight: bold;
+}
+.nav-bar-link:link{
+    color: white !important;
+    background-color: #004145 !important;
 }
