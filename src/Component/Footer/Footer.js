@@ -69,27 +69,52 @@ function Footer() {
         <div className="footer-content social-media-link">
           <Link to="#" className="icon-social-media">
             <i class="FaFacebookSquare">
-              <FaFacebookSquare className="icon" />
+              <FaFacebookSquare
+                size={18}
+                className="icon"
+                onMouseOver={({ target }) => (target.style.color = "#4267B2")}
+                onMouseOut={({ target }) => (target.style.color = "white")}
+              />
             </i>
           </Link>
           <Link to="#" className="icon-social-media">
             <i class="FaYoutube">
-              <FaYoutube className="icon" />
+              <FaYoutube
+                size={18}
+                className="icon"
+                onMouseOver={({ target }) => (target.style.color = "#FF0000 ")}
+                onMouseOut={({ target }) => (target.style.color = "white")}
+              />
             </i>
           </Link>
           <Link to="#" className="icon-social-media">
             <i class="FaInstagramSquare">
-              <FaInstagramSquare className="icon" />
+              <FaInstagramSquare
+                size={18}
+                className="icon"
+                onMouseOver={({ target }) => (target.style.color = "#fb3958")}
+                onMouseOut={({ target }) => (target.style.color = "white")}
+              />
             </i>
           </Link>
           <Link to="#" className="icon-social-media">
             <i class="FaLinkedin">
-              <FaLinkedin className="icon" />
+              <FaLinkedin
+                size={18}
+                className="icon"
+                onMouseOver={({ target }) => (target.style.color = "#0072b1 ")}
+                onMouseOut={({ target }) => (target.style.color = "white")}
+              />
             </i>
           </Link>
           <Link to="#" className="icon-social-media">
             <i class="FaTwitter">
-              <FaTwitter className="icon" />
+              <FaTwitter
+                size={18}
+                className="icon"
+                onMouseOver={({ target }) => (target.style.color = "#00acee ")}
+                onMouseOut={({ target }) => (target.style.color = "white")}
+              />
             </i>
           </Link>
         </div>
