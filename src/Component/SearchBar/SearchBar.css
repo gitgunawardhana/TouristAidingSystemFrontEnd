@@ -1,0 +1,37 @@
+.search-div-css {
+  margin: auto 20% auto 20%;
+}
+
+.search-input-css {
+  border-radius: 50px 0px 0px 50px !important;
+  border: 1px solid #03676e !important;
+}
+
+.search-btn-css {
+  border-radius: 0px 50px 50px 0px !important;
+  border: 1px solid #03676e !important;
+}
+
+::placeholder {
+  color: #004145 !important;
+  opacity: 0.8 !important; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #004145 !important;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #004145 !important;
+}
+
+.search-bar-custom {
+  z-index: 1;
+}
+
+.fa-search:hover,
+#search-addon:hover {
+  cursor: pointer;
+}

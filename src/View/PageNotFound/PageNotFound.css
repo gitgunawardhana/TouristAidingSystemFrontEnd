@@ -1,0 +1,27 @@
+.page-not-found {
+  /* position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(51, 51, 51, 0.7);
+  text-align: center;
+  line-height: 600px;
+  text-align: center; */
+  height: 930px;
+  position: relative;
+  background: rgba(51, 51, 51, 0.7);
+}
+
+/* If the text has multiple lines, add the following: */
+.page-not-found h1 {
+  /* line-height: 100%;
+  display: inline-block;
+  vertical-align: middle; */
+  color: rgba(51, 51, 51, 0.514);
+  font-size: 36px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
