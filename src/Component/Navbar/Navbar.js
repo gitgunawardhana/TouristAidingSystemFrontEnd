@@ -21,9 +21,9 @@ function Navbar() {
                         >
                             <i className="fas fa-bars"></i>
                         </button>
-                        <a className="navbar-brand mt-2 mt-lg-0" to="/">
+                        <Link className="navbar-brand mt-2 mt-lg-0" to="/">
                             <img src={ROADSIGN} height="15" alt="MDB Logo" loading="lazy"/>
-                        </a>
+                        </Link>
                         <br/>
 
                         <div
