@@ -56,4 +56,6 @@ nav {
     margin-left: 28px;
     color: aliceblue;
   }
-}
+}.navbar{
+  position: relative;
+ }
