@@ -1,0 +1,24 @@
+.sp-sri-lanka {
+  font-weight: 900;
+}
+.heading {
+  text-align: center;
+}
+.bg {
+  font-family: "Segoe UI" !important;
+  font-weight: lighter;
+  padding: 50px;
+}
+
+.container-md {
+  border-radius: 10px;
+  margin-top: 50px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.btn-see-all {
+  margin: 20px auto 50px auto;
+  border-radius: 50px;
+  padding-right: 25px;
+  padding-left: 25px;
+}

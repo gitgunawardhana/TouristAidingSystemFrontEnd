@@ -3,7 +3,7 @@ import Navbar from "../../Components/NavigationBar/Navbar/Navbar";
 import "./AccountSettings.css";
 import Body from "../../Components/AccountSettings/AccountSettings";
 
-function Test() {
+function AccountSetting() {
     return (
         <>
             <Navbar></Navbar>
@@ -12,4 +12,4 @@ function Test() {
     );
 }
 
-export default Test;
+export default AccountSetting;
