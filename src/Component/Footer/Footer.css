@@ -1,89 +1,87 @@
 .footer {
-  background-color: #000e0f;
-  z-index: 1;
-  margin: 0;
-  width: 100%;
-  height: 190px;
-  color: aliceblue;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-flow: wrap;
-  height: auto;
-  font-size: 16px;
-  padding: auto 50px auto 50px;
-  bottom: 0;
-
+    background-color: #000e0f;
+    z-index: 1;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    color: aliceblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-flow: wrap;
+    font-size: 16px;
+    padding: auto 50px auto 50px;
+    bottom: 0 !important;
 }
 
 .footer-content {
-  margin: auto;
+    margin: auto;
 }
 
 .footer-content p {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .footer-log {
-  text-align: center;
+    text-align: center;
 }
 
 .footer-log img {
-  margin: 80px 10px 70px 10px;
+    margin: 80px 10px 70px 10px;
 }
 
 .icon-social-media {
-  color: aliceblue;
+    color: aliceblue;
 }
 
 .icon-social-media .icon {
-  margin: 20px;
-  color: aliceblue;
+    margin: 20px;
+    color: aliceblue;
 }
 
 .footer .social-media-link {
-  display: flex;
+    display: flex;
 }
 
 .footer .footer-nav-link {
-  font-size: 16px;
-  margin-top: 20px;
+    font-size: 16px;
+    margin-top: 20px;
 }
 
 .footer-content p {
-  cursor: pointer;
-  font-size: 14px;
+    cursor: pointer;
+    font-size: 14px;
 }
 
 .footer .contact-us {
-  font-size: 16px;
-  margin-top: 20px;
+    font-size: 16px;
+    margin-top: 20px;
 }
 
 .footer-navi-link {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
 }
 
 .footer-navi-link:hover {
-  color: aliceblue;
+    color: aliceblue;
 }
 
 @media screen and (max-width: 390px) and (min-width: 412px) {
-  .footer .footer-nav-link,
-  .contact-us {
-    margin-left: 51px;
-  }
+    .footer .footer-nav-link,
+    .contact-us {
+        margin-left: 51px;
+    }
 
-  .footer .social-media-link {
-    padding-bottom: 50px;
-  }
+    .footer .social-media-link {
+        padding-bottom: 50px;
+    }
 }
 
 @media screen and (max-width: 412px) {
-  .footer .footer-nav-link,
-  .contact-us {
-    margin-left: 51px;
-  }
+    .footer .footer-nav-link,
+    .contact-us {
+        margin-left: 51px;
+    }
 }

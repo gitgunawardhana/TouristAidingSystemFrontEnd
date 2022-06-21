@@ -6,6 +6,7 @@
 
 .item-color {
   color: white !important;
+  font-weight: revert !important;
 }
 
 .item-color:hover {
@@ -20,15 +21,28 @@
 .customize-navbar {
   top: 0;
   width: 100%;
-  z-index: 1;
-  position: absolute !important;
-  width: 100%;
+  z-index: 10;
+  position: fixed;
 }
 
 .pa {
   margin-bottom: 80px;
+  z-index: 10;
 }
-.navbar{
-  position: fixed;
-  width: 100%;
+
+.sign-up-btn{
+width: 140px !important;
+}
+
+.login-btn{
+  font-weight: bold !important;
+  text-decoration: none;
+  color: white !important;
+  margin-left: 10px;
+}
+
+@media(max-width:393px) {
+.sign-btn-set{
+  float: right !important;
+}
 }

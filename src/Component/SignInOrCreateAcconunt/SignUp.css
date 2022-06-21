@@ -1,5 +1,5 @@
 .main-div {
-    margin-top: 100px !important;
+    margin-top: 150px !important;
     width: 40% !important;
     margin-left: 25%;
 
@@ -18,10 +18,19 @@
 
 }
 .nav-link{
-    color: #004145 ;
+    color: #03676e ;
     font-weight: bold;
+    margin-left: 0 !important;
 }
-.nav-bar-link:link{
-    color: white !important;
-    background-color: #004145 !important;
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: #03676e !important;
+}
+.btn-primary{
+ border-color: #03676e !important;
+}
+.form-check-input:checked{
+    background-color: #004145;
+}
+.last-div{
+    height:83px;
 }
