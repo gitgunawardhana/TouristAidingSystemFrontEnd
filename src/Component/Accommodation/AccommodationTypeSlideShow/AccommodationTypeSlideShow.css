@@ -1,0 +1,16 @@
+.slide-show{
+    width: 80%;
+    height: 250px;
+    margin-left: 10%;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.type-card{
+    position: relative;
+    display: inline-block;
+    margin: 1%;
+    width: 14%;
+    cursor: pointer;
+}

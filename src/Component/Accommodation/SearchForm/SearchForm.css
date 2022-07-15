@@ -1,0 +1,25 @@
+.search-form-main {
+    position: relative;
+    margin-top: 80px;
+    width: 100%;
+    height: auto;
+}
+
+.search-form-box {
+    position: absolute;
+    width: 50%;
+    background-color: white;
+    top: 100px;
+    left: 25%;
+    color: #004145;
+    text-align: center;
+    padding: 20px 20px 30px 0;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.form-icon{
+    font-size: 40px;
+    margin: 20% 0 0 50%;
+    font-weight: lighter;
+}
