@@ -1,0 +1,17 @@
+.filter-section{
+    width: 100%;
+    padding: 15px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.find-accommodation-form{
+    position: relative;
+}
+.find-accommodation-form-icon{
+    width: 32px;
+    margin: 17px 0 0 0;
+}
+
+.accommodation-filter-check-box{
+    font-size: 100px;
+}

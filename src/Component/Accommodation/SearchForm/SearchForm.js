@@ -9,6 +9,7 @@ import Grid from "@mui/material/Grid";
 import * as FaIcons from "react-icons/fa";
 import {styled} from '@mui/material/styles';
 import Button from '@mui/material/Button';
+import {useNavigate} from "react-router";
 
 function SearchForm() {
     const [checkInTime, setCheckInTime] = React.useState(Date.now());
@@ -34,6 +35,11 @@ function SearchForm() {
         boxShadow: '1px 1px 5px rgba(0, 0, 0, 0.4)',
         padding: '10px',
     }));
+
+    const navigate = useNavigate();
+    const navigateToAccommodationFilter = () => {
+        navigate('/accommodations-filter');
+    };
 
     return (
         <div className="search-form-main">
@@ -101,7 +107,7 @@ function SearchForm() {
                         </Grid>
                     </Grid>
                 </div>
-                <SearchButton>Find the Best Results</SearchButton>
+                <SearchButton onClick={navigateToAccommodationFilter}>Find the Best Results</SearchButton>
             </Box>
         </div>
     );

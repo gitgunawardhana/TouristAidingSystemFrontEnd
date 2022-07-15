@@ -11,6 +11,7 @@ import AccountSetting from "./View/AccountSettings/AccountSettings";
 import Security from "./View/Security/Security";
 import Profile from "./View/Profile/Profile";
 import SignUp from "./View/SignInOrCreateAccount/SignUp";
+import AccommodationFilter from "./View/AccommodationFilter/AccommodationFilter";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
                     <Route path="/" exact element={<Home/>}/>
                     <Route path="/locations" element={<Location/>}/>
                     <Route path="/accommodations" element={<Accommodation/>}/>
+                    <Route path="/accommodations-filter" element={<AccommodationFilter/>}/>
                     <Route path="*" element={<PageNotFound/>}/>
                     <Route path="/accountSetting" element={<AccountSetting/>}/>
                     <Route path="/security" element={<Security/>}/>
