@@ -10,6 +10,11 @@ import * as FaIcons from "react-icons/fa";
 import {styled} from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import {useNavigate} from "react-router";
+import LocationIcon from "../../../Assets/AccommodationFilterFormIcons/location.png";
+import StartDate from "../../../Assets/AccommodationFilterFormIcons/start-date.png";
+import EndDate from "../../../Assets/AccommodationFilterFormIcons/end-date.png";
+import People from "../../../Assets/AccommodationFilterFormIcons/people.png";
+import Room from "../../../Assets/AccommodationFilterFormIcons/room.png";
 
 function SearchForm() {
     const [checkInTime, setCheckInTime] = React.useState(Date.now());
@@ -54,7 +59,7 @@ function SearchForm() {
                     <h4>CHOOSE YOUR STAY</h4>
                     <Grid container spacing={0}>
                         <Grid item xs={1}>
-                            <FaIcons.FaMapMarkedAlt className="form-icon"/>
+                            <img src={LocationIcon} alt="Start Date" className="form-icon"/>
                         </Grid>
                         <Grid item xs={11}>
                             <TextField id="destination" label="Enter the destination" type="text"
@@ -65,7 +70,7 @@ function SearchForm() {
                     <LocalizationProvider dateAdapter={AdapterMoment}>
                         <Grid container spacing={0}>
                             <Grid item xs={1}>
-                                <FaIcons.FaRegCalendarAlt className="form-icon"/>
+                                <img src={StartDate} alt="Start Date" className="form-icon"/>
                             </Grid>
                             <Grid item xs={5}>
                                 <MobileDatePicker
@@ -77,7 +82,7 @@ function SearchForm() {
                                 />
                             </Grid>
                             <Grid item xs={1}>
-                                <FaIcons.FaRegCalendarCheck className="form-icon"/>
+                                <img src={EndDate} alt="Start Date" className="form-icon"/>
                             </Grid>
                             <Grid item xs={5}>
                                 <MobileDatePicker
@@ -92,14 +97,14 @@ function SearchForm() {
                     </LocalizationProvider>
                     <Grid container spacing={0}>
                         <Grid item xs={1}>
-                            <FaIcons.FaUsers className="form-icon"/>
+                            <img src={People} alt="Start Date" className="form-icon"/>
                         </Grid>
                         <Grid item xs={5}>
                             <TextField id="numberOfPeople" label="Number of people" type="text"
                                        sx={{m: 1, width: '99%'}}/>
                         </Grid>
                         <Grid item xs={1}>
-                            <FaIcons.FaBed className="form-icon"/>
+                            <img src={Room} alt="Start Date" className="form-icon"/>
                         </Grid>
                         <Grid item xs={5}>
                             <TextField id="numberOfRooms" label="Number of rooms" type="text"
