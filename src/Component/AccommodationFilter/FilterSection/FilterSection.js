@@ -2,7 +2,7 @@ import React from "react";
 import "./FilterSection.css";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
-import {LocalizationProvider, MobileDatePicker} from "@mui/x-date-pickers";
+import {DatePicker, LocalizationProvider, MobileDatePicker} from "@mui/x-date-pickers";
 import {AdapterMoment} from "@mui/x-date-pickers/AdapterMoment";
 import Box from "@mui/material/Box";
 import {styled} from "@mui/material/styles";
@@ -92,7 +92,7 @@ function FilterSection() {
                                 <img src={StartDate} alt="Start Date" className="find-accommodation-form-icon"/>
                             </Grid>
                             <Grid item xs={11}>
-                                <MobileDatePicker
+                                <DatePicker
                                     label="Start day of your travel"
                                     inputFormat="DD/MM/yyyy"
                                     value={checkInTime}
@@ -107,7 +107,7 @@ function FilterSection() {
                                 <img src={EndDate} alt="End Date" className="find-accommodation-form-icon"/>
                             </Grid>
                             <Grid item xs={11}>
-                                <MobileDatePicker
+                                <DatePicker
                                     label="End day of your travel"
                                     inputFormat="DD/MM/yyyy"
                                     value={checkOutTime}
