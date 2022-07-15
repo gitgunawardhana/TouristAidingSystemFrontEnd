@@ -1,0 +1,26 @@
+.container {
+  margin-top: 25px;
+  padding: 35px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+}
+
+.btn-map {
+  margin-top: 15px;
+  border-radius: 25px;
+  background-color: black !important;
+  border: none;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 10px;
+  padding-top: 8px;
+  display: flex;
+  width: 100px;
+}
+
+.btn-map:hover {
+  background-color: rgba(0, 0, 0, 0.932) !important;
+}
+
+.btn-value {
+  margin-top: -2px;
+}

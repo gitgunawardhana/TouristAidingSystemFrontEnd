@@ -1,0 +1,60 @@
+.d-block,
+.carousel-item {
+  width: 102% !important;
+  margin-top: -1px !important;
+  margin-left: -1px !important;
+  padding: 0px !important;
+  /* margin: 0px !important; */
+}
+
+/* .bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+.place-heading-title {
+  font-weight: 800;
+}
+
+.container-my img {
+  vertical-align: middle;
+}
+
+.container-my .content {
+  /* position: relative;
+  text-align: center;
+  color: white; */
+  position: absolute;
+  top: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
