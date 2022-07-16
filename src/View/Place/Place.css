@@ -27,6 +27,7 @@
   position: -webkit-sticky !important;
   top: 100px !important;
 }
+
 .filter-result-heading {
   background-color: white;
   margin: 0px !important;
@@ -88,5 +89,13 @@
 @media screen and (max-width: 768px) {
   .filter-result-part {
     padding-right: 20px;
+  }
+
+  .filter-heading-mobile,
+  .filter-part {
+    z-index: 1;
+    position: sticky !important;
+    position: -webkit-sticky !important;
+    top: 100px !important;
   }
 }

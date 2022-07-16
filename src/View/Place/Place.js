@@ -145,7 +145,7 @@ function Place() {
                 </div>
               </div>
             ) : (
-              <div className="container filter-heading">
+              <div className="container filter-heading filter-heading-mobile">
                 <div
                   className="filter-heading-btn"
                   data-toggle="collapse"
