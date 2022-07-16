@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ImageSlider.css";
 function ImageSlider(props) {
   const [covers, setCovers] = useState(props.covers);
-  console.log(covers);
+  // console.log(covers);
   return (
     <div>
       <div
