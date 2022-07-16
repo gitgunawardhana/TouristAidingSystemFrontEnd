@@ -6,7 +6,7 @@ function Description(props) {
   const [desc, setDesc] = useState(props.description);
   return (
     <div>
-      <div className="container">
+      <div className="container container-desc">
         <h3>Description</h3>
         <p>{desc}</p>
         <div className="btn btn-primary btn-map">
