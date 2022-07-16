@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
+import { BsArrowDownShort } from "react-icons/bs";
 import { useParams } from "react-router-dom";
 import AllLocationCardView from "../../Component/AllLocationCardView/AllLocationCardView";
 import allLocationDataList from "../../Component/AllLocationDataList";
@@ -9,9 +10,12 @@ import Description from "../../Component/Description/Description";
 import ImageSlider from "../../Component/ImageSlider/ImageSlider";
 import Navbar from "../../Component/Navbar/Navbar";
 import locationDataList from "../../Component/TopLocationDataList";
+import useMediaQuery from "../../Component/useMediaQuery";
 import "./Place.css";
 
 function Place() {
+  const matches = useMediaQuery("(min-width: 768px)");
+
   const { id } = useParams();
 
   const filteredResult = locationDataList.find((e) => e.id == id);
@@ -106,37 +110,103 @@ function Place() {
       <div className="container container-bottom">
         <div className="row mt-5 mx-2">
           <div className="col-md-3 mb-3 filter-part">
-            <div className="container filter-heading">
-              <h4 id="filter-heading">Filter Locations</h4>
-              <hr />
-              <h5>Provinces</h5>
-              {provincesCategory.map((item, index) => (
-                <CheckBox
-                  label={item.display}
-                  onChange={(input) =>
-                    filterSelect("PROVINCE", input.checked, item)
-                  }
-                  checked={filter.provincesCategory.includes(item.province)}
-                ></CheckBox>
-              ))}
-              <hr />
-              <h5>Things To Do</h5>
-              {thingsToDoCategory.map((item, index) => (
-                <CheckBox
-                  label={item.display}
-                  onChange={(input) =>
-                    filterSelect("THINGSTODO", input.checked, item)
-                  }
-                  checked={filter.thingsToDoCategory.includes(item.thingsToDo)}
-                ></CheckBox>
-              ))}
-              <hr />
-              <div className="clear-filter">
-                <button className="btn-clear-filter" onClick={clearFilter}>
-                  Reset
-                </button>
+            {matches ? (
+              <div className="container filter-heading">
+                <h4 id="filter-heading">Filter Locations</h4>
+                <hr />
+                <h5>Provinces</h5>
+                {provincesCategory.map((item, index) => (
+                  <CheckBox
+                    label={item.display}
+                    onChange={(input) =>
+                      filterSelect("PROVINCE", input.checked, item)
+                    }
+                    checked={filter.provincesCategory.includes(item.province)}
+                  ></CheckBox>
+                ))}
+                <hr />
+                <h5>Things To Do</h5>
+                {thingsToDoCategory.map((item, index) => (
+                  <CheckBox
+                    label={item.display}
+                    onChange={(input) =>
+                      filterSelect("THINGSTODO", input.checked, item)
+                    }
+                    checked={filter.thingsToDoCategory.includes(
+                      item.thingsToDo
+                    )}
+                  ></CheckBox>
+                ))}
+                <hr />
+                <div className="clear-filter">
+                  <button className="btn-clear-filter" onClick={clearFilter}>
+                    Reset
+                  </button>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="container filter-heading">
+                <div
+                  className="filter-heading-btn"
+                  data-toggle="collapse"
+                  data-target="#collapseExample"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                >
+                  <h4
+                    id="filter-heading"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseExample"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                  >
+                    Filter Locations
+                  </h4>
+                  <div
+                    className="btn-arrow"
+                    data-toggle="collapse"
+                    data-target="#collapseExample"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                  >
+                    <BsArrowDownShort size={30}></BsArrowDownShort>
+                  </div>
+                </div>
+                <div class="collapse" id="collapseExample">
+                  <hr />
+                  <h5>Provinces</h5>
+                  {provincesCategory.map((item, index) => (
+                    <CheckBox
+                      label={item.display}
+                      onChange={(input) =>
+                        filterSelect("PROVINCE", input.checked, item)
+                      }
+                      checked={filter.provincesCategory.includes(item.province)}
+                    ></CheckBox>
+                  ))}
+                  <hr />
+                  <h5>Things To Do</h5>
+                  {thingsToDoCategory.map((item, index) => (
+                    <CheckBox
+                      label={item.display}
+                      onChange={(input) =>
+                        filterSelect("THINGSTODO", input.checked, item)
+                      }
+                      checked={filter.thingsToDoCategory.includes(
+                        item.thingsToDo
+                      )}
+                    ></CheckBox>
+                  ))}
+                  <hr />
+                  <div className="clear-filter">
+                    <button className="btn-clear-filter" onClick={clearFilter}>
+                      Reset
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
           <div className="col-md-9 filter-result-part">
             <div className="container filter-result-heading">
