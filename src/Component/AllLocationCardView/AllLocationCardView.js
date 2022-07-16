@@ -1,5 +1,6 @@
 import React from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import emptyImage from "../../Assets/emptyImage.png";
 import "./AllLocationCardView.css";
 
@@ -43,12 +44,36 @@ function AllLocationCardView(props) {
             >
               <div className="row no-gutters">
                 <div className="col-sm-5">
-                  <img className="card-img" src={item.image} alt={item.title} />
+                  <Link className="nav-to-place" to={`/place/${item.id}`}>
+                    <img
+                      className="card-img"
+                      src={item.image}
+                      alt={item.title}
+                      onClick="window.location.reload();"
+                    />
+                  </Link>
                 </div>
                 <div className="col-sm-7">
                   <div className="card-body">
-                    <h5 className="card-title">{item.title}</h5>
-                    <p className="card-text">{item.description}</p>
+                    <Link className="nav-to-place" to={`/place/${item.id}`}>
+                      <h5
+                        className="card-title"
+                        onClick="window.location.reload();"
+                      >
+                        {item.title}
+                      </h5>
+                    </Link>
+                    <p className="card-text">
+                      {item.description.slice(0, 100) + "..."}
+                      <Link className="nav-to-place" to={`/place/${item.id}`}>
+                        <span
+                          className="read-more"
+                          onClick="window.location.reload();"
+                        >
+                          read more
+                        </span>
+                      </Link>
+                    </p>
                     <div className="btn btn-primary btn-map">
                       <div>MAP&nbsp;</div>
                       <div className="btn-value">

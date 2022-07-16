@@ -18,3 +18,17 @@
   border-radius: 2px;
   padding: 115px;
 }
+
+.read-more {
+  color: rgb(90, 90, 90);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.read-more:hover {
+  color: #004145;
+}
+
+.nav-to-place {
+  text-decoration: none;
+}

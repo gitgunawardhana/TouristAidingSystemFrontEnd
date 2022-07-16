@@ -3,10 +3,7 @@ import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import { TbArrowBarDown, TbArrowBarUp } from "react-icons/tb";
 import Carousel from "../../Component/Carousel/Carousel";
-import {
-  default as favoriteDataList,
-  default as FavoriteDataList,
-} from "../../Component/FavoriteDataList";
+import favoriteDataList from "../../Component/FavoriteDataList";
 import FavoritePlaces from "../../Component/ImageGalleryWithDescription/ImageGalleryWithDescription";
 import Navbar from "../../Component/Navbar/Navbar";
 import RecommendedDataList from "../../Component/RecommendedDataList";
@@ -87,7 +84,7 @@ function Location() {
             </h1>
             <FavoritePlaces
               visibleValue={visible}
-              dataList={FavoriteDataList}
+              dataList={favoriteDataList}
             ></FavoritePlaces>
             <div className="text-center">
               <button

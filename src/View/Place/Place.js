@@ -9,7 +9,6 @@ import thingsToDoCategory from "../../Component/CheckBox/ThingsToDoCategory";
 import Description from "../../Component/Description/Description";
 import ImageSlider from "../../Component/ImageSlider/ImageSlider";
 import Navbar from "../../Component/Navbar/Navbar";
-import locationDataList from "../../Component/TopLocationDataList";
 import useMediaQuery from "../../Component/useMediaQuery";
 import "./Place.css";
 
@@ -18,7 +17,7 @@ function Place() {
 
   const { id } = useParams();
 
-  const filteredResult = locationDataList.find((e) => e.id == id);
+  const filteredResult = allLocationDataList.find((e) => e.id == id);
   // console.log(filteredResult);
 
   const coverImages = [
