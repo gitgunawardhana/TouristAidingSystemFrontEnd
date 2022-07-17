@@ -17,7 +17,6 @@ import NotificationSettings from "./View/NotificationSettings/NotificationSettin
 import PaymentMethod from "./View/PaymentMethod/PaymentMethod";
 import Notifications from "./View/Notifications/Notifications";
 import SignIn from "./View/SignIn/SignIn";
-import AccommodationFilter from "./View/AccommodationFilter/AccommodationFilter";
 import CreateAccount from "./View/CreateAccount/CreateAccount";
 import EmailVerification from "./View/EmailVerification/EmailVerification";
 
