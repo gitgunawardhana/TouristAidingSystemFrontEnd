@@ -1,6 +1,7 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import Navbar from "../../Component/Navbar/Navbar";
+import EditProfile from "../../Component/Profile/EditProfile";
+
 
 
 function Profile() {
@@ -8,6 +9,7 @@ function Profile() {
 
         <div >
             <Navbar/>
+            <EditProfile/>
 
         </div>
     );

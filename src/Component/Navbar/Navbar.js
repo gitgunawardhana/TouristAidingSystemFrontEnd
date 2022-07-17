@@ -141,7 +141,7 @@ function Navbar() {
                         {/*                              </Link>*/}
                         {/*                          </li>*/}
                         {/*                          <li>*/}
-                        {/*                              <Link className="dropdown-item" to="/accountSetting">*/}
+                        {/*                              <Link className="dropdown-item" to="/profile">*/}
                         {/*                                  Settings*/}
                         {/*                              </Link>*/}
                         {/*                          </li>*/}
