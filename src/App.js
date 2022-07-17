@@ -16,6 +16,7 @@ import NotificationSettings from "./View/NotificationSettings/NotificationSettin
 import PaymentMethod from "./View/PaymentMethod/PaymentMethod";
 import Notifications from "./View/Notifications/Notifications";
 import SignIn from "./View/SignIn/SignIn";
+import React from "react";
 
 
 function App() {
@@ -23,9 +24,8 @@ function App() {
         <>
             <Router>
                 <Routes>
-                    <ScrollToTop></ScrollToTop>
+
                     <Route path="/" exact element={<Home/>}/>
-                    <Route path="/locations" element={<Location/>}/>
                     <Route path="/accommodations" element={<Accommodation/>}/>
                     <Route path="*" element={<PageNotFound/>}/>
                     <Route path="/security" element={<Security/>}/>
@@ -35,9 +35,7 @@ function App() {
                     <Route path="/paymentMethod" element={<PaymentMethod/>}/>
                     <Route path='/notifications' element={<Notifications/>}/>
                     <Route path="/signIn" element={<SignIn/>}/>
-                    <Route path="/" exact element={<Home/>}/>
                     <Route path="/locations" element={<Locations/>}/>
-                    <Route path="/accommodations" element={<Accommodation/>}/>
                     <Route path="/location/:id" element={<Location/>}/>
                     <Route path="*" element={<PageNotFound/>}/>
                 </Routes>
