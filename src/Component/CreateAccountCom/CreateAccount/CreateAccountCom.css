@@ -32,12 +32,10 @@
     padding-top:10px;
 
 }
-.btn-login{
+.btn-create{
+    background-color: #004145 !important;
     color: white;
-    background-color: #004145!important;
-    width: 100%;
-    align-items: center!important;
-
+    width: 100% ;
 }
 
 .register-btn{
@@ -71,7 +69,4 @@
     float: right!important;
     margin-right: 15px;
     margin-top: 15px;
-}
-.train-img{
-    height: 100%!important;
 }

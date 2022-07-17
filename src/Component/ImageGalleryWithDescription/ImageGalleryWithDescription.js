@@ -2,6 +2,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import { MdFavorite } from "react-icons/md";
+import { Link } from "react-router-dom";
 import "./ImageGalleryWithDescription.css";
 
 function TopLocation(props) {
@@ -17,8 +18,6 @@ function TopLocation(props) {
     <>
       <div className="card-list-2 container-fluid">
         {menuItems.slice(0, props.visibleValue).map((items) => {
-          const { id, category, image, title, link1, link2, text, favorite } =
-            items;
           return (
             <>
               <div data-aos="fade-up" className="container-custom">
@@ -26,9 +25,14 @@ function TopLocation(props) {
                   <div className="card border-0 me-lg-4 mb-lg-0 mb-4 card-custom">
                     <div className="backgroundEffect"></div>
                     <div className="pic">
-                      <img className="" src={image} alt="" />
+                      <Link
+                        className="nav-to-place"
+                        to={`/location/${items.id}`}
+                      >
+                        <img className="" src={items.image} alt="" />
+                      </Link>
                       <div className="date">
-                        <span className="day">{id}</span>{" "}
+                        <span className="day">{items.id}</span>{" "}
                         {/* <span className="month"> {favorite}</span>
                     <span className="year">
                       <MdFavorite classNameName="fav-icon" />
@@ -36,22 +40,32 @@ function TopLocation(props) {
                       </div>
                     </div>
                     <div className="content">
-                      <p className="h-1 mt-4">
-                        {id} {title}
-                      </p>
-                      <p className="text-muted mt-3">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Quas natus perferendis ducimus ad voluptate quasi!
-                      </p>
+                      <Link
+                        className="nav-to-place-bottom"
+                        to={`/location/${items.id}`}
+                      >
+                        <p className="h-1 mt-4">
+                          {items.id} {items.title}
+                        </p>
+                      </Link>
+                      <p className="text-muted mt-3">{items.description}</p>
                       <div className="d-flex align-items-center justify-content-between mt-3 pb-3">
-                        <div className="btn btn-primary">
-                          Read More<span className="fas fa-arrow-right"></span>
-                        </div>
+                        <Link
+                          className="nav-to-place"
+                          to={`/location/${items.id}`}
+                        >
+                          <div className="btn btn-primary">
+                            Read More
+                            <span className="fas fa-arrow-right"></span>
+                          </div>
+                        </Link>
                         <div className="d-flex align-items-center justify-content-center foot">
                           <p className="admin">
                             <MdFavorite classNameName="fav-icon" />
                           </p>
-                          <p className="ps-3 icon text-muted">{favorite}</p>
+                          <p className="ps-3 icon text-muted">
+                            {items.favorite}
+                          </p>
                         </div>
                       </div>
                     </div>

@@ -1,3 +1,4 @@
+import React from "react";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
@@ -6,6 +7,7 @@ import Footer from "./Component/Footer/Footer";
 import Accommodation from "./View/Accommodation/Accommodation";
 import Home from "./View/Home/Home";
 import Location from "./View/Location/Location";
+import Locations from "./View/Locations/Locations";
 import PageNotFound from "./View/PageNotFound/PageNotFound";
 import Security from "./View/Security/Security";
 import SignUp from "./View/SignInOrCreateAccount/SignUp";
@@ -15,6 +17,10 @@ import NotificationSettings from "./View/NotificationSettings/NotificationSettin
 import PaymentMethod from "./View/PaymentMethod/PaymentMethod";
 import Notifications from "./View/Notifications/Notifications";
 import SignIn from "./View/SignIn/SignIn";
+import AccommodationFilter from "./View/AccommodationFilter/AccommodationFilter";
+import CreateAccount from "./View/CreateAccount/CreateAccount";
+import EmailVerification from "./View/EmailVerification/EmailVerification";
+
 
 
 function App() {
@@ -35,7 +41,11 @@ function App() {
                     <Route path="/paymentMethod" element={<PaymentMethod/>}/>
                     <Route path='/notifications' element={<Notifications/>}/>
                     <Route path="/signIn" element={<SignIn/>}/>
-
+                    <Route path="/location" element={<Locations/>}/>
+                    <Route path="/location/:id" element={<Location/>}/>
+                    <Route path="*" element={<PageNotFound/>}/>
+                    <Route path="/createAccount" element={<CreateAccount/>}/>
+                    <Route path="/emailVerification" element={<EmailVerification/>}/>
                 </Routes>
                 <Footer></Footer>
             </Router>

@@ -29,28 +29,32 @@ function NavbarHome() {
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li className="navi-item">
-                <Link className="navi-link active" aria-current="page" to="/">
+              <li className="nav-item">
+                <Link
+                  className="navi-link nav-link active"
+                  aria-current="page"
+                  to="/"
+                >
                   Home
                 </Link>
               </li>
-              <li className="navi-item">
-                <Link className="navi-link" to="/tripplanners">
+              <li className="nav-item">
+                <Link className="navi-link nav-link" to="/tripplanners">
                   Trip Planner
                 </Link>
               </li>
-              <li className="navi-item">
-                <Link className="navi-link" to="/locations">
+              <li className="nav-item">
+                <Link className="navi-link nav-link" to="/location">
                   Location
                 </Link>
               </li>
-              <li className="navi-item">
-                <Link className="navi-link" to="/accommodations">
+              <li className="nav-item">
+                <Link className="navi-link nav-link" to="/accommodations">
                   Accommodation
                 </Link>
               </li>
-              <li className="navi-item">
-                <Link className="navi-link" to="/vehicles">
+              <li className="nav-item">
+                <Link className="navi-link nav-link" to="/vehicles">
                   Vehicle
                 </Link>
               </li>
