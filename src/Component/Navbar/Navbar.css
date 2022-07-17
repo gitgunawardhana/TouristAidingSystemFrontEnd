@@ -158,3 +158,25 @@
     margin-right: 0px;
   }
 }
+#collasible-nav-dropdown{
+  border: none!important;
+}
+.profile-icon{
+  position: absolute;
+  margin-left: 20px;
+}
+.dropdown-div{
+
+  padding-left: 50px;
+  padding-top: 10px;
+}
+. profile-nav{
+  margin-left: 10px !important;
+}
+.nav-item-link{
+  text-decoration: none !important;
+  color: #030303;
+}
+#collasible-nav-dropdown{
+  color: white !important;
+}
