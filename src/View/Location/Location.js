@@ -1,126 +1,222 @@
-import Aos from "aos";
-import "aos/dist/aos.css";
-import { useEffect, useState } from "react";
-import { TbArrowBarDown, TbArrowBarUp } from "react-icons/tb";
-import Carousel from "../../Component/Carousel/Carousel";
-import favoriteDataList from "../../Component/FavoriteDataList";
-import FavoritePlaces from "../../Component/ImageGalleryWithDescription/ImageGalleryWithDescription";
+import React, { useCallback, useEffect, useState } from "react";
+import { BsArrowDownShort } from "react-icons/bs";
+import { useParams } from "react-router-dom";
+import AllLocationCardView from "../../Component/AllLocationCardView/AllLocationCardView";
+import allLocationDataList from "../../Component/AllLocationDataList";
+import CheckBox from "../../Component/CheckBox/CheckBox";
+import provincesCategory from "../../Component/CheckBox/ProvincesCategory";
+import thingsToDoCategory from "../../Component/CheckBox/ThingsToDoCategory";
+import Description from "../../Component/Description/Description";
+import ImageSlider from "../../Component/ImageSlider/ImageSlider";
 import Navbar from "../../Component/Navbar/Navbar";
-import RecommendedDataList from "../../Component/RecommendedDataList";
-import SearchBar from "../../Component/SearchBar/SearchBar";
-import ThingsToDoDataList from "../../Component/ThingsToDoDataList";
+import useMediaQuery from "../../Component/useMediaQuery";
 import "./Location.css";
 
-function Location() {
-  const [visible, setVisible] = useState(8);
-  const [disableAll, setDisableAll] = useState(true);
-  const [disableLess, setDisableLess] = useState(true);
+function Place() {
+  const matches = useMediaQuery("(min-width: 768px)");
 
-  const seeAll = () => {
-    setVisible((prevValue) => {
-      if (favoriteDataList.length <= prevValue) {
-        setDisableAll(false);
-        return favoriteDataList.length;
-      } else {
-        setDisableLess(true);
-        return prevValue + 4;
-      }
-    });
+  const { id } = useParams();
+
+  const filteredResult = allLocationDataList.find((e) => e.id == id);
+  // console.log(filteredResult);
+
+  const coverImages = [
+    filteredResult.coverImg0,
+    filteredResult.coverImg1,
+    filteredResult.coverImg2,
+    filteredResult.title,
+  ];
+
+  // filtering data
+  const initFilter = {
+    provincesCategory: [],
+    thingsToDoCategory: [],
   };
 
-  const seeLess = () => {
-    setVisible((prevValue) => {
-      if (8 >= prevValue) {
-        setDisableLess(false);
-        return 8;
-      } else {
-        setDisableAll(true);
-        if (prevValue === favoriteDataList.length) {
-          return prevValue - (favoriteDataList.length % 4);
-        }
-        return prevValue - 4;
+  const locationList = allLocationDataList;
+
+  const [locations, setLocations] = useState(locationList);
+
+  const [filter, setFilter] = useState(initFilter);
+
+  const filterSelect = (type, checked, item) => {
+    if (checked) {
+      switch (type) {
+        case "PROVINCE":
+          setFilter({
+            ...filter,
+            provincesCategory: [...filter.provincesCategory, item.province],
+          });
+          break;
+        case "THINGSTODO":
+          setFilter({
+            ...filter,
+            thingsToDoCategory: [...filter.thingsToDoCategory, item.thingsToDo],
+          });
+          break;
+        default:
       }
-    });
+    } else {
+      switch (type) {
+        case "PROVINCE":
+          const newProvinceCategory = filter.provincesCategory.filter(
+            (e) => e !== item.province
+          );
+          setFilter({ ...filter, provincesCategory: newProvinceCategory });
+          break;
+        case "THINGSTODO":
+          const newThingsToDoCategory = filter.thingsToDoCategory.filter(
+            (e) => e !== item.thingsToDo
+          );
+          setFilter({ ...filter, thingsToDoCategory: newThingsToDoCategory });
+          break;
+        default:
+      }
+    }
   };
+
+  const clearFilter = () => setFilter(initFilter);
+
+  const updateLocations = useCallback(() => {
+    let temp = locationList;
+
+    if (filter.provincesCategory.length > 0) {
+      temp = temp.filter((e) => filter.provincesCategory.includes(e.province));
+    }
+
+    if (filter.thingsToDoCategory.length > 0) {
+      temp = temp.filter((e) => {
+        const check = e.thingsToDo.find((thingsToDo) =>
+          filter.thingsToDoCategory.includes(thingsToDo)
+        );
+        return check !== undefined;
+      });
+    }
+    setLocations(temp);
+  }, [filter, locationList]);
 
   useEffect(() => {
-    Aos.init({ duration: 2000 });
-  }, []);
+    updateLocations();
+  }, [updateLocations]);
 
   return (
-    <div className="loaction-page">
+    <div>
+      {/* {console.log("filter", locations)} */}
       <Navbar></Navbar>
-      <h1 className="heading main-heading" style={{ "margin-top": "60px" }}>
-        Places to Visit in <span className="sp-sri-lanka">Sri Lanka</span>
-      </h1>
-      <div className="search-bar-custom">
-        <SearchBar></SearchBar>
-      </div>
-      <Carousel
-        slidesToShowScroll={4}
-        heading="Things To Do"
-        subHeading=""
-        dataList={ThingsToDoDataList}
-      ></Carousel>
-      <Carousel
-        data-aos="flip-up"
-        slidesToShowScroll={3}
-        heading="Recommended Locations"
-        subHeading="Lorem ipsum dolor, sit amet consectetur adipisic."
-        dataList={RecommendedDataList}
-      ></Carousel>
-      <div
-        data-aos="fade-up"
-        className="container-fluid"
-        style={{ backgroundColor: "#EEEEEE" }}
-      >
-        <div className="container-fluid fv-location">
-          <div className="custom-head">
-            <h1
-              className="text-center"
-              style={{ color: "black", paddingTop: "50px", fontSize: "28px" }}
-            >
-              Top Attractions in Sri Lanka
-            </h1>
-            <FavoritePlaces
-              visibleValue={visible}
-              dataList={favoriteDataList}
-            ></FavoritePlaces>
-            <div className="text-center">
-              <button
-                type="button"
-                class="text-center btn-see"
-                onClick={seeLess}
-                disabled={!disableLess}
-              >
-                <TbArrowBarUp></TbArrowBarUp>
-              </button>
-              <button
-                type="button"
-                class="text-center btn-see"
-                onClick={seeAll}
-                disabled={!disableAll}
-              >
-                <TbArrowBarDown></TbArrowBarDown>
-              </button>
+      <ImageSlider covers={coverImages}></ImageSlider>
+      <Description description={filteredResult.description}></Description>
+      <div className="container container-bottom">
+        <div className="row mt-5 mx-2">
+          <div className="col-md-3 mb-3 filter-part">
+            {matches ? (
+              <div className="container filter-heading">
+                <h4 id="filter-heading">Filter Locations</h4>
+                <hr />
+                <h5>Provinces</h5>
+                {provincesCategory.map((item, index) => (
+                  <CheckBox
+                    label={item.display}
+                    onChange={(input) =>
+                      filterSelect("PROVINCE", input.checked, item)
+                    }
+                    checked={filter.provincesCategory.includes(item.province)}
+                  ></CheckBox>
+                ))}
+                <hr />
+                <h5>Things To Do</h5>
+                {thingsToDoCategory.map((item, index) => (
+                  <CheckBox
+                    label={item.display}
+                    onChange={(input) =>
+                      filterSelect("THINGSTODO", input.checked, item)
+                    }
+                    checked={filter.thingsToDoCategory.includes(
+                      item.thingsToDo
+                    )}
+                  ></CheckBox>
+                ))}
+                <hr />
+                <div className="clear-filter">
+                  <button className="btn-clear-filter" onClick={clearFilter}>
+                    Reset
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div className="container filter-heading filter-heading-mobile">
+                <div
+                  className="filter-heading-btn"
+                  data-toggle="collapse"
+                  data-target="#collapseExample"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                >
+                  <h4
+                    id="filter-heading"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseExample"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                  >
+                    Filter Locations
+                  </h4>
+                  <div
+                    className="btn-arrow"
+                    data-toggle="collapse"
+                    data-target="#collapseExample"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                  >
+                    <BsArrowDownShort size={30}></BsArrowDownShort>
+                  </div>
+                </div>
+                <div class="collapse" id="collapseExample">
+                  <hr />
+                  <h5>Provinces</h5>
+                  {provincesCategory.map((item, index) => (
+                    <CheckBox
+                      label={item.display}
+                      onChange={(input) =>
+                        filterSelect("PROVINCE", input.checked, item)
+                      }
+                      checked={filter.provincesCategory.includes(item.province)}
+                    ></CheckBox>
+                  ))}
+                  <hr />
+                  <h5>Things To Do</h5>
+                  {thingsToDoCategory.map((item, index) => (
+                    <CheckBox
+                      label={item.display}
+                      onChange={(input) =>
+                        filterSelect("THINGSTODO", input.checked, item)
+                      }
+                      checked={filter.thingsToDoCategory.includes(
+                        item.thingsToDo
+                      )}
+                    ></CheckBox>
+                  ))}
+                  <hr />
+                  <div className="clear-filter">
+                    <button className="btn-clear-filter" onClick={clearFilter}>
+                      Reset
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="col-md-9 filter-result-part">
+            <div className="container filter-result-heading">
+              <h4 id="filter-result-heading">All Locations</h4>
             </div>
+
+            <AllLocationCardView dataList={locations}></AllLocationCardView>
           </div>
         </div>
       </div>
-      {/* 
-      <FavoritePlaces
-        visibleValue={visible}
-        dataList={FavoriteDataList}
-      ></FavoritePlaces>
-      <button
-        type="button"
-        class="btn btn-dark text-center btn-see-all"
-        onClick={seeAll}
-      >
-        See all
-      </button> */}
     </div>
   );
 }
 
-export default Location;
+export default Place;

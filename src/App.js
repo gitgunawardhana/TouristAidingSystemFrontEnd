@@ -6,8 +6,8 @@ import Footer from "./Component/Footer/Footer";
 import Accommodation from "./View/Accommodation/Accommodation";
 import Home from "./View/Home/Home";
 import Location from "./View/Location/Location";
+import Locations from "./View/Locations/Locations";
 import PageNotFound from "./View/PageNotFound/PageNotFound";
-import Place from "./View/Place/Place";
 
 function App() {
   return (
@@ -15,9 +15,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" exact element={<Home />} />
-          <Route path="/locations" element={<Location />} />
+          <Route path="/locations" element={<Locations />} />
           <Route path="/accommodations" element={<Accommodation />} />
-          <Route path="/place/:id" element={<Place />} />
+          <Route path="/location/:id" element={<Location />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer></Footer>

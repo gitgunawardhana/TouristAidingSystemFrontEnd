@@ -44,7 +44,7 @@ function AllLocationCardView(props) {
             >
               <div className="row no-gutters">
                 <div className="col-sm-5">
-                  <Link className="nav-to-place" to={`/place/${item.id}`}>
+                  <Link className="nav-to-place" to={`/location/${item.id}`}>
                     <img
                       className="card-img"
                       src={item.image}
@@ -55,7 +55,7 @@ function AllLocationCardView(props) {
                 </div>
                 <div className="col-sm-7">
                   <div className="card-body">
-                    <Link className="nav-to-place" to={`/place/${item.id}`}>
+                    <Link className="nav-to-place" to={`/location/${item.id}`}>
                       <h5
                         className="card-title"
                         onClick="window.location.reload();"
@@ -65,7 +65,10 @@ function AllLocationCardView(props) {
                     </Link>
                     <p className="card-text">
                       {item.description.slice(0, 100) + "..."}
-                      <Link className="nav-to-place" to={`/place/${item.id}`}>
+                      <Link
+                        className="nav-to-place"
+                        to={`/location/${item.id}`}
+                      >
                         <span
                           className="read-more"
                           onClick="window.location.reload();"

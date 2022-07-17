@@ -74,7 +74,7 @@ function Carousel(props) {
             return (
               <div data-aos="fade-right" className="col-md-3 mb-3">
                 <div className="card im" style={{ marginTop: "15px" }}>
-                  <Link className="nav-to-place" to={`/place/${id}`}>
+                  <Link className="nav-to-place" to={`/location/${id}`}>
                     <img
                       className="card img-fluid w-100 hover-shadow"
                       alt="100%x280"
@@ -82,7 +82,7 @@ function Carousel(props) {
                     />
                   </Link>
                   <div className="card-body">
-                    <Link className="nav-to-place" to={`/place/${id}`}>
+                    <Link className="nav-to-place" to={`/location/${id}`}>
                       <h4 className="card-title">{title}</h4>
                     </Link>
                     <p className="card-text">{text}</p>

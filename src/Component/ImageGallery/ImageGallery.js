@@ -19,7 +19,7 @@ function TopLocation(props) {
         {menuItems.slice(0, props.visibleValue).map((items) => {
           const { id, category, image, title, link1, link2, text } = items;
           return (
-            <Link to={`/place/${id}`}>
+            <Link to={`/location/${id}`}>
               <div data-aos="fade-up" className="img-card">
                 <div className="title text-left">
                   <h4>{title}</h4>

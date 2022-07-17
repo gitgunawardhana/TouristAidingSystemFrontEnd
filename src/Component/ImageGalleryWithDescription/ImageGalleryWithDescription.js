@@ -25,7 +25,10 @@ function TopLocation(props) {
                   <div className="card border-0 me-lg-4 mb-lg-0 mb-4 card-custom">
                     <div className="backgroundEffect"></div>
                     <div className="pic">
-                      <Link className="nav-to-place" to={`/place/${items.id}`}>
+                      <Link
+                        className="nav-to-place"
+                        to={`/location/${items.id}`}
+                      >
                         <img className="" src={items.image} alt="" />
                       </Link>
                       <div className="date">
@@ -39,7 +42,7 @@ function TopLocation(props) {
                     <div className="content">
                       <Link
                         className="nav-to-place-bottom"
-                        to={`/place/${items.id}`}
+                        to={`/location/${items.id}`}
                       >
                         <p className="h-1 mt-4">
                           {items.id} {items.title}
@@ -49,7 +52,7 @@ function TopLocation(props) {
                       <div className="d-flex align-items-center justify-content-between mt-3 pb-3">
                         <Link
                           className="nav-to-place"
-                          to={`/place/${items.id}`}
+                          to={`/location/${items.id}`}
                         >
                           <div className="btn btn-primary">
                             Read More
