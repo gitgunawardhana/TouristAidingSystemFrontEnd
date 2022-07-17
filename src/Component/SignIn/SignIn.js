@@ -48,15 +48,13 @@ function SignInCom() {
 
 
                                                 <div className="d-flex justify-content-end pt-3">
-                                                    <button type="button" className="btn  btn-lg ms-2">Login
+                                                    <button type="button" className="btn  btn-lg ms-2 btn-login">Login
                                                     </button>
                                                 </div>
 
                                                 <p className="text-center text-muted mt-5 mb-0">New to RoadSign?
                                                     <Link to="/createAccount" className="fw-bold text-body">Register</Link>
                                                 </p>
-
-
                                             </div>
                                         </div>
                                     </div>

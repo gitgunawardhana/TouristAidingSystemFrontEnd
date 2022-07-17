@@ -1,9 +1,9 @@
+import React from "react";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "./App.css";
 import Footer from "./Component/Footer/Footer";
-import ScrollToTop from "./Component/ScrollToTop";
 import Accommodation from "./View/Accommodation/Accommodation";
 import Home from "./View/Home/Home";
 import Location from "./View/Location/Location";
@@ -16,8 +16,10 @@ import NotificationSettings from "./View/NotificationSettings/NotificationSettin
 import PaymentMethod from "./View/PaymentMethod/PaymentMethod";
 import Notifications from "./View/Notifications/Notifications";
 import SignIn from "./View/SignIn/SignIn";
-import React from "react";
 import AccommodationFilter from "./View/AccommodationFilter/AccommodationFilter";
+import CreateAccount from "./View/CreateAccount/CreateAccount";
+import EmailVerification from "./View/EmailVerification/EmailVerification";
+
 
 
 function App() {
@@ -31,7 +33,6 @@ function App() {
                     <Route path="/accommodations" element={<Accommodation/>}/>
                     <Route path="/accommodations-filter" element={<AccommodationFilter/>}/>
                     <Route path="*" element={<PageNotFound/>}/>
-                    <Route path="/accountSetting" element={<AccountSetting/>}/>
                     <Route path="/security" element={<Security/>}/>
                     <Route path="/profile" element={<Profile/>}/>
                     <Route path="/signUp" element={<SignUp/>}/>
@@ -39,9 +40,11 @@ function App() {
                     <Route path="/paymentMethod" element={<PaymentMethod/>}/>
                     <Route path='/notifications' element={<Notifications/>}/>
                     <Route path="/signIn" element={<SignIn/>}/>
-                    <Route path="/locations" element={<Locations/>}/>
+                    <Route path="/location" element={<Locations/>}/>
                     <Route path="/location/:id" element={<Location/>}/>
                     <Route path="*" element={<PageNotFound/>}/>
+                    <Route path="/createAccount" element={<CreateAccount/>}/>
+                    <Route path="/emailVerification" element={<EmailVerification/>}/>
                 </Routes>
                 <Footer></Footer>
             </Router>

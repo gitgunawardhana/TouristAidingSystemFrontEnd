@@ -44,7 +44,7 @@ function NavbarHome() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="navi-link nav-link" to="/locations">
+                <Link className="navi-link nav-link" to="/location">
                   Location
                 </Link>
               </li>

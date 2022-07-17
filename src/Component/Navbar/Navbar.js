@@ -62,7 +62,7 @@ function Navbar() {
                           ? "nav-link item-color navi-link active"
                           : "nav-link item-color navi-link"
                       }
-                      to="/locations"
+                      to="/location"
                     >
                       Location
                     </Link>
