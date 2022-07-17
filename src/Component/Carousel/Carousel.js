@@ -1,6 +1,7 @@
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "./Carousel.css";
 
@@ -69,18 +70,22 @@ function Carousel(props) {
         </p>
         <Slider {...settings}>
           {menuItems.map((items) => {
-            const { id, src, title, description } = items;
+            const { id, image, title, text } = items;
             return (
               <div data-aos="fade-right" className="col-md-3 mb-3">
                 <div className="card im" style={{ marginTop: "15px" }}>
-                  <img
-                    className="card img-fluid w-100 hover-shadow"
-                    alt="100%x280"
-                    src={src}
-                  />
+                  <Link className="nav-to-place" to={`/location/${id}`}>
+                    <img
+                      className="card img-fluid w-100 hover-shadow"
+                      alt="100%x280"
+                      src={image}
+                    />
+                  </Link>
                   <div className="card-body">
-                    <h4 className="card-title">{title}</h4>
-                    <p className="card-text">{description}</p>
+                    <Link className="nav-to-place" to={`/location/${id}`}>
+                      <h4 className="card-title">{title}</h4>
+                    </Link>
+                    <p className="card-text">{text}</p>
                   </div>
                 </div>
               </div>

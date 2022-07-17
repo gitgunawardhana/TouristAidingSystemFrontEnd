@@ -3,9 +3,11 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "./App.css";
 import Footer from "./Component/Footer/Footer";
+import ScrollToTop from "./Component/ScrollToTop";
 import Accommodation from "./View/Accommodation/Accommodation";
 import Home from "./View/Home/Home";
 import Location from "./View/Location/Location";
+import Locations from "./View/Locations/Locations";
 import PageNotFound from "./View/PageNotFound/PageNotFound";
 import Security from "./View/Security/Security";
 import SignUp from "./View/SignInOrCreateAccount/SignUp";
@@ -21,7 +23,7 @@ function App() {
         <>
             <Router>
                 <Routes>
-
+                    <ScrollToTop></ScrollToTop>
                     <Route path="/" exact element={<Home/>}/>
                     <Route path="/locations" element={<Location/>}/>
                     <Route path="/accommodations" element={<Accommodation/>}/>
@@ -33,12 +35,17 @@ function App() {
                     <Route path="/paymentMethod" element={<PaymentMethod/>}/>
                     <Route path='/notifications' element={<Notifications/>}/>
                     <Route path="/signIn" element={<SignIn/>}/>
-
+                    <Route path="/" exact element={<Home/>}/>
+                    <Route path="/locations" element={<Locations/>}/>
+                    <Route path="/accommodations" element={<Accommodation/>}/>
+                    <Route path="/location/:id" element={<Location/>}/>
+                    <Route path="*" element={<PageNotFound/>}/>
                 </Routes>
                 <Footer></Footer>
             </Router>
         </>
     );
+
 }
 
 export default App;

@@ -56,3 +56,12 @@
   /* object-fit: cover; */
   cursor: pointer;
 }
+
+.nav-to-place {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-to-place:hover {
+  color: #1e3d3e;
+}

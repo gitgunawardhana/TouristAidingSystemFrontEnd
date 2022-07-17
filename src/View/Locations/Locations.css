@@ -1,0 +1,35 @@
+.sp-sri-lanka {
+  font-weight: 900;
+}
+.heading {
+  text-align: center;
+}
+.bg {
+  font-family: "Segoe UI" !important;
+  font-weight: lighter;
+  padding: 50px;
+}
+
+.fv-location {
+  border-radius: 10px;
+  margin-top: 50px;
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+  /* box-shadow: #1e3d3ed2 0px 7px 29px 0px; */
+}
+
+.btn-see {
+  margin: 20px 5px 50px 5px;
+  border-radius: 50px;
+  padding-right: 25px;
+  padding-left: 25px;
+  font-size: 13px;
+  /* background-color: transparent !important; */
+}
+
+.loaction-page {
+  padding-top: 90px;
+}
+
+.search-bar-custom {
+  z-index: 1 !important;
+}

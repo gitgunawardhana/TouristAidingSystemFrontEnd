@@ -11,7 +11,7 @@ import kandy from "../Assets/TopLocation/kandy.png";
 import mirissa from "../Assets/TopLocation/mirissa.png";
 import nilaveli from "../Assets/TopLocation/nilaveli.png";
 
-const favoriteDataList = [
+const locationData = [
   {
     id: 1,
     category: "Top_Location",
@@ -302,4 +302,4 @@ const favoriteDataList = [
   },
 ];
 
-export default favoriteDataList;
+export default locationData;

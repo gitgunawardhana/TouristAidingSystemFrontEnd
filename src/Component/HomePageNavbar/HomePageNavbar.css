@@ -3,7 +3,7 @@ nav {
 }
 
 .navi-link {
-  color: antiquewhite;
+  color: antiquewhite !important;
   border: 1px solid transparent;
   padding: 6px 25px 6px 25px;
   border-radius: 35px;
@@ -21,7 +21,7 @@ nav {
   border: 1px solid aliceblue;
   border-radius: 35px;
   padding: 4px 25px 6px 25px;
-  color: aliceblue;
+  color: aliceblue !important;
 }
 
 .navi-item {
@@ -38,7 +38,6 @@ nav {
 
 @media screen and (max-width: 991px) {
   .navbar-collapse-home .navi-item {
-    /* padding-left: -100px; */
     padding-left: 0px;
     padding-top: 0px;
   }
