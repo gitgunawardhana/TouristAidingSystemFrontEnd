@@ -17,6 +17,7 @@ import PaymentMethod from "./View/PaymentMethod/PaymentMethod";
 import Notifications from "./View/Notifications/Notifications";
 import SignIn from "./View/SignIn/SignIn";
 import React from "react";
+import AccommodationFilter from "./View/AccommodationFilter/AccommodationFilter";
 
 
 function App() {
@@ -26,8 +27,11 @@ function App() {
                 <Routes>
 
                     <Route path="/" exact element={<Home/>}/>
+                    <Route path="/locations" element={<Location/>}/>
                     <Route path="/accommodations" element={<Accommodation/>}/>
+                    <Route path="/accommodations-filter" element={<AccommodationFilter/>}/>
                     <Route path="*" element={<PageNotFound/>}/>
+                    <Route path="/accountSetting" element={<AccountSetting/>}/>
                     <Route path="/security" element={<Security/>}/>
                     <Route path="/profile" element={<Profile/>}/>
                     <Route path="/signUp" element={<SignUp/>}/>
@@ -43,7 +47,6 @@ function App() {
             </Router>
         </>
     );
-
 }
 
 export default App;

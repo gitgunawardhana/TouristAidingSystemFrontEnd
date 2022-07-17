@@ -1,0 +1,64 @@
+.location-grid {
+    position: relative;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding: 2%;
+}
+
+.location-grid td {
+    width: 20%;
+    border-radius: 15px;
+    height: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 5px solid white;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+.location-name {
+    width: 100%;
+    background-color: rgba(0, 65, 69, 0.64);
+    color: white;
+    padding: 10px;
+    top: 0;
+    border-radius: 8px 8px 0 0;
+}
+
+.location-text {
+    background-color: #004145;
+    color: white;
+    text-transform: uppercase;
+    font-size: 22px;
+    line-height: 40px;
+    font-weight: lighter;
+    vertical-align: middle!important;
+    text-align: center;
+}
+
+.colombo {
+    background-image: url("../../../Assets/TopAccommodationLocations/colombo.png");
+}
+
+.nuwara-eliya {
+    background-image: url("../../../Assets/TopAccommodationLocations/nuwara-eliya.png");
+}
+
+.kandy {
+    background-image: url("../../../Assets/TopAccommodationLocations/kandy.png");
+}
+
+.negambo {
+    background-image: url("../../../Assets/TopAccommodationLocations/negambo.png");
+}
+
+.galle {
+    background-image: url("../../../Assets/TopAccommodationLocations/galle.png");
+}
+
+.ella {
+    background-image: url("../../../Assets/TopAccommodationLocations/ella.png");
+}
