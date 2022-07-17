@@ -43,7 +43,7 @@ function App() {
                     <Route path="/location" element={<Locations/>}/>
                     <Route path="/location/:id" element={<Location/>}/>
                     <Route path="*" element={<PageNotFound/>}/>
-                    <Route path="/createAccount" element={<CreatAccount/>}/>
+                    <Route path="/createAccount" element={<CreateAccount/>}/>
                     <Route path="/emailVerification" element={<EmailVerification/>}/>
                 </Routes>
                 <Footer></Footer>
