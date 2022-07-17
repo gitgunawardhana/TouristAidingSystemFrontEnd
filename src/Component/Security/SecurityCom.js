@@ -6,7 +6,7 @@ function SecurityCom() {
     return (
 
 
-        <div className="container-xl px-4 mt-4">
+        <div className="container-xl px-4 mt-4 ">
             {/*// <!-- Account page navigation-->*/}
             <nav className="nav nav-borders">
                 <Link  to="/profile" className="nav-link  ms-0"

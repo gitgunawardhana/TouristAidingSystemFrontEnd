@@ -9,7 +9,7 @@ function CreateAccountCom() {
     const [value, setValue] = useState()
     return (
         <div className="create-account-main-div">
-            <section className="h-100 bg-dark">
+            <section className="h-100 bg-dark bg-dark-col">
                 <div className="container py-5 h-100 ">
                     <div className="row d-flex justify-content-center align-items-center h-100">
                         <div className="col ">
