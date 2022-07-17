@@ -130,7 +130,7 @@ function Navbar() {
                             />
                             <div className="dropdown-div " >
                                 <NavDropdown id="collasible-nav-dropdown">
-                                    <NavDropdown.Item ><Link to="/profile" className="nav-item-link">Action</Link></NavDropdown.Item>
+                                    <NavDropdown.Item ><Link to="/profile" className="nav-item-link">Profile</Link></NavDropdown.Item>
                                     <NavDropdown.Item >
                                         <Link to="/paymentMethod" className="nav-item-link">Payment Methods</Link>
                                     </NavDropdown.Item  >
