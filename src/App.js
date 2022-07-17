@@ -11,12 +11,12 @@ import Locations from "./View/Locations/Locations";
 import PageNotFound from "./View/PageNotFound/PageNotFound";
 import Security from "./View/Security/Security";
 import SignUp from "./View/SignInOrCreateAccount/SignUp";
+import AccommodationFilter from "./View/AccommodationFilter/AccommodationFilter";
 import Profile from "./View/Profile/Profile";
 import NotificationSettings from "./View/NotificationSettings/NotificationSettings";
 import PaymentMethod from "./View/PaymentMethod/PaymentMethod";
 import Notifications from "./View/Notifications/Notifications";
 import SignIn from "./View/SignIn/SignIn";
-import AccommodationFilter from "./View/AccommodationFilter/AccommodationFilter";
 import CreateAccount from "./View/CreateAccount/CreateAccount";
 import EmailVerification from "./View/EmailVerification/EmailVerification";
 
