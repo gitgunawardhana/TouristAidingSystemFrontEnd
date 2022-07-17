@@ -91,6 +91,13 @@ function Navbar() {
                       Vehicle
                     </Link>
                   </li>
+                  <li className="nav-item">
+                    <div className="sign-out-mobile-view">
+                      <button type="button" class="text-center btn-sign-out">
+                        Sign out
+                      </button>
+                    </div>
+                  </li>
                 </ul>
                 {/* <!-- Left links --> */}
               </div>
@@ -118,7 +125,7 @@ function Navbar() {
               >
                 <img
                   src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-                  className="rounded"
+                  className="rounded profile-pic"
                   height="50"
                   alt="Black and White Portrait of a Man"
                   loading="lazy"
@@ -185,7 +192,7 @@ function Navbar() {
             </div>
           </div>
           {/* <!-- Right elements --> */}
-          <div className="text-center">
+          <div className="text-center sign-out-pc-view">
             <button type="button" class="text-center btn-sign-out">
               Sign out
             </button>

@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "./App.css";
 import Footer from "./Component/Footer/Footer";
+import ScrollToTop from "./Component/ScrollToTop";
 import Accommodation from "./View/Accommodation/Accommodation";
 import Home from "./View/Home/Home";
 import Location from "./View/Location/Location";
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <Router>
+        <ScrollToTop></ScrollToTop>
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/locations" element={<Locations />} />

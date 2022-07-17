@@ -91,15 +91,38 @@
   margin-top: 7px;
 }
 
+.btn-sign-out:hover {
+  background-color: rgba(255, 255, 255, 0.849);
+  border: 1px solid white;
+  color: #03676e;
+}
+
 .notification-bel {
   border-left: 1px solid #c4c4c48a;
   height: 50px;
   padding: 12px 0px 0px 10px;
 }
 
-.rounded {
+.profile-pic {
   border: 1px solid #03676e;
 }
+
+.sign-out-mobile-view {
+  padding-left: 26px;
+}
+
+@media screen and (min-width: 992px) {
+  .sign-out-mobile-view {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .sign-out-pc-view {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .navigationBar {
     margin-bottom: 140px;
