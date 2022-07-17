@@ -1,0 +1,8 @@
+.row-margin{
+    margin-bottom: 212px !important;
+}
+@media screen and (max-width: 992px){
+    .row-margin{
+        margin-bottom: auto !important;
+    }
+}

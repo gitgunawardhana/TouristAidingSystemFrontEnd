@@ -7,11 +7,14 @@ import Accommodation from "./View/Accommodation/Accommodation";
 import Home from "./View/Home/Home";
 import Location from "./View/Location/Location";
 import PageNotFound from "./View/PageNotFound/PageNotFound";
-import AccountSetting from "./View/AccountSettings/AccountSettings";
 import Security from "./View/Security/Security";
-import Profile from "./View/Profile/Profile";
 import SignUp from "./View/SignInOrCreateAccount/SignUp";
 import AccommodationFilter from "./View/AccommodationFilter/AccommodationFilter";
+import Profile from "./View/Profile/Profile";
+import NotificationSettings from "./View/NotificationSettings/NotificationSettings";
+import PaymentMethod from "./View/PaymentMethod/PaymentMethod";
+import Notifications from "./View/Notifications/Notifications";
+import SignIn from "./View/SignIn/SignIn";
 
 
 function App() {
@@ -25,10 +28,14 @@ function App() {
                     <Route path="/accommodations" element={<Accommodation/>}/>
                     <Route path="/accommodations-filter" element={<AccommodationFilter/>}/>
                     <Route path="*" element={<PageNotFound/>}/>
-                    <Route path="/accountSetting" element={<AccountSetting/>}/>
                     <Route path="/security" element={<Security/>}/>
                     <Route path="/profile" element={<Profile/>}/>
                     <Route path="/signUp" element={<SignUp/>}/>
+                    <Route path="/notificationSettings" element={<NotificationSettings/>}/>
+                    <Route path="/paymentMethod" element={<PaymentMethod/>}/>
+                    <Route path='/notifications' element={<Notifications/>}/>
+                    <Route path="/signIn" element={<SignIn/>}/>
+
                 </Routes>
                 <Footer></Footer>
             </Router>
