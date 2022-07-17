@@ -37,9 +37,14 @@ function TopLocation(props) {
                       </div>
                     </div>
                     <div className="content">
-                      <p className="h-1 mt-4">
-                        {items.id} {items.title}
-                      </p>
+                      <Link
+                        className="nav-to-place-bottom"
+                        to={`/place/${items.id}`}
+                      >
+                        <p className="h-1 mt-4">
+                          {items.id} {items.title}
+                        </p>
+                      </Link>
                       <p className="text-muted mt-3">{items.description}</p>
                       <div className="d-flex align-items-center justify-content-between mt-3 pb-3">
                         <Link
