@@ -1,14 +1,13 @@
 import React from "react";
 import "./SignIn.css"
-import beach from "../../Assets/CreateAccount/Beach.png"
+import beach from "../../Assets/CreateAccount/beach.png"
 import {Link} from "react-router-dom";
 
 function SignInCom() {
     return (
         <>
-
-            <div className="create-account-main-div">
-                <section className="h-100 bg-dark bg-dark-col">
+            <div className="create-account-main-div" >
+                <section className="h-100 bg-dark bg-dark-col" >
                     <div className="container py-5 h-100 ">
                         <div className="row d-flex justify-content-center align-items-center h-100">
                             <div className="col">
@@ -33,16 +32,20 @@ function SignInCom() {
                                                 </div>
 
                                                 <div className="form-outline mb-4">
-                                                    <label className="form-label" htmlFor="form3Example97">Email Address</label>
+                                                    <label className="form-label" htmlFor="form3Example97">Email
+                                                        Address</label>
                                                     <input type="text" id="form3Example97"
-                                                           className="form-control form-control-lg" placeholder="Email Address"/>
+                                                           className="form-control form-control-lg"
+                                                           placeholder="Email Address"/>
 
                                                 </div>
 
                                                 <div className="form-outline mb-4">
-                                                    <label className="form-label" htmlFor="form3Example4cg">Password</label>
+                                                    <label className="form-label"
+                                                           htmlFor="form3Example4cg">Password</label>
                                                     <input type="password" id="form3Example4cg"
-                                                           className="form-control form-control-lg" placeholder="Password"/>
+                                                           className="form-control form-control-lg"
+                                                           placeholder="Password"/>
 
                                                 </div>
 
@@ -53,7 +56,8 @@ function SignInCom() {
                                                 </div>
 
                                                 <p className="text-center text-muted mt-5 mb-0">New to RoadSign?
-                                                    <Link to="/createAccount" className="fw-bold text-body">Register</Link>
+                                                    <Link to="/createAccount"
+                                                          className="fw-bold text-body">Register</Link>
                                                 </p>
                                             </div>
                                         </div>
@@ -64,9 +68,7 @@ function SignInCom() {
                     </div>
                 </section>
 
-
             </div>
-
 
         </>
     );

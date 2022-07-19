@@ -10,6 +10,7 @@ import RecommendedDataList from "../../Component/RecommendedDataList";
 import SearchBar from "../../Component/SearchBar/SearchBar";
 import ThingsToDoDataList from "../../Component/ThingsToDoDataList";
 import "./Locations.css";
+import Footer from "../../Component/Footer/Footer";
 
 function Location() {
   const [visible, setVisible] = useState(8);
@@ -119,6 +120,7 @@ function Location() {
       >
         See all
       </button> */}
+      <Footer/>
     </div>
   );
 }

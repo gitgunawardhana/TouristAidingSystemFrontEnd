@@ -155,7 +155,7 @@ function NotificationSettingsCom() {
                                                 subscribe to new product notifications</label>
                                     </div>
                                     {/*// <!-- Submit button-->*/}
-                                    <button className="btn btn-danger-soft text-danger">Unsubscribe from all
+                                    <button className=" btn-danger-soft text-danger unsub-btn">Unsubscribe from all
                                         notifications
                                     </button>
                                 </form>

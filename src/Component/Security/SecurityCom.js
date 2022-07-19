@@ -58,7 +58,7 @@ function SecurityCom() {
                         <div className="card-body">
                             <p>Deleting your account is a permanent action and cannot be undone. If you are sure you
                                 want to delete your account, select the button below.</p>
-                            <button className="btn btn-danger-soft text-danger" type="button">I understand, delete
+                            <button className=" btn-danger-soft text-danger unsub-btn" type="button">I understand, delete
                                 my account
                             </button>
                         </div>

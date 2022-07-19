@@ -6,6 +6,7 @@ import Grid from "@mui/material/Grid";
 import SortingSection from "../../Component/AccommodationFilter/SortingSection/SortingSection";
 import FilteredLocationSection
     from "../../Component/AccommodationFilter/FilteredLocationSection/FilteredLocationSection";
+import Footer from "../../Component/Footer/Footer";
 
 function AccommodationFilter() {
 
@@ -28,6 +29,7 @@ function AccommodationFilter() {
                 </Grid>
 
             </div>
+            <Footer/>
         </>
     );
 }

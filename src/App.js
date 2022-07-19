@@ -46,7 +46,6 @@ function App() {
                     <Route path="/createAccount" element={<CreateAccount/>}/>
                     <Route path="/emailVerification" element={<EmailVerification/>}/>
                 </Routes>
-                <Footer></Footer>
             </Router>
         </>
     );

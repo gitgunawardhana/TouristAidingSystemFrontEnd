@@ -11,6 +11,7 @@ import ImageSlider from "../../Component/ImageSlider/ImageSlider";
 import Navbar from "../../Component/Navbar/Navbar";
 import useMediaQuery from "../../Component/useMediaQuery";
 import "./Location.css";
+import Footer from "../../Component/Footer/Footer";
 
 function Place() {
   const matches = useMediaQuery("(min-width: 768px)");
@@ -215,6 +216,7 @@ function Place() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

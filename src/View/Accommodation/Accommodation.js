@@ -7,6 +7,7 @@ import AccommodationTypeSlideShow
 import PopularLocations from "../../Component/Accommodation/PopularLocations/PopularLocations";
 import RecommendedAccommodations
     from "../../Component/Accommodation/RecommendedAccommodations/RecommendedAccommodations";
+import Footer from "../../Component/Footer/Footer";
 
 function Accommodation() {
 
@@ -21,6 +22,7 @@ function Accommodation() {
             <AccommodationTypeSlideShow/>
             <PopularLocations/>
             <RecommendedAccommodations/>
+            <Footer/>
         </>
     );
 }

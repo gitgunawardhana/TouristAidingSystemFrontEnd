@@ -6,3 +6,8 @@
         margin-bottom: auto !important;
     }
 }
+.unsub-btn{
+    margin-top: 15px;
+   background-color: transparent;
+    border: none;
+}
