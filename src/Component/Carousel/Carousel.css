@@ -41,9 +41,16 @@
   transition: 0.5s;
   cursor: pointer;
 }
+
 .im img {
   object-fit: cover;
 }
+
+.im {
+  margin-right: 5px !important;
+  margin-left: 5px !important;
+}
+
 .im:hover img {
   -o-transition: 0.5s;
   -ms-transition: 0.5s;

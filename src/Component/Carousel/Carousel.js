@@ -72,7 +72,7 @@ function Carousel(props) {
           {menuItems.map((items) => {
             const { id, image, title, text } = items;
             return (
-              <div data-aos="fade-right" className="col-md-3 mb-3">
+              <div data-aos="fade-left" className="col-md-3 mb-3">
                 <div className="card im" style={{ marginTop: "15px" }}>
                   <Link className="nav-to-place" to={`/location/${id}`}>
                     <img
