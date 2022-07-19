@@ -5,7 +5,7 @@ import EmailVerify from "../../Component/CreateAccountCom/EmailVerify/EmailVerif
 function EmailVerification() {
     return (
        <>
-            <Navbar/>
+
             <EmailVerify/>
         </>
     );

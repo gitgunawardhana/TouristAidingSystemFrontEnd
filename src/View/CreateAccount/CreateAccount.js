@@ -5,7 +5,7 @@ import CreateAccountCom from "../../Component/CreateAccountCom/CreateAccount/Cre
 function CreateAccount() {
     return (
         <>
-            <Navbar/>
+
             <CreateAccountCom/>
         </>
     );
