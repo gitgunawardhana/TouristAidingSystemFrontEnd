@@ -138,7 +138,7 @@ function Place() {
                 <hr />
                 <div className="clear-filter">
                   <button className="btn-clear-filter" onClick={clearFilter}>
-                    Reset
+                    RESET
                   </button>
                 </div>
               </div>
@@ -199,7 +199,7 @@ function Place() {
                   <hr />
                   <div className="clear-filter">
                     <button className="btn-clear-filter" onClick={clearFilter}>
-                      Reset
+                      RESET
                     </button>
                   </div>
                 </div>
