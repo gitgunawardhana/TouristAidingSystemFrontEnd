@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import "./CreateAccountCom.css"
-import trainpic from "../../../Assets/CreateAccount/BadullaTrain.png";
+import beach from "../../../Assets/CreateAccount/beachs.png";
 import PhoneInput from "react-phone-number-input";
 import 'react-phone-number-input/style.css'
 import {Link} from "react-router-dom";
@@ -16,7 +16,7 @@ function CreateAccountCom() {
                             <div className="card card-registration my-4 shadow-lg p-3 mb-5 bg-white rounded">
                                 <div className="row g-0">
                                     <div className="col-xl-6 d-none d-xl-block">
-                                        <img src={trainpic} alt="train" className="train-img img-fluid"/>
+                                        <img src={beach} alt="train" className="train-img img-fluid"/>
                                     </div>
                                     <div className="col-xl-6">
                                         <Link to="/">

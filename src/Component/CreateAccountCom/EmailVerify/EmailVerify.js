@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import "./EmailVerify.css"
-import colombo from "../../../Assets/CreateAccount/colombo.png";
+import fish from "../../../Assets/CreateAccount/anupam.png";
 import 'react-phone-number-input/style.css'
 import Form from 'react-bootstrap/Form';
 
@@ -15,7 +15,7 @@ function EmailVerify() {
                             <div className="card card-registration my-4 shadow-lg p-3 mb-5 bg-white rounded ">
                                 <div className="row g-0">
                                     <div className="col-xl-6 d-none d-xl-block">
-                                        <img src={colombo} alt="train" className="train-img img-fluid"/>
+                                        <img src={fish} alt="train" className="train-img img-fluid"/>
                                     </div>
                                     <div className="col-xl-6">
                                         <div className="card-body p-md-5 text-black sub-form">

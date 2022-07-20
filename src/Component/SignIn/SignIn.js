@@ -1,6 +1,6 @@
 import React from "react";
 import "./SignIn.css"
-import beach from "../../Assets/CreateAccount/beach.png"
+import elephant from "../../Assets/CreateAccount/taiger.png"
 import {Link} from "react-router-dom";
 
 function SignInCom() {
@@ -14,7 +14,7 @@ function SignInCom() {
                                 <div className="card card-registration my-4 shadow-lg p-3 mb-5 bg-white rounded ">
                                     <div className="row g-0">
                                         <div className="col-xl-6 d-none d-xl-block">
-                                            <img src={beach} alt="train" className="train-img img-fluid"/>
+                                            <img src={elephant} alt="train" className="train-img img-fluid"/>
                                         </div>
                                         <div className="col-xl-6">
                                             <Link to="/">
