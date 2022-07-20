@@ -1,0 +1,17 @@
+.card-btn {
+  cursor: pointer;
+  font-weight: 500;
+  color: #004145;
+}
+
+.card-dsc {
+  padding: 0px 15px 10px 15px;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+.crd-im {
+  border-radius: 15px 15px 0px 0px;
+}

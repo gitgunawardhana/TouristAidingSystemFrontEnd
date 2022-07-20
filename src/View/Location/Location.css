@@ -79,6 +79,20 @@
   margin-top: -2px;
   right: 16px;
 }
+
+#top-attraction-dist {
+  padding-left: 140px;
+  padding-right: 140px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.top-attraction-dist {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  padding: 30px 50px 30px 50px;
+  margin-top: 50px;
+}
+
 @media screen and (max-width: 768px) {
   .filter-result-part {
     padding-right: 20px;

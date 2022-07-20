@@ -4,12 +4,21 @@ import "./Description.css";
 
 function Description(props) {
   const [desc, setDesc] = useState(props.description);
+  const [title, setTitle] = useState(props.title);
+  const [display, setDisplay] = useState(props.display);
+
   return (
     <div>
       <div className="container container-desc">
-        <h3>Description</h3>
+        <h3>{title}</h3>
         <p>{desc}</p>
-        <div className="btn btn-primary btn-map">
+        <div
+          className={
+            display === "none"
+              ? "btn btn-primary btn-map btn-display-none"
+              : "btn btn-primary btn-map "
+          }
+        >
           <div>MAP&nbsp;</div>
           <div className="btn-value">
             <FaMapMarkerAlt />

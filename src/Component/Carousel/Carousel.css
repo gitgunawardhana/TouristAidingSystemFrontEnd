@@ -72,3 +72,8 @@
 .nav-to-place:hover {
   color: #1e3d3e;
 }
+
+.im-outer-div {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}

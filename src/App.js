@@ -7,6 +7,7 @@ import Footer from "./Component/Footer/Footer";
 import ScrollToTop from "./Component/ScrollToTop";
 import Accommodation from "./View/Accommodation/Accommodation";
 import AccommodationFilter from "./View/AccommodationFilter/AccommodationFilter";
+import Attraction from "./View/Attraction/Attraction";
 import CreateAccount from "./View/CreateAccount/CreateAccount";
 import EmailVerification from "./View/EmailVerification/EmailVerification";
 import Home from "./View/Home/Home";
@@ -47,6 +48,7 @@ function App() {
           <Route path="/signIn" element={<SignIn />} />
           <Route path="/location" element={<Locations />} />
           <Route path="/location/:id" element={<Location />} />
+          <Route path="/attraction/:id" element={<Attraction />} />
           <Route path="*" element={<PageNotFound />} />
           <Route path="/createAccount" element={<CreateAccount />} />
           <Route path="/emailVerification" element={<EmailVerification />} />
