@@ -9,8 +9,12 @@ function AttractionCards(props) {
         {props.dataList.map((item) => {
           return (
             <div class="col">
-              <div class="card h-100">
-                <img src={item.image} class="card-img-top crd-im" alt={item.title} />
+              <div class="card h-100 card-transition">
+                <img
+                  src={item.image}
+                  class="card-img-top crd-im"
+                  alt={item.title}
+                />
                 <div class="card-body">
                   <Link className="nav-to-place" to={`/attraction/${item.id}`}>
                     <h5

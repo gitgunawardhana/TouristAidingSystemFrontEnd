@@ -40,7 +40,7 @@ function Footer() {
           </p>
           <p>
             <Link to="/location" className="footer-navi-link">
-              Lacation
+              Location
             </Link>
           </p>
           <p>
