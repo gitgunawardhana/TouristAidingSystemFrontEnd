@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import kandyCover3 from "../../Assets/Cover/kandyCover3.png";
 import kandyCover4 from "../../Assets/Cover/kandyCover4.png";
@@ -27,6 +29,10 @@ function Attraction() {
   const matches = useMediaQuery("(min-width: 768px)");
 
   const [mainImage, setMainImage] = useState(kandyCover4);
+
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
 
   return (
     <div>
@@ -86,7 +92,7 @@ function Attraction() {
         description={filteredResult.description}
         display={"none"}
       ></Description>
-      <div className="container top-attraction-dist">
+      <div data-aos="fade-up" className="container top-attraction-dist">
         <h4 id="filter-heading" style={{ marginBottom: "15px" }}>
           Explore other attractions in {filteredResult.title}
         </h4>
