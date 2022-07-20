@@ -33,26 +33,27 @@
   margin: 0 auto;
 }
 
+.im img {
+  object-fit: cover;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.im {
+  margin-right: 5px !important;
+  margin-left: 5px !important;
+}
+
 .im:hover {
   -o-transition: 0.5s;
   -ms-transition: 0.5s;
   -moz-transition: 0.5s;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  cursor: pointer;
-}
-.im img {
-  object-fit: cover;
-}
-.im:hover img {
-  -o-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  transform: scale(1.025);
+  transform: scale(1.015);
   transition: all 0.5s ease;
+}
 
+.im:hover img {
   /* object-fit: cover; */
   cursor: pointer;
 }
@@ -64,4 +65,9 @@
 
 .nav-to-place:hover {
   color: #1e3d3e;
+}
+
+.im-outer-div {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }

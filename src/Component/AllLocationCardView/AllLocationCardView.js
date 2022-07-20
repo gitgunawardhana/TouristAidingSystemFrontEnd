@@ -42,7 +42,7 @@ function AllLocationCardView(props) {
               className="card ml-3 mb-3 card-shadow"
               style={{ width: "50px;" }}
             >
-              <div className="row no-gutters">
+              <div className="row no-gutters card-transition">
                 <div className="col-sm-5">
                   <Link className="nav-to-place" to={`/location/${item.id}`}>
                     <img

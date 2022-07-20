@@ -3,12 +3,15 @@ import { BsArrowDownShort } from "react-icons/bs";
 import { useParams } from "react-router-dom";
 import AllLocationCardView from "../../Component/AllLocationCardView/AllLocationCardView";
 import allLocationDataList from "../../Component/AllLocationDataList";
+import AttractionCards from "../../Component/AttractionCards/AttractionCards";
 import CheckBox from "../../Component/CheckBox/CheckBox";
 import provincesCategory from "../../Component/CheckBox/ProvincesCategory";
 import thingsToDoCategory from "../../Component/CheckBox/ThingsToDoCategory";
+import DatasetForAttraction from "../../Component/DatasetForAttractionCards";
 import Description from "../../Component/Description/Description";
 import ImageSlider from "../../Component/ImageSlider/ImageSlider";
 import Navbar from "../../Component/Navbar/Navbar";
+
 import useMediaQuery from "../../Component/useMediaQuery";
 import "./Location.css";
 import Footer from "../../Component/Footer/Footer";
@@ -105,7 +108,21 @@ function Place() {
       {/* {console.log("filter", locations)} */}
       <Navbar></Navbar>
       <ImageSlider covers={coverImages}></ImageSlider>
-      <Description description={filteredResult.description}></Description>
+      <Description
+        title={filteredResult.title}
+        description={filteredResult.description}
+        display={"block"}
+      ></Description>
+
+      {/* <div className="container-fluid" id="top-attraction-dist"> */}
+      <div className="container top-attraction-dist">
+        <h4 id="filter-heading" style={{ marginBottom: "15px" }}>
+          Top attractions in {filteredResult.title}
+        </h4>
+        <AttractionCards dataList={DatasetForAttraction}></AttractionCards>
+      </div>
+      {/* </div> */}
+
       <div className="container container-bottom">
         <div className="row mt-5 mx-2">
           <div className="col-md-3 mb-3 filter-part">
@@ -139,7 +156,7 @@ function Place() {
                 <hr />
                 <div className="clear-filter">
                   <button className="btn-clear-filter" onClick={clearFilter}>
-                    Reset
+                    RESET
                   </button>
                 </div>
               </div>
@@ -200,7 +217,7 @@ function Place() {
                   <hr />
                   <div className="clear-filter">
                     <button className="btn-clear-filter" onClick={clearFilter}>
-                      Reset
+                      RESET
                     </button>
                   </div>
                 </div>

@@ -48,9 +48,8 @@ function Carousel(props) {
 
   return (
     <>
-      <div className="container">
+      <div className="container" data-aos="fade-up">
         <h2
-          data-aos="flip-up"
           className="text-center"
           style={{
             color: "black",
@@ -62,7 +61,6 @@ function Carousel(props) {
           {props.heading}
         </h2>
         <p
-          data-aos="flip-up"
           className="text-center"
           style={{ color: "black", marginTop: "-25px" }}
         >
@@ -72,7 +70,7 @@ function Carousel(props) {
           {menuItems.map((items) => {
             const { id, image, title, text } = items;
             return (
-              <div data-aos="fade-right" className="col-md-3 mb-3">
+              <div className="col-md-3 mb-3 im-outer-div">
                 <div className="card im" style={{ marginTop: "15px" }}>
                   <Link className="nav-to-place" to={`/location/${id}`}>
                     <img

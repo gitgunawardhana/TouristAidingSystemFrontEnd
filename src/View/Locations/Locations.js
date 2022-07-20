@@ -64,7 +64,6 @@ function Location() {
         dataList={ThingsToDoDataList}
       ></Carousel>
       <Carousel
-        data-aos="flip-up"
         slidesToShowScroll={3}
         heading="Recommended Locations"
         subHeading="Lorem ipsum dolor, sit amet consectetur adipisic."

@@ -24,3 +24,7 @@
 .btn-value {
   margin-top: -2px;
 }
+
+.btn-display-none {
+  display: none;
+}

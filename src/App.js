@@ -4,23 +4,23 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "./App.css";
 import Footer from "./Component/Footer/Footer";
+import ScrollToTop from "./Component/ScrollToTop";
 import Accommodation from "./View/Accommodation/Accommodation";
+import AccommodationFilter from "./View/AccommodationFilter/AccommodationFilter";
+import Attraction from "./View/Attraction/Attraction";
+import CreateAccount from "./View/CreateAccount/CreateAccount";
+import EmailVerification from "./View/EmailVerification/EmailVerification";
 import Home from "./View/Home/Home";
 import Location from "./View/Location/Location";
 import Locations from "./View/Locations/Locations";
-import PageNotFound from "./View/PageNotFound/PageNotFound";
-import Security from "./View/Security/Security";
-import SignUp from "./View/SignInOrCreateAccount/SignUp";
-import AccommodationFilter from "./View/AccommodationFilter/AccommodationFilter";
-import Profile from "./View/Profile/Profile";
-import NotificationSettings from "./View/NotificationSettings/NotificationSettings";
-import PaymentMethod from "./View/PaymentMethod/PaymentMethod";
 import Notifications from "./View/Notifications/Notifications";
+import NotificationSettings from "./View/NotificationSettings/NotificationSettings";
+import PageNotFound from "./View/PageNotFound/PageNotFound";
+import PaymentMethod from "./View/PaymentMethod/PaymentMethod";
+import Profile from "./View/Profile/Profile";
+import Security from "./View/Security/Security";
 import SignIn from "./View/SignIn/SignIn";
-import CreateAccount from "./View/CreateAccount/CreateAccount";
-import EmailVerification from "./View/EmailVerification/EmailVerification";
-
-
+import SignUp from "./View/SignInOrCreateAccount/SignUp";
 
 function App() {
     return (
@@ -46,6 +46,7 @@ function App() {
                     <Route path="/createAccount" element={<CreateAccount/>}/>
                     <Route path="/emailVerification" element={<EmailVerification/>}/>
                 </Routes>
+                <Footer></Footer>
             </Router>
         </>
     );

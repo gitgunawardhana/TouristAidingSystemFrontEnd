@@ -1,0 +1,27 @@
+.card-btn {
+  cursor: pointer;
+  font-weight: 500;
+  color: #004145;
+}
+
+.card-dsc {
+  padding: 0px 15px 10px 15px;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+.crd-im {
+  border-radius: 15px 15px 0px 0px;
+}
+
+.card-transition:hover {
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  transform: scale(1.01);
+  transition: all 0.5s ease;
+}
