@@ -21,7 +21,7 @@ import Profile from "./View/Profile/Profile";
 import Security from "./View/Security/Security";
 import SignIn from "./View/SignIn/SignIn";
 import SignUp from "./View/SignInOrCreateAccount/SignUp";
-
+import Vehicle from "./View/Vehicle/Vehicle";
 function App() {
   return (
     <>
@@ -52,6 +52,7 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
           <Route path="/createAccount" element={<CreateAccount />} />
           <Route path="/emailVerification" element={<EmailVerification />} />
+          <Route path="/vehicles" element={<Vehicle />} />
         </Routes>
         <Footer></Footer>
       </Router>
