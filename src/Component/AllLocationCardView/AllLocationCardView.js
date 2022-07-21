@@ -73,16 +73,20 @@ function AllLocationCardView(props) {
                           className="read-more"
                           onClick="window.location.reload();"
                         >
-                          read more
+                          &nbsp;Read more
                         </span>
                       </Link>
                     </p>
+                    <hr />
                     <div className="btn btn-primary btn-map">
-                      <div>MAP&nbsp;</div>
-                      <div className="btn-value">
-                        <FaMapMarkerAlt />
+                      <div className="span text-center">
+                        <div>MAP&nbsp;</div>
+                        <div className="btn-value">
+                          <FaMapMarkerAlt />
+                        </div>
                       </div>
                     </div>
+                    <hr />
                   </div>
                 </div>
               </div>

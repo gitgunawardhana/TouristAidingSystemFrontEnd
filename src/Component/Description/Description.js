@@ -19,9 +19,11 @@ function Description(props) {
               : "btn btn-primary btn-map "
           }
         >
-          <div>MAP&nbsp;</div>
-          <div className="btn-value">
-            <FaMapMarkerAlt />
+          <div className="span text-center">
+            <div>MAP&nbsp;</div>
+            <div className="btn-value">
+              <FaMapMarkerAlt />
+            </div>
           </div>
         </div>
       </div>
