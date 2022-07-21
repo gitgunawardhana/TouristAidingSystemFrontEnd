@@ -48,6 +48,7 @@ nav {
     border: 1px solid aliceblue;
     padding: 5px 25px 6px 25px;
     margin-left: 28px;
+    width: fit-content;
   }
   .navi-link:hover {
     border: 1px solid aliceblue;
@@ -57,5 +58,5 @@ nav {
     color: aliceblue;
   }
 }.navbar{
-  position: relative;
+   position: relative;
  }

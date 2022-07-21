@@ -22,6 +22,8 @@ import Security from "./View/Security/Security";
 import SignIn from "./View/SignIn/SignIn";
 import SignUp from "./View/SignInOrCreateAccount/SignUp";
 
+
+
 function App() {
     return (
         <>
@@ -45,6 +47,8 @@ function App() {
                     <Route path="*" element={<PageNotFound/>}/>
                     <Route path="/createAccount" element={<CreateAccount/>}/>
                     <Route path="/emailVerification" element={<EmailVerification/>}/>
+                    <Route path="/attraction/:id" element={<Attraction />} />
+
                 </Routes>
                 <Footer></Footer>
             </Router>
