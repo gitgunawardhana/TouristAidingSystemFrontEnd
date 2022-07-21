@@ -28,3 +28,49 @@
 .btn-display-none {
   display: none;
 }
+
+.btn-map {
+  border-radius: 10px;
+  background-color: #f4511e;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  /* font-size: 28px; */
+  /* padding: 20px; */
+  padding: auto;
+  margin-left: 0px !important;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.btn-map .span {
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn-map .span:after {
+  content: "\00bb";
+  font-size: 28px;
+  /* transform: translateX(-15px);
+  transform: translateY(-11px); */
+  transform: translate(30px, -11px);
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  color: #004145;
+  transition: 0.5s;
+}
+
+.btn-map:hover .span {
+  padding-right: 25px;
+}
+
+.btn-map:hover .span:after {
+  opacity: 1;
+  right: 0;
+}

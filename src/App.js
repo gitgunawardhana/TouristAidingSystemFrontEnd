@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "./App.css";
@@ -21,39 +21,43 @@ import Profile from "./View/Profile/Profile";
 import Security from "./View/Security/Security";
 import SignIn from "./View/SignIn/SignIn";
 import SignUp from "./View/SignInOrCreateAccount/SignUp";
-
-
-
+import Vehicle from "./View/Vehicle/Vehicle";
 function App() {
-    return (
-        <>
-            <Router>
-                <Routes>
-
-                    <Route path="/" exact element={<Home/>}/>
-                    <Route path="/locations" element={<Location/>}/>
-                    <Route path="/accommodations" element={<Accommodation/>}/>
-                    <Route path="/accommodations-filter" element={<AccommodationFilter/>}/>
-                    <Route path="*" element={<PageNotFound/>}/>
-                    <Route path="/security" element={<Security/>}/>
-                    <Route path="/profile" element={<Profile/>}/>
-                    <Route path="/signUp" element={<SignUp/>}/>
-                    <Route path="/notificationSettings" element={<NotificationSettings/>}/>
-                    <Route path="/paymentMethod" element={<PaymentMethod/>}/>
-                    <Route path='/notifications' element={<Notifications/>}/>
-                    <Route path="/signIn" element={<SignIn/>}/>
-                    <Route path="/location" element={<Locations/>}/>
-                    <Route path="/location/:id" element={<Location/>}/>
-                    <Route path="*" element={<PageNotFound/>}/>
-                    <Route path="/createAccount" element={<CreateAccount/>}/>
-                    <Route path="/emailVerification" element={<EmailVerification/>}/>
-                    <Route path="/attraction/:id" element={<Attraction />} />
-
-                </Routes>
-                <Footer></Footer>
-            </Router>
-        </>
-    );
+  return (
+    <>
+      <Router>
+        <ScrollToTop></ScrollToTop>
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/locations" element={<Location />} />
+          <Route path="/accommodations" element={<Accommodation />} />
+          <Route
+            path="/accommodations-filter"
+            element={<AccommodationFilter />}
+          />
+          <Route path="*" element={<PageNotFound />} />
+          <Route path="/security" element={<Security />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/signUp" element={<SignUp />} />
+          <Route
+            path="/notificationSettings"
+            element={<NotificationSettings />}
+          />
+          <Route path="/paymentMethod" element={<PaymentMethod />} />
+          <Route path="/notifications" element={<Notifications />} />
+          <Route path="/signIn" element={<SignIn />} />
+          <Route path="/location" element={<Locations />} />
+          <Route path="/location/:id" element={<Location />} />
+          <Route path="/attraction/:id" element={<Attraction />} />
+          <Route path="*" element={<PageNotFound />} />
+          <Route path="/createAccount" element={<CreateAccount />} />
+          <Route path="/emailVerification" element={<EmailVerification />} />
+          <Route path="/vehicles" element={<Vehicle />} />
+        </Routes>
+        <Footer></Footer>
+      </Router>
+    </>
+  );
 }
 
 export default App;
