@@ -11,8 +11,14 @@ function NavbarHome() {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-fixed-top navbar-light">
-        <div className="container-fluid">
+      <nav
+        className="navbar navbar-expand-lg navbar-fixed-top navbar-light"
+        style={{ marginTop: "-10px" }}
+      >
+        <div
+          className="container-fluid"
+          style={{ width: "max-content", marginLeft: "0px" }}
+        >
           <button
             className="navbar-toggler navbar-toggler-home"
             type="button"
@@ -27,6 +33,7 @@ function NavbarHome() {
           <div
             className="collapse navbar-collapse navbar-collapse-home"
             id="navbarSupportedContent"
+            style={{ marginBottom: "70px", float: "left", left: "0" }}
           >
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
