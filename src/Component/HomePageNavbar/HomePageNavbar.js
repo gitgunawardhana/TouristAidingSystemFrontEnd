@@ -11,7 +11,7 @@ function NavbarHome() {
 
   return (
       <>
-        <nav className="navbar navbar-expand-lg navbar-fixed-top navbar-light">
+        <nav className="navbar navbar-expand-lg navbar-fixed-top navbar-light nav-div">
           <div className="container-fluid">
             <button
                 className="navbar-toggler navbar-toggler-home"
@@ -25,10 +25,10 @@ function NavbarHome() {
               <i class="fas fa-bars" style={{ color: "#fff" }}></i>
             </button>
             <div
-                className="collapse navbar-collapse navbar-collapse-home"
+                className="collapse navbar-collapse navbar-collapse-home  "
                 id="navbarSupportedContent"
             >
-              <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
                 <li className="nav-item">
                   <Link
                       className="navi-link nav-link active"
@@ -38,12 +38,12 @@ function NavbarHome() {
                     Home
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="navi-link nav-link" to="/tripplanners">
+                <li className="nav-item ">
+                  <Link className="navi-link nav-link" to="/tripPlanner">
                     Trip Planner
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item ">
                   <Link className="navi-link nav-link" to="/location">
                     Location
                   </Link>

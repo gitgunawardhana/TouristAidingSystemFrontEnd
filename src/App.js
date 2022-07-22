@@ -22,6 +22,7 @@ import Security from "./View/Security/Security";
 import SignIn from "./View/SignIn/SignIn";
 import SignUp from "./View/SignInOrCreateAccount/SignUp";
 import Vehicle from "./View/Vehicle/Vehicle";
+import TripPlanner from "./View/TripPlanner/TripPlanner";
 function App() {
   return (
     <>
@@ -53,8 +54,8 @@ function App() {
           <Route path="/createAccount" element={<CreateAccount />} />
           <Route path="/emailVerification" element={<EmailVerification />} />
           <Route path="/vehicles" element={<Vehicle />} />
+          <Route path="/tripPlanner" element={<TripPlanner/>}/>
         </Routes>
-        <Footer></Footer>
       </Router>
     </>
   );
