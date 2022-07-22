@@ -164,6 +164,7 @@
 .profile-icon{
   position: absolute;
   margin-left: 20px;
+  border:none!important;
 }
 .dropdown-div{
 

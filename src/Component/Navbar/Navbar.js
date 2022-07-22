@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import profile from "../../Assets/Profile/Profile-1.jpg";
+import profile from "../../Assets/Profile/Ellipse 4.png";
 import ROADSIGN from "../../Assets/ROADSIGNnavbar.png";
 import "./Navbar.css";
 
@@ -15,7 +15,7 @@ function Navbar() {
         <div className="nav-logo">
           <div className="logo">
             <Link className="navbar-brand mt-2 mt-lg-0" to="/">
-              <img src={ROADSIGN} height="15" alt="MDB Logo" loading="lazy" />
+              <img src={ROADSIGN} height="15" alt="RoadSign Logo" loading="lazy" />
             </Link>
           </div>
           <nav className="navbar navbar-expand-lg navbar-light nav-custom">
