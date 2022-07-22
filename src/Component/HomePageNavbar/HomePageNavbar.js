@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./HomePageNavbar.css";
 
+
 function NavbarHome() {
   useEffect(() => {
     Aos.init({ duration: 2000 });
@@ -28,7 +29,7 @@ function NavbarHome() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <i class="fas fa-bars" style={{ color: "#fff" }}></i>
+            <i class="fas fa-bars fas-fas-bar" style={{ color: "#fff" }}></i>
           </button>
           <div
             className="collapse navbar-collapse navbar-collapse-home"
@@ -66,8 +67,20 @@ function NavbarHome() {
                 </Link>
               </li>
             </ul>
+
           </div>
+
         </div>
+
+          <div className="btn-2-div">
+            <Link to="/createAccount">
+              <button className="text-center btn-sign-out btn-reg">Register</button>
+            </Link>
+            <Link to="/signin">
+              <button className="text-center btn-sign-out">Sign In</button>
+            </Link>
+          </div>
+
       </nav>
     </>
   );

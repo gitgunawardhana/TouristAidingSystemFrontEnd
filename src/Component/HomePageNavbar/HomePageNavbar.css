@@ -64,3 +64,25 @@ nav {
    position: absolute;
    left: 0 ;
  }
+ .Sign-in-btn{
+   position: absolute !important;
+   right: 0!important;
+   top: 0!important;
+ }
+.btn-reg{
+  margin-right: 10px;
+}
+.btn-2-div{
+  position: absolute;
+  right: 0;
+  top:0;
+}
+
+@media screen and (max-width: 992px){
+  .btn-2-div{
+    top: -20px;
+    position: relative;
+
+  }
+}
+
