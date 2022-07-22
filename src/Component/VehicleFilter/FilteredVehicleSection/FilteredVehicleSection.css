@@ -1,0 +1,175 @@
+.filtered-location-section {
+    width: 100%;
+}
+
+.filtered-single-location {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+.filtered-location-details {
+    padding-left: 10px;
+}
+
+.filtered-location-name {
+    color: #004145;
+    font-size: 25px;
+}
+
+.filtered-location-address {
+    color: #5B5B5B;
+    font-size: 15px;
+}
+
+.filtered-location-single-facility {
+    background-color: #C4C4C4;
+    padding: 5px;
+    border-radius: 5px;
+    width: 80px;
+    font-size: 10px;
+    margin: 10px 5px 10px 0;
+    text-align: center;
+    display: inline-block;
+}
+
+.filtered-location-bed {
+    color: #004145;
+}
+
+.filtered-location-description {
+    font-size: 13px;
+    color: #787878;
+    text-align: justify;
+    padding-right: 10px;
+}
+
+.filtered-location-package-facilities {
+    margin-top: 10px;
+}
+
+.filtered-location-package-facility {
+    width: 160px;
+    border-radius: 5px;
+    padding: 5px;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px;
+    text-align: center;
+    color: white;
+}
+
+.filtered-location-package-facility img {
+    width: 20px;
+}
+
+.free-cancellation {
+    background-color: #769F00;
+}
+
+.pay-at-property {
+    background-color: #675D8D;
+}
+
+.view {
+    background-color: #0F97C3;
+}
+
+.filtered-location-review-price {
+    width: 100%;
+    height: 100%;
+    border-left: 1px solid #C4C4C4;
+    padding: 10px;
+}
+
+.filtered-location-rating-stars {
+    margin-left: 20%;
+}
+
+.filtered-location-rating-message {
+    text-align: right;
+    font-size: 13px;
+    color: #004145;
+    font-weight: bold;
+}
+
+.filtered-location-rating-count {
+    text-align: right;
+    font-size: 13px;
+    padding-bottom: 2px;
+}
+
+.filtered-location-rating-flag {
+    width: 82%;
+    height: 90%;
+    margin-left: 20%;
+    margin-top: 5%;
+    background-image: url("../../../Assets/RecommendedAccommodations/rating-flag.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.filtered-location-rating {
+    text-align: center;
+    padding: 4px;
+    color: white;
+}
+
+.filtered-location-discount {
+    padding: 2px;
+    background-color: #C30F0F;
+    border-radius: 8px;
+    font-size: 11px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    width: 70%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 25%;
+
+}
+
+.filtered-location-price {
+    padding: 2px;
+    font-size: 15px;
+    width: 95%;
+    font-weight: normal;
+    color: #9B0404;
+    text-decoration: line-through;
+    text-align: right;
+}
+
+.filtered-location-discounted-price {
+    padding: 2px;
+    font-size: 20px;
+    width: 95%;
+    font-weight: bold;
+    text-align: right;
+    color: #004145;
+}
+
+.filtered-location-discounted-price p {
+    font-size: 10px;
+    font-weight: lighter;
+    color: #7A8182;
+}
+
+.filtered-location-people {
+    padding: 2px;
+    width: 95%;
+    text-align: right;
+    font-size: 15px;
+    color: #4E4E4E;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.filtered-location-pagination {
+    width: 50%;
+    margin: 20px 20px 20px 25%;
+}

@@ -1,0 +1,77 @@
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+}
+
+.card-registration .select-arrow {
+    top: 13px;
+}
+
+
+.bg-dark-col {
+    background-color: white !important;
+}
+
+.logo-name {
+    width: 200px;
+    height: 60px;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #004145;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px !important;
+}
+
+.sub-logo-name {
+    padding-top: 10px;
+
+}
+.btn-create {
+    background-color: #004145 !important;
+    color: white;
+    width: 100%;
+}
+
+.btn:hover {
+    color: white !important;
+}
+
+.acc-des {
+    font-size: 20px;
+    color: #004145 !important;
+    padding: 0;
+}
+
+.fw-bold {
+    color: #0a58ca !important;
+    text-decoration: none;
+}
+
+.p-3 {
+    padding: 0 !important;
+}
+
+.py-5 {
+    padding-bottom: 0 !important;
+    padding-top: 2px !important;
+}
+
+.sub-form {
+    margin-top: 20%;
+}
+
+.logo-name-sub {
+    margin-bottom: 20px !important;
+}
+
+.acc-des {
+    font-weight: revert !important;
+    font-family: 'Roboto', sans-serif;
+
+}
+

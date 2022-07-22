@@ -1,0 +1,73 @@
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+  background: #03676e !important;
+}
+
+.img-fluid {
+  height: 280px !important;
+}
+
+.slick-prev {
+  left: -3% !important;
+  z-index: 1;
+}
+.slick-next {
+  right: -3% !important;
+  z-index: 1;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #1e3d3e !important;
+  z-index: 1;
+}
+
+.card-text {
+  font-size: 13px;
+}
+
+.im {
+  transition: transform 0.2s;
+  margin: 0 auto;
+}
+
+.im img {
+  object-fit: cover;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.im {
+  margin-right: 5px !important;
+  margin-left: 5px !important;
+}
+
+.im:hover {
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  transform: scale(1.015);
+  transition: all 0.5s ease;
+}
+
+.im:hover img {
+  /* object-fit: cover; */
+  cursor: pointer;
+}
+
+.nav-to-place {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-to-place:hover {
+  color: #1e3d3e;
+}
+
+.im-outer-div {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}

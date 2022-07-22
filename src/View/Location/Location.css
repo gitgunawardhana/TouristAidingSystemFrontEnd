@@ -1,0 +1,108 @@
+.container-bottom {
+  /* box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px; */
+  padding: 0px 0px 0px 0px !important;
+}
+
+.filter-part {
+  padding: 0px;
+  height: auto;
+}
+
+.filter-result-part {
+  padding-right: 0px;
+}
+
+.filter-part {
+  /* background-color: #004145; */
+}
+
+.filter-heading {
+  background-color: white;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  /* text-align: center; */
+  margin: 0px !important;
+  padding: 20px 18px 16px 18px;
+  border-radius: 4px;
+  position: sticky !important;
+  position: -webkit-sticky !important;
+  top: 160px !important;
+}
+
+.filter-result-heading {
+  background-color: white;
+  margin: 0px !important;
+  padding: 20px 18px 16px 18px;
+  color: black;
+  /* text-align: center; */
+}
+
+#filter-heading {
+  font-weight: 500;
+}
+#filter-result-heading {
+  font-weight: 900;
+}
+
+.btn-clear-filter {
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  background-color: #004145 !important;
+  border: 1px solid white;
+  color: white;
+  font-weight: 500;
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-bottom: 8px;
+  padding-top: 6px;
+  display: flex;
+  margin-bottom: 10px !important;
+  margin-top: 20px !important;
+  /* width: 120px; */
+}
+
+.btn-clear-filter:hover {
+  /* background-color: white !important;
+  border: 1px solid #004145;
+  color: #004145; */
+
+  /* width: 120px; */
+}
+
+.filter-heading-btn {
+  display: flex;
+}
+.btn-arrow {
+  float: right;
+  position: absolute;
+  margin-top: -2px;
+  right: 16px;
+}
+
+#top-attraction-dist {
+  padding-left: 140px;
+  padding-right: 140px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.top-attraction-dist {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  padding: 30px 50px 30px 50px;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .filter-result-part {
+    padding-right: 20px;
+  }
+
+  .filter-heading-mobile,
+  .filter-part {
+    z-index: 1;
+    position: sticky !important;
+    position: -webkit-sticky !important;
+    top: 160px !important;
+  }
+}
