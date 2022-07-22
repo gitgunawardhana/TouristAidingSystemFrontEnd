@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "./EditProfile.css"
 import {Link} from "react-router-dom";
-import profilePic from "../../Assets/Profile/Profile-pic.jpg"
+import profilePic from "../../Assets/Profile/Ellipse 4.png"
 import PhoneInput from "react-phone-number-input";
 import 'react-phone-number-input/style.css'
 import Stack from '@mui/material/Stack';

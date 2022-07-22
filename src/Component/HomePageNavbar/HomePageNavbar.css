@@ -60,3 +60,7 @@ nav {
 }.navbar{
    position: relative;
  }
+ .nav-div{
+   position: absolute;
+   left: 0 ;
+ }

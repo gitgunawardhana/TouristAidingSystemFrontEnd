@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "./App.css";
@@ -21,10 +21,11 @@ import Profile from "./View/Profile/Profile";
 import Security from "./View/Security/Security";
 import SignIn from "./View/SignIn/SignIn";
 import SignUp from "./View/SignInOrCreateAccount/SignUp";
-
-
-
 import Vehicle from "./View/Vehicle/Vehicle";
+import TripPlanner from "./View/TripPlanner/TripPlanner";
+import ForgottenPassword from "./View/ForgottenYourPassword/ForgottenYourPassword";
+import CreateNewPassword from "./View/CreateNewPassword/CreateNewPassword";
+import CheckYourEmail from "./View/CheckYourEmail/CheckYourEmail";
 function App() {
   return (
     <>
@@ -56,8 +57,11 @@ function App() {
           <Route path="/createAccount" element={<CreateAccount />} />
           <Route path="/emailVerification" element={<EmailVerification />} />
           <Route path="/vehicles" element={<Vehicle />} />
+          <Route path="/tripPlanner" element={<TripPlanner/>}/>
+          <Route path="/forgetPassword" element={<ForgottenPassword/>}/>
+          <Route path="/createNewPassword" element={<CreateNewPassword/>}/>
+          <Route path="/checkYourEmail" element={<CheckYourEmail/>}/>
         </Routes>
-        <Footer></Footer>
       </Router>
     </>
   );
