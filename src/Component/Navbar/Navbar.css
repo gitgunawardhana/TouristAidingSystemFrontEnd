@@ -26,7 +26,7 @@
 }
 
 .navigationBar {
-  margin-bottom: 145px;
+  margin-bottom: 130px;
   z-index: 10;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .navbar-brand img {
-  width: 300px;
+  width: 200px;
   height: auto;
   padding: 10px 10px 10px 0px;
 }
