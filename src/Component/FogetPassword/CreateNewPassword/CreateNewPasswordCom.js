@@ -6,8 +6,8 @@ import {Link} from "react-router-dom";
 function CreateNewPasswordCom() {
     return (
         <>
-            <div className="create-account-main-div" >
-                <section className="h-100 bg-dark bg-dark-col" >
+            <div className="create-account-main-div">
+                <section className="h-100 bg-dark bg-dark-col">
                     <div className="container py-5 h-100 ">
                         <div className="row d-flex justify-content-center align-items-center h-100">
                             <div className="col">
@@ -31,11 +31,14 @@ function CreateNewPasswordCom() {
                                                     Create a new password
                                                 </div>
 
-                                                <p className="text-center text-muted mt-5 mb-0 para-width" >Use a minimum of 10 characters, including uppercase letters, lowercase letters and numbers.
+                                                <p className="text-center text-muted mt-5 mb-0 para-width">Use a minimum
+                                                    of 10 characters, including uppercase letters, lowercase letters and
+                                                    numbers.
                                                 </p>
 
                                                 <div className="form-outline mb-4">
-                                                    <label className="form-label" htmlFor="form3Example97">Password</label>
+                                                    <label className="form-label"
+                                                           htmlFor="form3Example97">Password</label>
                                                     <input type="password" id="form3Example97"
                                                            className="form-control form-control-lg"
                                                            placeholder="Password"/>
@@ -51,12 +54,13 @@ function CreateNewPasswordCom() {
 
                                                 </div>
 
-
-                                                <div className="d-flex justify-content-end pt-3">
-                                                    <button type="button" className="btn  btn-lg ms-2 btn-login">Set new password
-                                                    </button>
-                                                </div>
-
+                                                <Link className="sent-email-link" to={"/signin"}>
+                                                    <div className="d-flex justify-content-end pt-3">
+                                                        <button type="button" className="btn  btn-lg ms-2 btn-login">Set
+                                                            new password
+                                                        </button>
+                                                    </div>
+                                                </Link>
 
                                             </div>
                                         </div>
