@@ -1,5 +1,6 @@
 import React from "react";
 import forgetEmail from "../../../Assets/ForgetPassword/elephantemail.jpg"
+import {Link} from "react-router-dom";
 
 function CheckYourEmailCom() {
     return (
@@ -24,14 +25,17 @@ function CheckYourEmailCom() {
                                                 Check your inbox
                                             </div>
 
-                                            <p className="text-center text-muted mt-5 mb-4">We've just emailed instructions and a reset password link to example@gmail.com. It might take a few minutes to arrive.
+                                            <p className="text-center text-muted mt-5 mb-4">We've just emailed
+                                                instructions and a reset password link to example@gmail.com. It might
+                                                take a few minutes to arrive.
                                             </p>
 
-
-                                            <div className="d-flex justify-content-end pt-3">
-                                                <button type="button" className="btn  btn-lg ms-2 btn-create">SENT RESET LINK
-                                                </button>
-                                            </div>
+                                            <Link className="sent-email-link" to={"/createNewPassword"}>
+                                                <div className="d-flex justify-content-end pt-3">
+                                                    <button type="button" className="btn  btn-lg ms-2 btn-create">BACK-TO-SIGN-IN
+                                                    </button>
+                                                </div>
+                                            </Link>
 
                                         </div>
                                     </div>
