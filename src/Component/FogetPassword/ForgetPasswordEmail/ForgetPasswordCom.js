@@ -1,6 +1,7 @@
 import React from "react";
 import "./ForgetPasswordCom.css"
 import forgetEmail from "../../../Assets/ForgetPassword/forgetpassword.jpg"
+import {Link} from "react-router-dom";
 
 function ForgetPasswordCom() {
     return (
@@ -40,11 +41,14 @@ function ForgetPasswordCom() {
 
                                             </div>
 
-
+                                            <Link className="sent-email-link" to={"/checkYourEmail"}>
                                             <div className="d-flex justify-content-end pt-3">
+
                                                 <button type="button" className="btn  btn-lg ms-2 btn-create">SENT RESET LINK
                                                 </button>
+
                                             </div>
+                                            </Link>
 
                                         </div>
                                     </div>
