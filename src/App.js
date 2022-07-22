@@ -23,6 +23,9 @@ import SignIn from "./View/SignIn/SignIn";
 import SignUp from "./View/SignInOrCreateAccount/SignUp";
 import Vehicle from "./View/Vehicle/Vehicle";
 import TripPlanner from "./View/TripPlanner/TripPlanner";
+import ForgottenPassword from "./View/ForgottenYourPassword/ForgottenYourPassword";
+import CreateNewPassword from "./View/CreateNewPassword/CreateNewPassword";
+import CheckYourEmail from "./View/CheckYourEmail/CheckYourEmail";
 function App() {
   return (
     <>
@@ -55,6 +58,9 @@ function App() {
           <Route path="/emailVerification" element={<EmailVerification />} />
           <Route path="/vehicles" element={<Vehicle />} />
           <Route path="/tripPlanner" element={<TripPlanner/>}/>
+          <Route path="/forgetPassword" element={<ForgottenPassword/>}/>
+          <Route path="/createNewPassword" element={<CreateNewPassword/>}/>
+          <Route path="/checkYourEmail" element={<CheckYourEmail/>}/>
         </Routes>
       </Router>
     </>
