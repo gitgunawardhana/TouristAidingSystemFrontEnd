@@ -1,0 +1,48 @@
+.center-crd {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-container-div {
+  display: flex;
+  padding: auto;
+  margin: auto;
+}
+
+.center-crd-btn {
+  visibility: hidden;
+  transform: translate(9999px);
+  opacity: 0;
+  margin-bottom: -50px;
+}
+
+.center-crd-h-tag {
+  color: white;
+}
+
+.crd-main-div {
+  margin: auto;
+  border: 1px solid white;
+  background-color: black;
+  overflow: hidden;
+}
+
+.crd-main-div:hover .center-crd-btn {
+  visibility: visible;
+  margin-top: -90px;
+  transition: opacity 0.5s linear;
+  transform: translate(0);
+  opacity: 1;
+}
+
+.crd-main-div:hover .center-crd-about {
+  visibility: hidden;
+  /* transition: all ease; */
+  /* -webkit-animation: fade-in 1s;
+  animation: fade-in 1s; */
+  transition: opacity 0.5s linear;
+  transform: translate(0);
+  opacity: 1;
+}

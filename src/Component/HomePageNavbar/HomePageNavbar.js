@@ -46,7 +46,7 @@ function NavbarHome() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="navi-link nav-link" to="/tripplanners">
+                <Link className="navi-link nav-link" to="/trip-planners">
                   Trip Planner
                 </Link>
               </li>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ImageSlider.css";
+
 function ImageSlider(props) {
   const [covers, setCovers] = useState(props.covers);
   // console.log(covers);
@@ -23,21 +24,6 @@ function ImageSlider(props) {
           <div class="content">
             <h1>{covers[3]}</h1>
           </div>
-          {/* <div class="top-left">
-            <h1 className="place-heading-title">{covers[3]}</h1>
-          </div> 
-          <div class="bottom-left">
-            <h1>{covers[3]}</h1>
-          </div>
-          <div class="top-right">
-            <h1>{covers[3]}</h1>
-          </div>
-          <div class="bottom-right">
-            <h1>{covers[3]}</h1>
-          </div>
-          <div class="centered">
-            <h1>{covers[3]}</h1>
-          </div> */}
         </div>
         <a
           className="carousel-control-prev"
