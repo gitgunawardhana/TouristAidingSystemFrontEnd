@@ -1,0 +1,70 @@
+.register .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 4rem auto;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+:root {
+  --primary: #118c4f;
+  --background: #f5f8ff;
+}
+
+.register .left {
+  padding: 1rem;
+}
+
+/* .register h1 {
+  padding: 1rem 0;
+} */
+
+.register .input-container {
+  padding: 1rem 0;
+}
+
+.register .right {
+  padding: 1rem;
+}
+
+.register .image-container {
+  width: 100%;
+  display: flex;
+}
+
+.register .myCarRegister {
+  max-width: 80%;
+  margin: auto;
+}
+
+.register .myButton {
+  padding: 14px 32px;
+  border: 1px solid var(--primary);
+  background-color: var(--primary);
+  border-radius: 24px 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 0.8rem;
+}
+
+.register input {
+  padding: 12px 32px;
+  border: 1px solid var(--primary);
+  background: transparent;
+  border-radius: 24px 4px;
+  font-size: 1rem;
+  margin-right: 0.8rem;
+  font-family: "poppins", sans-serif;
+}
+
+@media screen and (max-width: 940px) {
+  .register .container {
+    grid-template-columns: 1fr;
+    margin: 1rem 0;
+  }
+  .register .myButton {
+    margin-top: 0.8rem;
+  }
+}

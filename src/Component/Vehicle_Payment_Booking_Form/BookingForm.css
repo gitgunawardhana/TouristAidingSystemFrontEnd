@@ -1,0 +1,132 @@
+.booking_form {
+  width: 47.5%;
+}
+
+.booking_form input {
+  padding: 8px 15px;
+  border: 1px solid #7c8a972a;
+  color: #7c8a97;
+  width: 100%;
+}
+
+.booking_form select,
+.textarea {
+  width: 100%;
+  padding: 10px 15px;
+  color: #7c8a97;
+  border: 1px solid #7c8a972a;
+  border-radius: 4px;
+}
+
+.time_picker::before {
+  content: "Journey Time";
+  color: #7c8a97;
+  margin-right: 0.5rem;
+}
+
+.textarea:focus,
+.booking_form input:focus,
+.booking_form select:focus {
+  outline: none;
+}
+
+/*pre defined css*/
+
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000d6b;
+  font-weight: 600;
+  margin-bottom: 0;
+} */
+
+/* h3,
+h4 {
+  font-size: 1.8rem;
+} */
+
+/* h5,
+h6 {
+  font-size: 1.2rem;
+} */
+
+/* a {
+  text-decoration: none;
+  color: unset;
+}
+
+a:hover {
+  color: unset;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+}
+
+.section_title {
+  color: #000d6b;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.section_subtitle {
+  color: #f9a826;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.section_description {
+  color: #7c8a97;
+  font-size: 0.9rem;
+  line-height: 30px;
+}
+
+section {
+  padding: 50px 0px;
+}
+
+.btn {
+  padding: 7px 15px;
+  background: #000d6b;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  color: #fff !important;
+  background: #000c6bd0;
+}
+
+@media only screen and (max-width: 768px) {
+  section {
+    padding: 30px 0px;
+  } */
+
+/* .section__title {
+    font-size: 1.6rem;
+  }
+
+  .section__subtitle {
+    font-size: 1.1rem;
+  } */
+
+/*end of pre defined css*/
+
+@media only screen and (max-width: 768px) {
+  .booking_form {
+    width: 100%;
+  }
+
+  .booking_form input,
+  .textarea,
+  .booking_form select {
+    font-size: 0.8rem;
+  }
+}
