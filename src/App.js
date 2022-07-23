@@ -7,8 +7,11 @@ import ScrollToTop from "./Component/ScrollToTop";
 import Accommodation from "./View/Accommodation/Accommodation";
 import AccommodationFilter from "./View/AccommodationFilter/AccommodationFilter";
 import Attraction from "./View/Attraction/Attraction";
+import CheckYourEmail from "./View/CheckYourEmail/CheckYourEmail";
 import CreateAccount from "./View/CreateAccount/CreateAccount";
+import CreateNewPassword from "./View/CreateNewPassword/CreateNewPassword";
 import EmailVerification from "./View/EmailVerification/EmailVerification";
+import ForgottenPassword from "./View/ForgottenYourPassword/ForgottenYourPassword";
 import Home from "./View/Home/Home";
 import Location from "./View/Location/Location";
 import Locations from "./View/Locations/Locations";
@@ -22,9 +25,6 @@ import SignIn from "./View/SignIn/SignIn";
 import SignUp from "./View/SignInOrCreateAccount/SignUp";
 import TripPlanner from "./View/TripPlanner/TripPlanner";
 import Vehicle from "./View/Vehicle/Vehicle";
-import ForgottenPassword from "./View/ForgottenYourPassword/ForgottenYourPassword";
-import CreateNewPassword from "./View/CreateNewPassword/CreateNewPassword";
-import CheckYourEmail from "./View/CheckYourEmail/CheckYourEmail";
 
 function App() {
   return (
@@ -58,12 +58,11 @@ function App() {
           <Route path="/emailVerification" element={<EmailVerification />} />
           <Route path="/vehicles" element={<Vehicle />} />
           <Route path="/trip-planners" element={<TripPlanner />} />
-          <Route path="/tripPlanner" element={<TripPlanner/>}/>
-          <Route path="/forgetPassword" element={<ForgottenPassword/>}/>
-          <Route path="/createNewPassword" element={<CreateNewPassword/>}/>
-          <Route path="/checkYourEmail" element={<CheckYourEmail/>}/>
+          <Route path="/tripPlanner" element={<TripPlanner />} />
+          <Route path="/forgetPassword" element={<ForgottenPassword />} />
+          <Route path="/createNewPassword" element={<CreateNewPassword />} />
+          <Route path="/checkYourEmail" element={<CheckYourEmail />} />
         </Routes>
-
       </Router>
     </>
   );
