@@ -26,6 +26,8 @@ import SignUp from "./View/SignInOrCreateAccount/SignUp";
 import TripPlanner from "./View/TripPlanner/TripPlanner";
 import Vehicle from "./View/Vehicle/Vehicle";
 
+import Vehicle_Home from '../src/View/Vehicle_Home/Car_Home.js'
+import Vehicle_Payment from '../src/View/Vehicle_Payment/CarDetails.js'
 function App() {
   return (
     <>
@@ -56,12 +58,22 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
           <Route path="/createAccount" element={<CreateAccount />} />
           <Route path="/emailVerification" element={<EmailVerification />} />
-          <Route path="/vehicles" element={<Vehicle />} />
+          <Route path="/vehicle" element={<Vehicle />} />
           <Route path="/trip-planners" element={<TripPlanner />} />
           <Route path="/tripPlanner" element={<TripPlanner />} />
           <Route path="/forgetPassword" element={<ForgottenPassword />} />
           <Route path="/createNewPassword" element={<CreateNewPassword />} />
           <Route path="/checkYourEmail" element={<CheckYourEmail />} />
+          <Route path="/vehicles" element={<Vehicle_Home />} />
+          <Route
+            path="/vehicles-filter"
+            element={<Vehicle />}
+          />
+          <Route
+            path="/vehicles-filter/:slug"
+            element={<Vehicle_Payment />}
+          />
+
         </Routes>
       </Router>
     </>

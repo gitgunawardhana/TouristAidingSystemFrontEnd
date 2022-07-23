@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import profile from "../../Assets/Profile/Ellipse 4.png";
+import profile from "../../Assets/Profile/Squa1.png";
 import ROADSIGN from "../../Assets/ROADSIGNnavbar.png";
 import "./Navbar.css";
 
@@ -121,7 +121,7 @@ function Navbar() {
             <div className="dropdown mr-3 col-lg-6">
               <img
                 src={profile}
-                className="rounded profile-pic profile-icon"
+                className=" profile-pic profile-icon"
                 height="50"
                 alt="Black and White Portrait of a Man"
                 loading="lazy"
