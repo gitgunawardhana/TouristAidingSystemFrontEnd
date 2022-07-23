@@ -44,6 +44,10 @@
   margin-right: 20px;
 }
 
+.vender-btn:hover {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 770px) {
   .vender-page-btns img {
     width: 300px;
