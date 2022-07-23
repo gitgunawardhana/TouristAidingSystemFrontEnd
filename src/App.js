@@ -60,9 +60,10 @@ function App() {
             element={<Vehicle />}
           />
           <Route
-            path="/vehicles-payment"
+            path="/vehicles-filter/:slug"
             element={<Vehicle_Payment />}
           />
+
         </Routes>
         <Footer></Footer>
       </Router>

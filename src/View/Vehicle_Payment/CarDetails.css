@@ -41,6 +41,17 @@ h6 {
   font-weight: 600;
   font-size: 2rem;
 } */
+#car_price_display {
+  color: #00565b !important;
+}
+
+#payment_info_part {
+  color: #00565b !important;
+}
+
+#booking_Heading {
+  color: #00565b !important;
+}
 
 .section_subtitle {
   color: #f9a826;
