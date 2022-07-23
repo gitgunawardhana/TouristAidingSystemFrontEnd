@@ -21,7 +21,9 @@ import Profile from "./View/Profile/Profile";
 import Security from "./View/Security/Security";
 import SignIn from "./View/SignIn/SignIn";
 import SignUp from "./View/SignInOrCreateAccount/SignUp";
+import TripPlanner from "./View/TripPlanner/TripPlanner";
 import Vehicle from "./View/Vehicle/Vehicle";
+
 import TripPlanner from "./View/TripPlanner/TripPlanner";
 import ForgottenPassword from "./View/ForgottenYourPassword/ForgottenYourPassword";
 import CreateNewPassword from "./View/CreateNewPassword/CreateNewPassword";
@@ -57,11 +59,13 @@ function App() {
           <Route path="/createAccount" element={<CreateAccount />} />
           <Route path="/emailVerification" element={<EmailVerification />} />
           <Route path="/vehicles" element={<Vehicle />} />
+          <Route path="/trip-planners" element={<TripPlanner />} />
           <Route path="/tripPlanner" element={<TripPlanner/>}/>
           <Route path="/forgetPassword" element={<ForgottenPassword/>}/>
           <Route path="/createNewPassword" element={<CreateNewPassword/>}/>
           <Route path="/checkYourEmail" element={<CheckYourEmail/>}/>
         </Routes>
+
       </Router>
     </>
   );

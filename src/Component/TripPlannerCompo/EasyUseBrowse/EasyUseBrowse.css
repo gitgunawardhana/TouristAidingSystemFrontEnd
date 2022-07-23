@@ -1,0 +1,12 @@
+.ptp-content {
+  padding: auto;
+  margin: auto;
+  text-align: center;
+}
+
+.trip-planner-easyuse-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-flow: wrap;
+}

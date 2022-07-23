@@ -49,11 +49,11 @@ function Navbar() {
                   <li className="nav-item">
                     <Link
                       className={
-                        currentPath.includes("tripplanners")
+                        currentPath.includes("trip-planners")
                           ? "nav-link item-color navi-link active"
                           : "nav-link item-color navi-link"
                       }
-                      to="/tripplanners"
+                      to="/trip-planners"
                     >
                       Trip Planner
                     </Link>
