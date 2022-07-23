@@ -50,7 +50,7 @@ function Carousel(props) {
     <>
       <div className="container" data-aos="fade-up">
         <h2
-          className="text-center carousel-h2"
+          className="text-center"
           style={{
             color: "black",
             paddingTop: "0px",
