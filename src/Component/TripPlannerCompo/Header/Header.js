@@ -51,6 +51,7 @@ function Header() {
           margin: "-2px",
           backgroundColor: "black",
           overflow: "hidden",
+          borderRadius: "0",
         }}
       >
         <img

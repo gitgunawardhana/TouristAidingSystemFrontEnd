@@ -6,7 +6,7 @@ import Kandy from "../../../../Assets/TopLocation/kandy.png";
 import Mirissa from "../../../../Assets/TopLocation/mirissa.png";
 import "./BtnCard.css";
 
-function BtnCard() {
+function BtnCard(props) {
   const titles = [
     { id: 1, title: "10 Days in Ella", image: Mirissa },
     { id: 2, title: "5 Days in Colombo", image: Kandy },
@@ -15,8 +15,8 @@ function BtnCard() {
   ];
 
   return (
-    <div className="container text-center btn-container-div">
-      {titles.map((item) => {
+    <div className="text-center btn-container-div">
+      {titles.slice(props.startP, props.endP).map((item) => {
         return (
           <div
             className="card crd-main-div"
@@ -47,6 +47,7 @@ function BtnCard() {
                       borderRadius: "50px",
                       width: "150px",
                       padding: "10px",
+                      marginBottom: "-60px",
                       "&:hover": {
                         backgroundColor: "#1e3d3eed",
                         color: "white",

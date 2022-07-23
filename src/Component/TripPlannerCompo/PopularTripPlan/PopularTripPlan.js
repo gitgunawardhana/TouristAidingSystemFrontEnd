@@ -11,7 +11,8 @@ function PopularTripPlan() {
             Popular Trip Plan
           </h2>
         </div>
-        <BtnCard></BtnCard>
+        <BtnCard endP={2}></BtnCard>
+        <BtnCard startP={2}></BtnCard>
       </div>
     </div>
   );
