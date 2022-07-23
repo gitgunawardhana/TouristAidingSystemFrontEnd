@@ -22,6 +22,8 @@ import Security from "./View/Security/Security";
 import SignIn from "./View/SignIn/SignIn";
 import SignUp from "./View/SignInOrCreateAccount/SignUp";
 import Vehicle from "./View/Vehicle/Vehicle";
+import Vehicle_Home from '../src/View/Vehicle_Home/Car_Home.js'
+import Vehicle_Payment from '../src/View/Vehicle_Payment/CarDetails.js'
 function App() {
   return (
     <>
@@ -52,7 +54,15 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
           <Route path="/createAccount" element={<CreateAccount />} />
           <Route path="/emailVerification" element={<EmailVerification />} />
-          <Route path="/vehicles" element={<Vehicle />} />
+          <Route path="/vehicles" element={<Vehicle_Home />} />
+          <Route
+            path="/vehicles-filter"
+            element={<Vehicle />}
+          />
+          <Route
+            path="/vehicles-payment"
+            element={<Vehicle_Payment />}
+          />
         </Routes>
         <Footer></Footer>
       </Router>

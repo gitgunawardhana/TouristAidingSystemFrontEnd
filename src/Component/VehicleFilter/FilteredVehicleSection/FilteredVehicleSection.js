@@ -4,6 +4,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormGroup from "@mui/material/FormGroup";
 import Grid from "@mui/material/Grid";
 import React from "react";
+import { useNavigate } from "react-router";
 
 import "./FilteredVehicleSection.css";
 
@@ -134,6 +135,10 @@ function FilteredLocationSection() {
     "Air Conditioning",
     "Child Seats Available",
   ];
+  const navigate = useNavigate();
+  const navigateToCarRental = () => {
+    navigate('/vehicles-payment');
+  };
 
   return (
     <div className="filtered-location-section">
@@ -236,7 +241,7 @@ function FilteredLocationSection() {
                     </Button>
                   </div>
                 </Grid>
-                <Button fullWidth variant="contained" size="small">
+                <Button fullWidth variant="contained" size="small" onClick={navigateToCarRental}>
                   VIEW DEAL
                 </Button>
               </div>
