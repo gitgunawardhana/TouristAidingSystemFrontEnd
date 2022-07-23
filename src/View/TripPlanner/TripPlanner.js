@@ -15,6 +15,7 @@ import Header from "../../Component/TripPlannerCompo/Header/Header";
 import PopularTripPlan from "../../Component/TripPlannerCompo/PopularTripPlan/PopularTripPlan";
 import TrendingDestinationsCard from "../../Component/TripPlannerCompo/TrendingDestinations/TrendingDestinations";
 import "./TripPlanner.css";
+import Footer from "../../Component/Footer/Footer";
 
 // Hook
 function useWindowSize() {
@@ -333,6 +334,7 @@ function TripPlanner() {
           </div>
         </Box>
       </Modal>
+        <Footer/>
     </div>
   );
 }
