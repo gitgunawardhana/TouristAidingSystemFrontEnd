@@ -1,9 +1,9 @@
 import React from "react";
 import Hotel from "../../Assets/VenderTypeAssets/Hotel.png";
 import Vehicle from "../../Assets/VenderTypeAssets/Vehicle.png";
-import "./VenderType.css";
+import "./VenderTypeCompo.css";
 
-function SignInCom() {
+function VenderType() {
   return (
     <>
       <div className="container card card-registration my-4 shadow-lg p-3 mb-5 bg-white rounded vender-type-rounded">
@@ -33,4 +33,4 @@ function SignInCom() {
   );
 }
 
-export default SignInCom;
+export default VenderType;

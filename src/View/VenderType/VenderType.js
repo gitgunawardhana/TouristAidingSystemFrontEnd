@@ -1,11 +1,11 @@
 import React from "react";
-import VenderType from "../../Component/VenderType/VenderType";
+import VenderTypeCompo from "../../Component/VenderTypeCompo/VenderTypeCompo";
 
-function SignIn() {
+function VenderType() {
   return (
     <>
-      <VenderType />
+      <VenderTypeCompo />
     </>
   );
 }
-export default SignIn;
+export default VenderType;
