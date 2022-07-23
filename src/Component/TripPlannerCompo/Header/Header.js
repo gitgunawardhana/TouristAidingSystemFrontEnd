@@ -39,7 +39,7 @@ function useWindowSize() {
   return windowSize;
 }
 
-function Header() {
+function Header(props) {
   const size = useWindowSize();
 
   return (
@@ -80,6 +80,7 @@ function Header() {
             </div>
             <div className="col-md-4">
               <Button
+                onClick={props.onClick}
                 fullWidth
                 variant="contained"
                 size="small"

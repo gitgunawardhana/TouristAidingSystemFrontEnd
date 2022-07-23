@@ -27,17 +27,23 @@ function BtnCard(props) {
             <img
               src={item.image}
               className="card-img-top"
-              alt="..."
+              alt={item.title.split(" ")[-1]}
               style={{ opacity: "0.4" }}
             />
             <div className="card-img-overlay">
               <div className="center-crd">
                 <div className="center-crd-about">
-                  <h4 className="center-crd-h-tag">{item.title}</h4>
+                  <h4
+                    className="center-crd-h-tag"
+                    style={{ fontWeight: "400" }}
+                  >
+                    {item.title}
+                  </h4>
                 </div>
 
                 <div className="center-crd-btn">
                   <Button
+                    onClick={props.onClick}
                     fullWidth
                     variant="contained"
                     size="small"

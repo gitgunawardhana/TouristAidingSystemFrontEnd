@@ -34,8 +34,6 @@ function Home() {
         ></TopLocation>
       </div>
       <div style={{ height: "200px" }}></div>
-
-
     </div>
   );
 }
