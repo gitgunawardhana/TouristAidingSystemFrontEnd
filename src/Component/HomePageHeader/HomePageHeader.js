@@ -27,9 +27,7 @@ function Header() {
         <div className="text">
           <div className="para">
             <h1 data-aos="flip-up">ROADSIGN</h1>
-            <h2 className="para-h2" data-aos="flip-up">
-              WHO ARE WE?
-            </h2>
+            <h2 data-aos="flip-up">WHO ARE WE?</h2>
             <p data-aos="flip-up">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
