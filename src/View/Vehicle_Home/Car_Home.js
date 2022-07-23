@@ -4,7 +4,7 @@ import 'bootstrap/dist/js/bootstrap.min';
 import Hero from '../../Component/Vehicle_Home_Hero/Hero.js';
 import Find from '../../Component/Car_Home_Carousel/Find.js';
 import Register from "../../Component/Register/Register.js";
-import Faq from "../../Component/Car_Home_FAQ_section/faq.js";
+import Faq from "../../Component/Car_Home_FAQ_section/Faq.js";
 import Footer from "../../Component/Footer/Footer.js";
 import Navbar from "../../Component/Navbar/Navbar.js"
 
