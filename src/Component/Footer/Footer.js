@@ -34,7 +34,7 @@ function Footer() {
             </Link>
           </p>
           <p>
-            <Link to="/tripplanners" className="footer-navi-link">
+            <Link to="/trip-planners" className="footer-navi-link">
               Trip Planner
             </Link>
           </p>
