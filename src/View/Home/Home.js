@@ -9,6 +9,7 @@ import TopLocation from "../../Component/ImageGallery/ImageGallery";
 import topLocationDataList from "../../Component/TopLocationDataList";
 import useMediaQuery from "../../Component/useMediaQuery";
 import "./Home.css";
+import Footer from "../../Component/Footer/Footer";
 
 function Home() {
   const matches = useMediaQuery("(min-width: 600px)");
@@ -18,6 +19,7 @@ function Home() {
   }, []);
 
   return (
+      <>
     <div className="bg">
       <HomePageNavbar></HomePageNavbar>
       <HomePageHeader></HomePageHeader>
@@ -34,7 +36,10 @@ function Home() {
         ></TopLocation>
       </div>
       <div style={{ height: "200px" }}></div>
+
     </div>
+    <Footer/>
+    </>
   );
 }
 

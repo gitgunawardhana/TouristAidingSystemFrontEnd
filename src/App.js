@@ -23,8 +23,6 @@ import SignIn from "./View/SignIn/SignIn";
 import SignUp from "./View/SignInOrCreateAccount/SignUp";
 import TripPlanner from "./View/TripPlanner/TripPlanner";
 import Vehicle from "./View/Vehicle/Vehicle";
-
-import TripPlanner from "./View/TripPlanner/TripPlanner";
 import ForgottenPassword from "./View/ForgottenYourPassword/ForgottenYourPassword";
 import CreateNewPassword from "./View/CreateNewPassword/CreateNewPassword";
 import CheckYourEmail from "./View/CheckYourEmail/CheckYourEmail";
