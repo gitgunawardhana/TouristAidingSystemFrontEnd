@@ -55,4 +55,4 @@ const Faq = () => {
       )
 }
 
-export default Faq
+export default Faq;

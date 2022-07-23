@@ -4,7 +4,6 @@ import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/js/bootstrap.bundle";
 import "bootstrap/dist/js/bootstrap.esm";
 import "bootstrap/dist/js/bootstrap.min.js";
-import 'remixicon/fonts/remixicon.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';

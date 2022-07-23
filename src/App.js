@@ -60,7 +60,7 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
           <Route path="/createAccount" element={<CreateAccount />} />
           <Route path="/emailVerification" element={<EmailVerification />} />
-          <Route path="/vehicles" element={<Vehicle />} />
+          <Route path="/vehicle" element={<Vehicle />} />
           <Route path="/trip-planners" element={<TripPlanner />} />
           <Route path="/tripPlanner" element={<TripPlanner />} />
           <Route path="/forgetPassword" element={<ForgottenPassword />} />
@@ -77,7 +77,6 @@ function App() {
           />
 
         </Routes>
-        <Footer></Footer>
       </Router>
     </>
   );

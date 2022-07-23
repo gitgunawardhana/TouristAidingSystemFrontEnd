@@ -16,7 +16,7 @@ const Car_Home = () => {
       <Register />
       <Find />
       <Faq />
-      {/* <Footer /> */}
+      <Footer/>
     </>
   )
 }
