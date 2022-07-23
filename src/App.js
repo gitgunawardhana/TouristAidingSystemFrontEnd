@@ -25,7 +25,6 @@ import SignIn from "./View/SignIn/SignIn";
 import SignUp from "./View/SignInOrCreateAccount/SignUp";
 import TripPlanner from "./View/TripPlanner/TripPlanner";
 import Vehicle from "./View/Vehicle/Vehicle";
-import VenderType from "./View/VenderType/VenderType";
 
 function App() {
   return (
@@ -51,7 +50,6 @@ function App() {
           <Route path="/paymentMethod" element={<PaymentMethod />} />
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/signIn" element={<SignIn />} />
-          <Route path="/vender-type" element={<VenderType />} />
           <Route path="/location" element={<Locations />} />
           <Route path="/location/:id" element={<Location />} />
           <Route path="/attraction/:id" element={<Attraction />} />
