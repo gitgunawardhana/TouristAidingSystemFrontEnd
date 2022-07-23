@@ -5,6 +5,7 @@ import FilterSection from "../../Component/VehicleFilter/FilterSectionVehiclePag
 import SortingSection from "../../Component/VehicleFilter/SortingSectionVehiclePage/SortingSection";
 import Navbar from "../../Component/Navbar/Navbar";
 import "./Vehicle.css";
+import Footer from "../../Component/Footer/Footer";
 
 function Vehicle1() {
   useEffect(() => {
@@ -25,6 +26,7 @@ function Vehicle1() {
           </Grid>
         </Grid>
       </div>
+      <Footer/>
     </>
   );
 }

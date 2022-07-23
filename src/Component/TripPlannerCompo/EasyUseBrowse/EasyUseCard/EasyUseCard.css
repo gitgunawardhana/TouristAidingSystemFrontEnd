@@ -1,0 +1,20 @@
+.img-icon {
+  width: 50px;
+  margin: auto;
+}
+
+.trip-planner-crd-title {
+  cursor: context-menu !important;
+}
+
+.trip-planner-crd-desc {
+  cursor: context-menu !important;
+  width: 250px;
+}
+
+.col-trip-planner {
+  width: max-content;
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 15px;
+}

@@ -1,0 +1,44 @@
+.trip-planner-crd-title {
+  cursor: context-menu !important;
+}
+
+.trip-planner-crd-desc {
+  cursor: context-menu !important;
+  width: 250px;
+}
+
+.col-trip-planner {
+  width: max-content;
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 15px;
+}
+
+.img-trending-destination {
+  border-radius: 50px !important;
+  margin: auto;
+  height: 250px;
+  width: 250px;
+  /* width: fit-content; */
+}
+
+.img-trending-destination .crd-im {
+  object-fit: none;
+  height: 250px;
+  width: 250px;
+  cursor: pointer;
+  border-radius: 100% !important;
+}
+
+.col-trending-destination {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+@media screen and (max-width: 993px) {
+  .col-trending-destination {
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+}

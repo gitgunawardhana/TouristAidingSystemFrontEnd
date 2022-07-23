@@ -59,6 +59,11 @@ function SignInCom() {
                                                     <Link to="/createAccount"
                                                           className="fw-bold text-body">Register</Link>
                                                 </p>
+
+                                                <p className="text-center text-muted mt-2 mb-0">
+                                                    <Link to="/forgetPassword"
+                                                          className="fw-bold text-body">Forget Your Password ? </Link>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
