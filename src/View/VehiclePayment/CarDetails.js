@@ -4,6 +4,7 @@ import { Container, Row, Col } from "reactstrap";
 import FilteredCars from '../../Assets/Data/CarDataFilter.js'
 import Carimage from "../../Assets/Cars/Large.jpg";
 import Navbar from "../../Component/Navbar/Navbar.js";
+import Footer from "../../Component/Footer/Footer.js";
 import BookingForm from "../../Component/Vehicle_Payment_Booking_Form/BookingForm.js";
 import PaymentMethod from "../../Component/Vehicle_Payment_Payment_Method/PaymentMethod.js";
 import './CarDetails.css'
@@ -82,6 +83,7 @@ const CarDetails = () => {
                 </Container>
 
             </section>
+            <Footer />
 
 
         </>

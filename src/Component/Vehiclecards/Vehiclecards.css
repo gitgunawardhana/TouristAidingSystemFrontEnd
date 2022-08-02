@@ -1,0 +1,16 @@
+.car-imgbx {
+  position: relative;
+  border-radius: 30px;
+  /* overflow: hidden; */
+  margin-bottom: 24px;
+}
+
+.carsvariants {
+  padding: 80px 0;
+  position: relative;
+}
+
+#vehicleheading97 {
+  color: black;
+  padding: 10px 0 25px 0;
+}
