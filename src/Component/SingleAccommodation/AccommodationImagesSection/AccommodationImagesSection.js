@@ -1,9 +1,5 @@
-import Button from "@mui/material/Button";
-import Grid from "@mui/material/Grid";
-import Rating from "@mui/material/Rating";
 import React from "react";
-import { Link } from "react-router-dom";
-import "./FilteredLocationSection.css";
+import "./AccommodationImagesSection.css";
 
 import Granbell1 from "../../../Assets/FilteredAccommodations/GranbellHotelColombo/1.jpg";
 import Granbell2 from "../../../Assets/FilteredAccommodations/GranbellHotelColombo/2.jpg";
@@ -41,11 +37,13 @@ import MandarinaColombo3 from "../../../Assets/FilteredAccommodations/MandarinaC
 import MandarinaColombo5 from "../../../Assets/FilteredAccommodations/MandarinaColombo/4.jpg";
 import MandarinaColombo4 from "../../../Assets/FilteredAccommodations/MandarinaColombo/5.jpg";
 
-import Pagination from "@mui/material/Pagination";
-import Address from "../../../Assets/AccommodationFacilityIcons/address.png";
-import FreeCancellation from "../../../Assets/AccommodationFacilityIcons/free-cancellation.png";
-import PayAtProperty from "../../../Assets/AccommodationFacilityIcons/pay-at-property.png";
-import View from "../../../Assets/AccommodationFacilityIcons/view.png";
+import imageCover4 from "../../../Assets/SingleAccommodation/252324192.png";
+import imageCover1 from "../../../Assets/SingleAccommodation/252324202.png";
+import imageCover3 from "../../../Assets/SingleAccommodation/252324209.png";
+import imageCover6 from "../../../Assets/SingleAccommodation/252324213.png";
+import imageCover7 from "../../../Assets/SingleAccommodation/252324215.png";
+import imageCover5 from "../../../Assets/SingleAccommodation/252324226.png";
+import imageCover2 from "../../../Assets/SingleAccommodation/2523242991.png";
 
 function FilteredLocationSection() {
   const filteredLocations = [
@@ -213,162 +211,58 @@ function FilteredLocationSection() {
     },
   ];
   return (
-    <div className="filtered-location-section">
-      {filteredLocations.map((item) => (
-        <div className="filtered-single-location">
-          <Grid container spacing={0}>
-            <Grid item xs={4}>
-              <Grid container spacing={0}>
-                <Grid item xs={12}>
-                  <img
-                    width="100%"
-                    height="200px"
-                    src={item.images[0]}
-                    alt="Granbell Hotel Colombo"
-                  />
-                </Grid>
-                <Grid item xs={3}>
-                  <img
-                    width="100%"
-                    height="70px"
-                    src={item.images[1]}
-                    alt="Granbell Hotel Colombo"
-                  />
-                </Grid>
-                <Grid item xs={3}>
-                  <img
-                    width="100%"
-                    height="70px"
-                    src={item.images[2]}
-                    alt="Granbell Hotel Colombo"
-                  />
-                </Grid>
-                <Grid item xs={3}>
-                  <img
-                    width="100%"
-                    height="70px"
-                    src={item.images[3]}
-                    alt="Granbell Hotel Colombo"
-                  />
-                </Grid>
-                <Grid item xs={3}>
-                  <img
-                    width="100%"
-                    height="70px"
-                    src={item.images[4]}
-                    alt="Granbell Hotel Colombo"
-                  />
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid className="filtered-location-details" item xs={6}>
-              <div className="filtered-location-name">
-                <Link to={`/single-accommodation/${item.name}`}>
-                  {item.name}
-                </Link>
-              </div>
-              <div className="filtered-location-address">
-                <img src={Address} alt="Address" />
-                {item.address}
-              </div>
-              <div className="filtered-location-facilities">
-                {item.facilities.map((facility) => (
-                  <p className="filtered-location-single-facility">
-                    {facility}
-                  </p>
-                ))}
-              </div>
-              <div className="filtered-location-size">
-                Size - {item.size} sq feet
-              </div>
-              <div className="filtered-location-bed">{item.bed}</div>
-              <div className="filtered-location-description">
-                {item.description}
-              </div>
-              <div className="filtered-location-package-facilities">
-                <div
-                  className={
-                    item.freeCancellation
-                      ? "filtered-location-package-facility free-cancellation"
-                      : "filtered-location-package-facility free-cancellation hidden"
-                  }
-                >
-                  <img src={FreeCancellation} alt="Free Cancellation" />
-                  FREE CANCELLATION
-                </div>
-                <div
-                  className={
-                    item.payAtProperty
-                      ? "filtered-location-package-facility pay-at-property"
-                      : "filtered-location-package-facility pay-at-property hidden"
-                  }
-                >
-                  <img src={PayAtProperty} alt="Pay at Property" />
-                  PAY AT THE PROPERTY
-                </div>
-                <div className="filtered-location-package-facility view">
-                  <img src={View} alt="View" />
-                  {item.view} VIEW
-                </div>
-              </div>
-            </Grid>
-            <Grid item xs={2}>
-              <div className="filtered-location-review-price">
-                <Rating
-                  name="filtered-location-rating-stars"
-                  className="filtered-location-rating-stars"
-                  defaultValue={Math.round(item.rating / 2)}
-                  precision={0.5}
-                  readOnly
-                />
-                <Grid container spacing={0}>
-                  <Grid item xs={8}>
-                    <p className="filtered-location-rating-message">
-                      {item.ratingMessage}
-                    </p>
-                    <p className="filtered-location-rating-count">
-                      {item.ratingCount} Reviews
-                    </p>
-                  </Grid>
-                  <Grid item xs={4}>
-                    <div className="filtered-location-rating-flag">
-                      <p className="filtered-location-rating">{item.rating}</p>
-                    </div>
-                  </Grid>
-                </Grid>
-                <div
-                  className={
-                    item.discount === 0
-                      ? "filtered-location-discount hidden"
-                      : "filtered-location-discount"
-                  }
-                >
-                  {Math.round(item.discount * 100)}% DISCOUNT
-                </div>
-                <div
-                  className={
-                    item.discount === 0
-                      ? "filtered-location-price hidden"
-                      : "filtered-location-price"
-                  }
-                >
-                  Rs. {item.price}.00
-                </div>
-                <div className="filtered-location-discounted-price">
-                  Rs. {Math.round(item.price * (1 - item.discount))}.00
-                  <p>Taxes included</p>
-                </div>
-                <div className="filtered-location-people">2 Adults 1 Night</div>
-                <Button fullWidth variant="contained" size="small">
-                  See Availability
-                </Button>
-              </div>
-            </Grid>
-          </Grid>
+    <div className="div-img-cover">
+      <div class="row div-img-cover-sub">
+        <div class="col-lg-8 col-md-12 mb-0 ml-0 mr-0 mb-lg-0 pl-0 pr-0 pb-0 pt-0">
+          <img
+            src={imageCover1}
+            class="w-100 h-50 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
+            alt="Boat on Calm Water"
+          />
+
+          <img
+            src={imageCover2}
+            class="w-100 h-50 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
+            alt="Wintry Mountain Landscape"
+          />
         </div>
-      ))}
-      <div className="filtered-location-pagination">
-        <Pagination count={10} variant="outlined" shape="rounded" />
+        <div
+          class="col-lg-4 mb-0 ml-0 mr-0 mb-lg-0 pl-0 pr-0 pb-0 pt-0"
+          style={{ backgroundColor: "black" }}
+        >
+          <div className="row h-25 div-img-cover-sub">
+            <div class="col-lg-8 mb-0 ml-0 mr-0 mb-lg-0 pl-0 pr-0 pb-0 pt-0">
+              <img
+                src={imageCover4}
+                class="w-100 h-100 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
+                alt="Waves at Sea"
+              />
+            </div>
+            <div class="col-lg-4 mb-0 ml-0 mr-0 mb-lg-0 pl-0 pr-0 pb-0 pt-0">
+              <img
+                src={imageCover5}
+                class="w-100 h-50 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
+                alt="Waves at Sea"
+              />
+              <img
+                src={imageCover6}
+                class="w-100 h-50 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
+                alt="Waves at Sea"
+              />
+            </div>
+          </div>
+          <img
+            src={imageCover3}
+            class="w-100 h-25 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
+            alt="Waves at Sea"
+          />
+          <img
+            src={imageCover7}
+            class="w-100 h-50 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
+            alt="Waves at Sea"
+            style={{ opacity: ".3" }}
+          />
+        </div>
       </div>
     </div>
   );

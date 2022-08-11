@@ -23,11 +23,12 @@ import Profile from "./View/Profile/Profile";
 import Security from "./View/Security/Security";
 import SignIn from "./View/SignIn/SignIn";
 import SignUp from "./View/SignInOrCreateAccount/SignUp";
+import SingleAccommodation from "./View/SingleAccommodation/SingleAccommodation";
 import TripPlanner from "./View/TripPlanner/TripPlanner";
 import Vehicle from "./View/Vehicle/Vehicle";
 
-import Vehicle_Home from '../src/View/Vehicle_Home/Car_Home.js'
-import Vehicle_Payment from '../src/View/Vehicle_Payment/CarDetails.js'
+import Vehicle_Home from "../src/View/Vehicle_Home/Car_Home.js";
+import Vehicle_Payment from "../src/View/Vehicle_Payment/CarDetails.js";
 function App() {
   return (
     <>
@@ -65,15 +66,12 @@ function App() {
           <Route path="/createNewPassword" element={<CreateNewPassword />} />
           <Route path="/checkYourEmail" element={<CheckYourEmail />} />
           <Route path="/vehicles" element={<Vehicle_Home />} />
+          <Route path="/vehicles-filter" element={<Vehicle />} />
+          <Route path="/vehicles-filter/:slug" element={<Vehicle_Payment />} />
           <Route
-            path="/vehicles-filter"
-            element={<Vehicle />}
+            path="/single-accommodation/:name"
+            element={<SingleAccommodation />}
           />
-          <Route
-            path="/vehicles-filter/:slug"
-            element={<Vehicle_Payment />}
-          />
-
         </Routes>
       </Router>
     </>
