@@ -8,8 +8,9 @@ const BookingForm = () => {
     }
     return (
         <Form onSubmit={submitHandler}>
+
             <FormGroup className='booking_form d-inline-block me-4 mb-4'>
-                <input type="text" placeholder='First Name' />
+                <input type="text" placeholder='First Name'  />
             </FormGroup>
             <FormGroup className='booking_form d-inline-block ms-1 mb-4'>
                 <input type="text" placeholder='Last Name' />
