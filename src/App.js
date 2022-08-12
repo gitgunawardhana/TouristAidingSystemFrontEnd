@@ -28,6 +28,7 @@ import Vehicle from "./View/Vehicle/Vehicle";
 // import VenderType from "./View/VenderType/VenderType";
 import CarHome from "./View/VehicleHome/CarHome";
 import CarDetails from "./View/VehiclePayment/CarDetails";
+import SingleAccommodationBooking from "./View/SingleAccommodationBooking/SingleAccomadationBooking";
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
           <Route path="/vehicles" element={<CarHome/>}/>
           <Route path="/vehicles-filter" element={<Vehicle />}/>
           <Route path="/vehicles-filter/:slug" element={<CarDetails/>}/>
+          <Route path="/singleAccommodationBooking" element={<SingleAccommodationBooking/>}/>
 
         </Routes>
       </Router>
