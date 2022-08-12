@@ -1,0 +1,32 @@
+.booking-details-section{
+    /*width: 30%;*/
+    padding: 15px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    margin-left: 20px;
+}
+.booking-details-heading{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+}
+.check-in{
+    font-size: 18px;
+}
+.check-in-day{
+    font-weight: bold;
+    font-size: 18px;
+}
+.check-in-time{
+    font-size: 18px;
+}
+.padding-bot{
+    margin-bottom: 10px;
+}
+.vertical-rule{
+    margin-top: 20px;
+    height: 100px;
+}
+.total-day{
+    font-size: 18px;
+}

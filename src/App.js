@@ -28,7 +28,7 @@ import Vehicle from "./View/Vehicle/Vehicle";
 // import VenderType from "./View/VenderType/VenderType";
 import CarHome from "./View/VehicleHome/CarHome";
 import CarDetails from "./View/VehiclePayment/CarDetails";
-import SingleAccommodationBooking from "./View/SingleAccommodationBooking/SingleAccomadationBooking";
+import SingleAccommodationBooking from "./View/SingleAccommodationBooking/SingleAccommodationBooking";
 
 function App() {
   return (
