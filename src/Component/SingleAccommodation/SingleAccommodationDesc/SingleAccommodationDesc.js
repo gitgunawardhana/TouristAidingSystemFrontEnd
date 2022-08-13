@@ -51,7 +51,6 @@ function SingleAccommodationDesc(params) {
           {accommodationDetails[0].description}
           {accommodationDetails[0].description}
           {accommodationDetails[0].description}
-          {accommodationDetails[0].description}
         </p>
       </div>
     </div>

@@ -262,6 +262,13 @@ function FilteredLocationSection() {
             alt="Waves at Sea"
             style={{ opacity: ".3" }}
           />
+          <div class="centered">
+            <span
+              style={{ color: "white", fontSize: "30px", fontWeight: "700" }}
+            >
+              +25 Photos
+            </span>
+          </div>
         </div>
       </div>
     </div>
