@@ -10,6 +10,7 @@ import UserDetailsComp from "../../Component/SingleAccommodationBooking/UserDeta
 import "./SingleAccommodationBooking.css"
 import ArrivalTime from "../../Component/SingleAccommodationBooking/ArrivalTime/ArrivalTime";
 import PriceComp from "../../Component/SingleAccommodationBooking/PriceComp/PriceComp";
+import PaymentComp from "../../Component/SingleAccommodationBooking/PaymentComp/PaymentComp";
 
 function SingleAccommodationBooking() {
     return (
@@ -21,6 +22,7 @@ function SingleAccommodationBooking() {
                     <Item className="item-margin">
                         <BookingDetailsComp />
                         <PriceComp/>
+                        <PaymentComp/>
                     </Item>
                 </Grid>
                 <Grid item xs={6} md={8}>
