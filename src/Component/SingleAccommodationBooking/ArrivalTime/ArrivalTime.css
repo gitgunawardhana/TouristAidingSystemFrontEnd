@@ -1,0 +1,25 @@
+.arrival-time-div{
+    width: 90%;
+    padding: 15px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.arrival-details-heading{
+    font-weight: bold;
+    font-size: 20px;
+
+}
+.check-between-para{
+    font-size: 15px;
+}
+.input-time-arrivel{
+    width: 20%;
+    margin-left: 20px;
+    border-radius: 6px;
+    border-color: #d1d2db;
+    height: 30px;
+}
+.arrival-time-form{
+    margin-top: 20px;
+}

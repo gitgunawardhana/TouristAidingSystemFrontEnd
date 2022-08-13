@@ -8,6 +8,8 @@ import Grid from "@mui/material/Grid";
 import Item from "@mui/material/Grid";
 import UserDetailsComp from "../../Component/SingleAccommodationBooking/UserDetailsComp/UserDetailsComp";
 import "./SingleAccommodationBooking.css"
+import ArrivalTime from "../../Component/SingleAccommodationBooking/ArrivalTime/ArrivalTime";
+import PriceComp from "../../Component/SingleAccommodationBooking/PriceComp/PriceComp";
 
 function SingleAccommodationBooking() {
     return (
@@ -18,12 +20,14 @@ function SingleAccommodationBooking() {
                 <Grid item xs={6} md={4}>
                     <Item className="item-margin">
                         <BookingDetailsComp />
+                        <PriceComp/>
                     </Item>
                 </Grid>
                 <Grid item xs={6} md={8}>
                     <Item className="item-margin">
                         <HotelDetailsComp/>
                         <UserDetailsComp/>
+                        <ArrivalTime/>
 
                     </Item>
                 </Grid>
