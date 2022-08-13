@@ -1,0 +1,19 @@
+#innerCss {
+  width: fit-content;
+  margin: 60px auto;
+}
+
+#mypaper {
+  border-radius: 25;
+}
+
+#customermedia1 {
+  object-fit: scale-down;
+}
+
+#contentmine {
+  text-align: center;
+  font-weight: normal;
+  white-space: nowrap;
+  color: #1e3d3e;
+}

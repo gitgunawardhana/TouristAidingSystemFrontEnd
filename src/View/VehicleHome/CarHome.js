@@ -7,16 +7,19 @@ import Register from "../../Component/Register/Register.js";
 import Faq from "../../Component/CarHomeFAQSection/Faq.js";
 import Footer from "../../Component/Footer/Footer.js";
 import Navbar from "../../Component/Navbar/Navbar.js"
+import VehicleHomePaper from "../../Component/vehicleHomePaperCards/vehicleHomePaper.js"
+import Vehicletypes from '../../Component/Vehiclecards/Vehicletypes.js';
+import AccordianVehicle from '../../Component/AccordianVehiclehome/AccordianVehicle.js';
 
 const CarHome = () => {
   return (
     <>
       <Navbar />
       <Hero />
-      <Register />
-      <Find />
-      <Faq />
-      <Footer/>
+      <VehicleHomePaper />
+      <Vehicletypes />
+      <AccordianVehicle />
+      <Footer />
     </>
   )
 }

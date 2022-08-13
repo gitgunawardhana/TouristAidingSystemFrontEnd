@@ -4,11 +4,11 @@ import { Container, Row, Col } from "reactstrap";
 import FilteredCars from '../../Assets/Data/CarDataFilter.js'
 import Carimage from "../../Assets/Cars/Large.jpg";
 import Navbar from "../../Component/Navbar/Navbar.js";
+import Footer from "../../Component/Footer/Footer.js";
 import BookingForm from "../../Component/Vehicle_Payment_Booking_Form/BookingForm.js";
 import PaymentMethod from "../../Component/Vehicle_Payment_Payment_Method/PaymentMethod.js";
 import './CarDetails.css'
 import { useParams } from "react-router-dom";
-import Footer from "../../Component/Footer/Footer";
 const CarDetails = () => {
     const { slug } = useParams()
     const singleCarItem = FilteredCars.find(item => item.name == slug);
@@ -83,7 +83,9 @@ const CarDetails = () => {
                 </Container>
 
             </section>
-            <Footer/>
+            <Footer />
+
+
         </>
     );
 };
