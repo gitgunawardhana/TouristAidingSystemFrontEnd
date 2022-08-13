@@ -1,0 +1,16 @@
+.complete-btn{
+    background-color: #03676E;
+    border-radius: 6px;
+    width: 150px;
+    color: white;
+    height: 30px;
+
+}
+.complete-booking-btn{
+    margin-bottom: 20px;
+    text-align: right;
+
+}
+.complete-booking-div{
+    width: 90%;
+}

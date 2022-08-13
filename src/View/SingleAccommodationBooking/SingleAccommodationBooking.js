@@ -11,6 +11,9 @@ import "./SingleAccommodationBooking.css"
 import ArrivalTime from "../../Component/SingleAccommodationBooking/ArrivalTime/ArrivalTime";
 import PriceComp from "../../Component/SingleAccommodationBooking/PriceComp/PriceComp";
 import PaymentComp from "../../Component/SingleAccommodationBooking/PaymentComp/PaymentComp";
+import CompleteBookingBtnComp
+    from "../../Component/SingleAccommodationBooking/CompleteBookingBtnComp/CompleteBookingBtnComp";
+import BookingCancelComp from "../../Component/SingleAccommodationBooking/BookingCancelComp/BookingCancelComp";
 
 function SingleAccommodationBooking() {
     return (
@@ -23,6 +26,7 @@ function SingleAccommodationBooking() {
                         <BookingDetailsComp />
                         <PriceComp/>
                         <PaymentComp/>
+                        <BookingCancelComp/>
                     </Item>
                 </Grid>
                 <Grid item xs={6} md={8}>
@@ -30,6 +34,7 @@ function SingleAccommodationBooking() {
                         <HotelDetailsComp/>
                         <UserDetailsComp/>
                         <ArrivalTime/>
+                        <CompleteBookingBtnComp/>
 
                     </Item>
                 </Grid>
