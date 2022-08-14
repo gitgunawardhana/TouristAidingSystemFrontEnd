@@ -7,13 +7,13 @@ import {
 } from "react-icons/io";
 import "./ImageModel.css";
 
-import imageCover4 from "../../../Assets/SingleAccommodation/252324192.png";
-import imageCover1 from "../../../Assets/SingleAccommodation/252324202.png";
-import imageCover3 from "../../../Assets/SingleAccommodation/252324209.png";
-import imageCover6 from "../../../Assets/SingleAccommodation/252324213.png";
-import imageCover7 from "../../../Assets/SingleAccommodation/252324215.png";
-import imageCover5 from "../../../Assets/SingleAccommodation/252324226.png";
-import imageCover2 from "../../../Assets/SingleAccommodation/2523242991.png";
+import imageCover4 from "../../../Assets/SingleAccommodation/252324192_1.png";
+import imageCover1 from "../../../Assets/SingleAccommodation/252324202_1.png";
+import imageCover3 from "../../../Assets/SingleAccommodation/252324209_1.png";
+import imageCover6 from "../../../Assets/SingleAccommodation/252324213_1.png";
+import imageCover7 from "../../../Assets/SingleAccommodation/252324215_1.png";
+import imageCover5 from "../../../Assets/SingleAccommodation/252324226_1.png";
+import imageCover2 from "../../../Assets/SingleAccommodation/252324299_1.png";
 
 const imgList = [
   imageCover1,
