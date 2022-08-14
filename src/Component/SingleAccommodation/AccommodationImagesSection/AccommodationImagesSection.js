@@ -286,7 +286,13 @@ function FilteredLocationSection() {
           />
           <div class="centered">
             <span
-              style={{ color: "white", fontSize: "30px", fontWeight: "700" }}
+              style={{
+                color: "white",
+                fontSize: "30px",
+                fontWeight: "700",
+                marginTop: "70px",
+                marginLeft: "-5px",
+              }}
             >
               +25 Photos
             </span>
