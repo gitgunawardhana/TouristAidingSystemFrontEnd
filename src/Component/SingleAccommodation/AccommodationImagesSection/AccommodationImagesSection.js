@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./AccommodationImagesSection.css";
+import ImageModel from "./ImageModel";
 
 import Granbell1 from "../../../Assets/FilteredAccommodations/GranbellHotelColombo/1.jpg";
 import Granbell2 from "../../../Assets/FilteredAccommodations/GranbellHotelColombo/2.jpg";
@@ -210,17 +211,33 @@ function FilteredLocationSection() {
       price: 74000.0,
     },
   ];
+
+  const [clickedImg, setClickedImg] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(null);
+
+  const handelClick = (imageItem, index) => {
+    setClickedImg(imageItem);
+    setCurrentIndex(index);
+    handleOpen();
+  };
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <div className="div-img-cover">
       <div class="row div-img-cover-sub">
         <div class="col-lg-8 col-md-12 mb-0 ml-0 mr-0 mb-lg-0 pl-0 pr-0 pb-0 pt-0">
           <img
+            onClick={() => handelClick(imageCover1, 0)}
             src={imageCover1}
             class="w-100 h-50 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
             alt="Boat on Calm Water"
           />
 
           <img
+            onClick={() => handelClick(imageCover2, 1)}
             src={imageCover2}
             class="w-100 h-50 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
             alt="Wintry Mountain Landscape"
@@ -233,6 +250,7 @@ function FilteredLocationSection() {
           <div className="row h-25 div-img-cover-sub">
             <div class="col-lg-8 mb-0 ml-0 mr-0 mb-lg-0 pl-0 pr-0 pb-0 pt-0">
               <img
+                onClick={() => handelClick(imageCover4, 3)}
                 src={imageCover4}
                 class="w-100 h-100 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
                 alt="Waves at Sea"
@@ -240,11 +258,13 @@ function FilteredLocationSection() {
             </div>
             <div class="col-lg-4 mb-0 ml-0 mr-0 mb-lg-0 pl-0 pr-0 pb-0 pt-0">
               <img
+                onClick={() => handelClick(imageCover5, 4)}
                 src={imageCover5}
                 class="w-100 h-50 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
                 alt="Waves at Sea"
               />
               <img
+                onClick={() => handelClick(imageCover6, 5)}
                 src={imageCover6}
                 class="w-100 h-50 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
                 alt="Waves at Sea"
@@ -252,11 +272,13 @@ function FilteredLocationSection() {
             </div>
           </div>
           <img
+            onClick={() => handelClick(imageCover3, 2)}
             src={imageCover3}
             class="w-100 h-25 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
             alt="Waves at Sea"
           />
           <img
+            onClick={() => handelClick(imageCover7, 6)}
             src={imageCover7}
             class="w-100 h-50 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
             alt="Waves at Sea"
@@ -271,6 +293,16 @@ function FilteredLocationSection() {
           </div>
         </div>
       </div>
+
+      {clickedImg && (
+        <ImageModel
+          handleClose={handleClose}
+          open={open}
+          clickedImg={clickedImg}
+          currentIndex={currentIndex}
+          setClickedImg={setClickedImg}
+        ></ImageModel>
+      )}
     </div>
   );
 }
