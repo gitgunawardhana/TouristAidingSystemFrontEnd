@@ -17,7 +17,11 @@ function ButtonBar() {
 
   return (
     <>
-      <div data-aos="fade-up" className="buttonBar buttonBar1">
+      <div
+        data-aos="fade-up"
+        className="buttonBar buttonBar1"
+        style={{ marginTop: "150px" }}
+      >
         <div className="button" id="button1">
           <div className="button-icon">
             <img src={Trip_Planner} alt="" />
