@@ -50,7 +50,7 @@ function Carousel(props) {
     Aos.init({ duration: 2000 });
   }, []);
 
-  console.log(2, menuItems);
+  // console.log(2, menuItems);
   return (
     <>
       <div className="container" data-aos="fade-up">
@@ -72,10 +72,10 @@ function Carousel(props) {
           {props.subHeading}
         </p>
         <Slider {...settings}>
-          {menuItems.map((items) => {
+          {menuItems.map((items, keyId) => {
             const { id, image, activityName } = items;
             return (
-              <div className="col-md-3 mb-3 im-outer-div">
+              <div key={keyId} className="col-md-3 mb-3 im-outer-div">
                 <div className="card im" style={{ marginTop: "15px" }}>
                   <Link className="nav-to-place" to={`/location/${id}`}>
                     <img

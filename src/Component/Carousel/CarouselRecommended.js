@@ -65,11 +65,11 @@ function CarouselRecommended(props) {
     Aos.init({ duration: 2000 });
   }, []);
 
-  console.log(2, menuItems);
+  // console.log(2, menuItems);
   return (
     <>
       <div className="container" data-aos="fade-up">
-        {console.log(menuItems)}
+        {/* {console.log(menuItems)} */}
         <h2
           className="text-center"
           style={{
@@ -88,16 +88,16 @@ function CarouselRecommended(props) {
           {props.subHeading}
         </p>
         <Slider {...settings}>
-          {menuItems.map((items) => {
+          {menuItems.map((items, keyId) => {
             const { id, description, name } = items;
             return (
-              <div className="col-md-3 mb-3 im-outer-div">
+              <div key={keyId} className="col-md-3 mb-3 im-outer-div">
                 <div className="card im" style={{ marginTop: "15px" }}>
                   <Link className="nav-to-place" to={`/location/${id}`}>
                     <img
                       className="card img-fluid w-100 hover-shadow"
                       alt={name}
-                      src={`http://localhost:8080/file/image/location/location-id/${id}`}
+                      src={`http://localhost:8080/file/image1/location/location-id/${id}`}
                       style={{ objectFit: "cover" }}
                     />
                   </Link>
@@ -105,7 +105,9 @@ function CarouselRecommended(props) {
                     <Link className="nav-to-place" to={`/location/${id}`}>
                       <h4 className="card-title">{name}</h4>
                     </Link>
-                    <p className="card-text">{description}</p>
+                    {/* <p className="card-text" style={{ height: "130px" }}>
+                      {description}
+                    </p> */}
                   </div>
                 </div>
               </div>

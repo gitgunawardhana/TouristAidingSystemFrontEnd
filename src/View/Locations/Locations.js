@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { TbArrowBarDown, TbArrowBarUp } from "react-icons/tb";
 import Carousel from "../../Component/Carousel/Carousel";
 import CarouselRecommended from "../../Component/Carousel/CarouselRecommended";
-import favoriteDataList from "../../Component/FavoriteDataList";
+import favoriteDataList1 from "../../Component/FavoriteDataList";
 import Footer from "../../Component/Footer/Footer";
 import FavoritePlaces from "../../Component/ImageGalleryWithDescription/ImageGalleryWithDescription";
 import Navbar from "../../Component/Navbar/Navbar";
@@ -20,10 +20,11 @@ function Location() {
 
   const [thingsToDoDataList, setThingsToDoDataList] = useState([]);
   const [recommendedDataList, setRecommendedDataList] = useState([]);
+  const [favoriteDataList, setFavoriteDataList] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/admin/activity")
+      .get("http://localhost:8080/public-user/activity")
       .then((res1) => {
         setThingsToDoDataList(res1.data.body);
       })
@@ -34,9 +35,10 @@ function Location() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/admin/location")
+      .get("http://localhost:8080/public-user/location")
       .then((res2) => {
         setRecommendedDataList(res2.data.body);
+        setFavoriteDataList(res2.data.body);
       })
       .catch((err2) => {
         console.log(err2);
@@ -76,8 +78,8 @@ function Location() {
 
   return (
     <div className="loaction-page">
-      {console.log(thingsToDoDataList)}
-      {console.log(recommendedDataList)}
+      {console.log(favoriteDataList1)}
+      {console.log(favoriteDataList)}
       <Navbar></Navbar>
       <h1 className="heading main-heading" style={{ "margin-top": "60px" }}>
         Places to Visit in <span className="sp-sri-lanka">Sri Lanka</span>
