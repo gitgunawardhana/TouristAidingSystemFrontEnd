@@ -5,7 +5,22 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "./Carousel.css";
 
-function Carousel(props) {
+import galle from "../../Assets/ThingsToDo/Galle.png";
+import kandy from "../../Assets/ThingsToDo/Kandy.png";
+
+const imageList = [
+  {
+    id: 1,
+    image: galle,
+  },
+  ,
+  {
+    id: 2,
+    image: kandy,
+  },
+];
+
+function CarouselRecommended(props) {
   var settings = {
     dots: true,
     infinite: false,
@@ -54,6 +69,7 @@ function Carousel(props) {
   return (
     <>
       <div className="container" data-aos="fade-up">
+        {console.log(menuItems)}
         <h2
           className="text-center"
           style={{
@@ -73,23 +89,23 @@ function Carousel(props) {
         </p>
         <Slider {...settings}>
           {menuItems.map((items) => {
-            const { id, image, activityName } = items;
+            const { id, description, name } = items;
             return (
               <div className="col-md-3 mb-3 im-outer-div">
                 <div className="card im" style={{ marginTop: "15px" }}>
                   <Link className="nav-to-place" to={`/location/${id}`}>
                     <img
                       className="card img-fluid w-100 hover-shadow"
-                      alt={activityName}
-                      src={image}
+                      alt={name}
+                      src={`http://localhost:8080/file/image/location/location-id/${id}`}
                       style={{ objectFit: "cover" }}
                     />
                   </Link>
                   <div className="card-body">
                     <Link className="nav-to-place" to={`/location/${id}`}>
-                      <h4 className="card-title">{activityName}</h4>
+                      <h4 className="card-title">{name}</h4>
                     </Link>
-                    {/* <p className="card-text">{activityName}</p> */}
+                    <p className="card-text">{description}</p>
                   </div>
                 </div>
               </div>
@@ -101,4 +117,4 @@ function Carousel(props) {
   );
 }
 
-export default Carousel;
+export default CarouselRecommended;

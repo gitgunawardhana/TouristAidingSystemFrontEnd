@@ -1,21 +1,47 @@
 import Aos from "aos";
 import "aos/dist/aos.css";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { TbArrowBarDown, TbArrowBarUp } from "react-icons/tb";
 import Carousel from "../../Component/Carousel/Carousel";
+import CarouselRecommended from "../../Component/Carousel/CarouselRecommended";
 import favoriteDataList from "../../Component/FavoriteDataList";
+import Footer from "../../Component/Footer/Footer";
 import FavoritePlaces from "../../Component/ImageGalleryWithDescription/ImageGalleryWithDescription";
 import Navbar from "../../Component/Navbar/Navbar";
-import RecommendedDataList from "../../Component/RecommendedDataList";
+// import RecommendedDataList from "../../Component/RecommendedDataList";
 import SearchBar from "../../Component/SearchBar/SearchBar";
-import ThingsToDoDataList from "../../Component/ThingsToDoDataList";
 import "./Locations.css";
-import Footer from "../../Component/Footer/Footer";
 
 function Location() {
   const [visible, setVisible] = useState(8);
   const [disableAll, setDisableAll] = useState(true);
   const [disableLess, setDisableLess] = useState(true);
+
+  const [thingsToDoDataList, setThingsToDoDataList] = useState([]);
+  const [recommendedDataList, setRecommendedDataList] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/admin/activity")
+      .then((res1) => {
+        setThingsToDoDataList(res1.data.body);
+      })
+      .catch((err1) => {
+        console.log(err1);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/admin/location")
+      .then((res2) => {
+        setRecommendedDataList(res2.data.body);
+      })
+      .catch((err2) => {
+        console.log(err2);
+      });
+  }, []);
 
   const seeAll = () => {
     setVisible((prevValue) => {
@@ -50,6 +76,8 @@ function Location() {
 
   return (
     <div className="loaction-page">
+      {console.log(thingsToDoDataList)}
+      {console.log(recommendedDataList)}
       <Navbar></Navbar>
       <h1 className="heading main-heading" style={{ "margin-top": "60px" }}>
         Places to Visit in <span className="sp-sri-lanka">Sri Lanka</span>
@@ -61,14 +89,14 @@ function Location() {
         slidesToShowScroll={4}
         heading="Things To Do"
         subHeading=""
-        dataList={ThingsToDoDataList}
+        dataList={thingsToDoDataList}
       ></Carousel>
-      <Carousel
+      <CarouselRecommended
         slidesToShowScroll={3}
         heading="Recommended Locations"
         subHeading="Lorem ipsum dolor, sit amet consectetur adipisic."
-        dataList={RecommendedDataList}
-      ></Carousel>
+        dataList={recommendedDataList}
+      ></CarouselRecommended>
       <div
         data-aos="fade-up"
         className="container-fluid"
@@ -119,7 +147,7 @@ function Location() {
       >
         See all
       </button> */}
-      <Footer/>
+      <Footer />
     </div>
   );
 }
