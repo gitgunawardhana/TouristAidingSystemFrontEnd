@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import emptyImage from "../../Assets/emptyImage.png";
 import "./AllLocationCardView.css";
 
 function AllLocationCardView(props) {
-  // useEffect(() => {
-  //   console.log(props.dataList);
-  // }, [props.dataList]);
+  const [locationDataList, setLocationDataList] = useState(props.dataList);
+  // console.log(covers);
+
+  useEffect(() => {
+    setLocationDataList(props.dataList);
+  });
 
   return (
     <div>
@@ -45,12 +48,16 @@ function AllLocationCardView(props) {
               <div className="row no-gutters card-transition">
                 <div className="col-sm-5">
                   <Link className="nav-to-place" to={`/location/${item.id}`}>
-                    <img
-                      className="card-img"
-                      src={item.image}
-                      alt={item.title}
-                      onClick="window.location.reload();"
-                    />
+                    <div className="crd-img-div-size">
+                      <img
+                        className="card-img"
+                        src={`http://localhost:8080/file/images/location/location-id/${
+                          item.id
+                        }/${1}`}
+                        alt={item.name}
+                        onClick="window.location.reload();"
+                      />
+                    </div>
                   </Link>
                 </div>
                 <div className="col-sm-7">
@@ -60,7 +67,7 @@ function AllLocationCardView(props) {
                         className="card-title"
                         onClick="window.location.reload();"
                       >
-                        {item.title}
+                        {item.name}
                       </h5>
                     </Link>
                     <p className="card-text">
@@ -78,7 +85,7 @@ function AllLocationCardView(props) {
                       </Link>
                     </p>
                     <hr />
-                    <div className="btn btn-primary btn-map">
+                    <div className="btn btn-primary btn-map btn-fit-content-cls">
                       <div className="span text-center">
                         <div>MAP&nbsp;</div>
                         <div className="btn-value">

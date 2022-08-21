@@ -19,7 +19,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/public-user/location")
+      .get("http://localhost:8080/public-user/location/top-locations")
       .then((res) => {
         setTopLocationDataList(res.data.body);
       })
