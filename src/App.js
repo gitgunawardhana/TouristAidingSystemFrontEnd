@@ -36,7 +36,7 @@ function App() {
         <ScrollToTop></ScrollToTop>
         <Routes>
           <Route path="/" exact element={<Home />} />
-          <Route path="/locations" element={<Location />} />
+          <Route path="/locations" element={<Locations />} />
           <Route path="/accommodations" element={<Accommodation />} />
           <Route
             path="/accommodations-filter"
