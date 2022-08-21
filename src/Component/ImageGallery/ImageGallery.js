@@ -31,7 +31,7 @@ function TopLocation(props) {
                 </div>
 
                 <img
-                  src={`http://localhost:8080/file/image2/location/location-id/${id}`}
+                  src={`http://localhost:8080/file/images/location/location-id/${id}/2`}
                   alt=""
                   className="img-location hover-zoom"
                 />

@@ -35,7 +35,7 @@ function TopLocation(props) {
                       >
                         <img
                           className=""
-                          src={`http://localhost:8080/file/image2/location/location-id/${items.id}`}
+                          src={`http://localhost:8080/file/images/location/location-id/${items.id}/2`}
                           alt=""
                         />
                       </Link>

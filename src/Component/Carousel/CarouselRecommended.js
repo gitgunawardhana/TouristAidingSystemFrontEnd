@@ -97,7 +97,7 @@ function CarouselRecommended(props) {
                     <img
                       className="card img-fluid w-100 hover-shadow"
                       alt={name}
-                      src={`http://localhost:8080/file/image1/location/location-id/${id}`}
+                      src={`http://localhost:8080/file/images/location/location-id/${id}/0`}
                       style={{ objectFit: "cover" }}
                     />
                   </Link>
