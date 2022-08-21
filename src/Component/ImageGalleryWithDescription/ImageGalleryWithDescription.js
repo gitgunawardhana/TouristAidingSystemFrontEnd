@@ -11,16 +11,20 @@ function TopLocation(props) {
   // setMenuItems(locationData);
 
   useEffect(() => {
+    setMenuItems(props.dataList);
+  });
+
+  useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
 
   return (
     <>
       <div className="card-list-2 container-fluid">
-        {menuItems.slice(0, props.visibleValue).map((items) => {
+        {menuItems.slice(0, props.visibleValue).map((items, keyId) => {
           return (
             <>
-              <div data-aos="fade-up" className="container-custom">
+              <div key={keyId} data-aos="fade-up" className="container-custom">
                 <div className="d-lg-flex">
                   <div className="card border-0 me-lg-4 mb-lg-0 mb-4 card-custom">
                     <div className="backgroundEffect"></div>
@@ -29,10 +33,14 @@ function TopLocation(props) {
                         className="nav-to-place"
                         to={`/location/${items.id}`}
                       >
-                        <img className="" src={items.image} alt="" />
+                        <img
+                          className=""
+                          src={`http://localhost:8080/file/images/location/location-id/${items.id}/2`}
+                          alt=""
+                        />
                       </Link>
                       <div className="date">
-                        <span className="day">{items.id}</span>{" "}
+                        <span className="day">{keyId + 1}</span>{" "}
                         {/* <span className="month"> {favorite}</span>
                     <span className="year">
                       <MdFavorite classNameName="fav-icon" />
@@ -45,10 +53,15 @@ function TopLocation(props) {
                         to={`/location/${items.id}`}
                       >
                         <p className="h-1 mt-4">
-                          {items.id} {items.title}
+                          {keyId + 1} {items.name}
                         </p>
                       </Link>
-                      <p className="text-muted mt-3">{items.description}</p>
+                      <p
+                        className="text-muted mt-3"
+                        style={{ height: "130px" }}
+                      >
+                        {items.description}
+                      </p>
                       <div className="d-flex align-items-center justify-content-between mt-3 pb-3">
                         <Link
                           className="nav-to-place"

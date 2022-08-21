@@ -74,3 +74,7 @@
   opacity: 1;
   right: 0;
 }
+
+.btn-fit-content-cls {
+  width: fit-content;
+}

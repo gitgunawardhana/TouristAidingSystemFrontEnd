@@ -32,3 +32,9 @@
 .nav-to-place {
   text-decoration: none;
 }
+
+.crd-img-div-size {
+  height: 250px;
+  overflow: hidden;
+  border-radius: 15px 0px 0px 15px;
+}

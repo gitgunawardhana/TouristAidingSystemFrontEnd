@@ -2,10 +2,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Accommodation from "../../Assets/Accommodation.png";
-import Calculator from "../../Assets/Calculator.png";
-import Date from "../../Assets/Date.png";
 import Location from "../../Assets/Location.png";
-import Placeholder from "../../Assets/Placeholder.png";
 import Trip_Planner from "../../Assets/Trip_Planner.png";
 import Vehicle from "../../Assets/Vehicle.png";
 import "./ButtonBar.css";
@@ -17,7 +14,11 @@ function ButtonBar() {
 
   return (
     <>
-      <div data-aos="fade-up" className="buttonBar buttonBar1">
+      <div
+        data-aos="fade-up"
+        className="buttonBar buttonBar1"
+        style={{ marginTop: "150px", marginBottom: "80px" }}
+      >
         <div className="button" id="button1">
           <div className="button-icon">
             <img src={Trip_Planner} alt="" />
@@ -51,7 +52,7 @@ function ButtonBar() {
           </div>
         </div>
       </div>
-      <div data-aos="fade-down" className="buttonBar buttonBar2">
+      {/* <div data-aos="fade-down" className="buttonBar buttonBar2">
         <div className="button" id="button1">
           <div className="button-icon">
             <img src={Placeholder} alt="" />
@@ -76,7 +77,7 @@ function ButtonBar() {
             </h6>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

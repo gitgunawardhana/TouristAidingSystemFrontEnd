@@ -1,27 +1,65 @@
 import Aos from "aos";
 import "aos/dist/aos.css";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { TbArrowBarDown, TbArrowBarUp } from "react-icons/tb";
-import Carousel from "../../Component/Carousel/Carousel";
-import favoriteDataList from "../../Component/FavoriteDataList";
-import FavoritePlaces from "../../Component/ImageGalleryWithDescription/ImageGalleryWithDescription";
-import Navbar from "../../Component/Navbar/Navbar";
-import RecommendedDataList from "../../Component/RecommendedDataList";
-import SearchBar from "../../Component/SearchBar/SearchBar";
-import ThingsToDoDataList from "../../Component/ThingsToDoDataList";
-import "./Locations.css";
+import CarouselThingsToDo from "../../Component/Carousel/Carousel";
+import CarouselRecommended from "../../Component/Carousel/CarouselRecommended";
+import attractionDataList1 from "../../Component/FavoriteDataList";
 import Footer from "../../Component/Footer/Footer";
+import AttractionPlaces from "../../Component/ImageGalleryWithDescription/ImageGalleryWithDescription";
+import Navbar from "../../Component/Navbar/Navbar";
+// import RecommendedDataList from "../../Component/RecommendedDataList";
+import SearchBar from "../../Component/SearchBar/SearchBar";
+import "./Locations.css";
 
 function Location() {
   const [visible, setVisible] = useState(8);
   const [disableAll, setDisableAll] = useState(true);
   const [disableLess, setDisableLess] = useState(true);
 
+  const [thingsToDoDataList, setThingsToDoDataList] = useState([]);
+  const [recommendedDataList, setRecommendedDataList] = useState([]);
+  const [attractionDataList, setAttractionsDataList] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/public-user/activity/all-activities")
+      .then((res1) => {
+        setThingsToDoDataList(res1.data.body);
+      })
+      .catch((err1) => {
+        console.log(err1);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/public-user/location/all-locations")
+      .then((res2) => {
+        setAttractionsDataList(res2.data.body);
+      })
+      .catch((err2) => {
+        console.log(err2);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/public-user/location/top-locations")
+      .then((res2) => {
+        setRecommendedDataList(res2.data.body);
+      })
+      .catch((err2) => {
+        console.log(err2);
+      });
+  }, []);
+
   const seeAll = () => {
     setVisible((prevValue) => {
-      if (favoriteDataList.length <= prevValue) {
+      if (attractionDataList.length <= prevValue) {
         setDisableAll(false);
-        return favoriteDataList.length;
+        return attractionDataList.length;
       } else {
         setDisableLess(true);
         return prevValue + 4;
@@ -36,8 +74,8 @@ function Location() {
         return 8;
       } else {
         setDisableAll(true);
-        if (prevValue === favoriteDataList.length) {
-          return prevValue - (favoriteDataList.length % 4);
+        if (prevValue === attractionDataList.length) {
+          return prevValue - (attractionDataList.length % 4);
         }
         return prevValue - 4;
       }
@@ -50,6 +88,8 @@ function Location() {
 
   return (
     <div className="loaction-page">
+      {console.log(attractionDataList1)}
+      {console.log(attractionDataList)}
       <Navbar></Navbar>
       <h1 className="heading main-heading" style={{ "margin-top": "60px" }}>
         Places to Visit in <span className="sp-sri-lanka">Sri Lanka</span>
@@ -57,18 +97,18 @@ function Location() {
       <div className="search-bar-custom">
         <SearchBar></SearchBar>
       </div>
-      <Carousel
+      <CarouselThingsToDo
         slidesToShowScroll={4}
         heading="Things To Do"
         subHeading=""
-        dataList={ThingsToDoDataList}
-      ></Carousel>
-      <Carousel
+        dataList={thingsToDoDataList}
+      ></CarouselThingsToDo>
+      <CarouselRecommended
         slidesToShowScroll={3}
         heading="Recommended Locations"
         subHeading="Lorem ipsum dolor, sit amet consectetur adipisic."
-        dataList={RecommendedDataList}
-      ></Carousel>
+        dataList={recommendedDataList}
+      ></CarouselRecommended>
       <div
         data-aos="fade-up"
         className="container-fluid"
@@ -82,10 +122,10 @@ function Location() {
             >
               Top Attractions in Sri Lanka
             </h1>
-            <FavoritePlaces
+            <AttractionPlaces
               visibleValue={visible}
-              dataList={favoriteDataList}
-            ></FavoritePlaces>
+              dataList={attractionDataList}
+            ></AttractionPlaces>
             <div className="text-center">
               <button
                 type="button"
@@ -108,10 +148,10 @@ function Location() {
         </div>
       </div>
       {/* 
-      <FavoritePlaces
+      <AttractionPlaces
         visibleValue={visible}
-        dataList={FavoriteDataList}
-      ></FavoritePlaces>
+        dataList={attractionDataList}
+      ></AttractionPlaces>
       <button
         type="button"
         class="btn btn-dark text-center btn-see-all"
@@ -119,7 +159,7 @@ function Location() {
       >
         See all
       </button> */}
-      <Footer/>
+      <Footer />
     </div>
   );
 }

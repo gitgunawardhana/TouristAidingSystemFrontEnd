@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ImageSlider.css";
 
 function ImageSlider(props) {
   const [covers, setCovers] = useState(props.covers);
   // console.log(covers);
+
+  useEffect(() => {
+    setCovers(props.covers);
+  });
+
   return (
     <div>
       <div
@@ -12,14 +17,29 @@ function ImageSlider(props) {
         data-ride="carousel"
       >
         <div className="carousel-inner container-my">
-          <div className="carousel-item active">
-            <img className="d-block w-100" src={covers[0]} alt={covers[3]} />
+          <div
+            className="carousel-item active"
+            style={{ border: "0px solid white" }}
+          >
+            <img
+              className="d-block w-100 img-location-cover"
+              src={`http://localhost:8080/file/images/location/location-id/${covers[0][0]}/${covers[0][1]}`}
+              alt={covers[3]}
+            />
           </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={covers[1]} alt={covers[3]} />
+          <div className="carousel-item" style={{ border: "0px solid white" }}>
+            <img
+              className="d-block w-100 img-location-cover"
+              src={`http://localhost:8080/file/images/location/location-id/${covers[1][0]}/${covers[1][1]}`}
+              alt={covers[3]}
+            />
           </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={covers[2]} alt={covers[3]} />
+          <div className="carousel-item" style={{ border: "0px solid white" }}>
+            <img
+              className="d-block w-100 img-location-cover"
+              src={`http://localhost:8080/file/images/location/location-id/${covers[2][0]}/${covers[2][1]}`}
+              alt={covers[3]}
+            />
           </div>
           <div class="content">
             <h1>{covers[3]}</h1>

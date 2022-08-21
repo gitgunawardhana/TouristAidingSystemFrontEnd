@@ -7,6 +7,11 @@
   /* margin: 0px !important; */
 }
 
+.img-location-cover {
+  height: 900px;
+  object-fit: fill;
+}
+
 /* .bottom-left {
   position: absolute;
   bottom: 8px;
