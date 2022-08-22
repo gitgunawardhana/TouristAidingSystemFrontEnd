@@ -1,0 +1,145 @@
+.accommodation-filter-main-section {
+  width: 80%;
+  margin-top: 200px;
+  margin-left: 10%;
+  margin-bottom: 50px;
+}
+
+.single-accommo-section2 {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.single-accommo-section2 p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.single-accommo-section3,
+.single-accommo-section4 {
+  width: 100%;
+}
+
+.map-div {
+  width: 100%;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background: #999ff000;
+  position: initial;
+  width: 100%;
+  height: 450px;
+  margin-top: -456px;
+}
+
+.availability-div {
+  background-color: #fcfcfc;
+  border: 1px solid #7676761a;
+  padding: 25px 35px;
+}
+
+#availability-tbl-section {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#availability-tbl-section td,
+#availability-tbl-section th {
+  border: 1px solid #03676e;
+  padding: 8px;
+}
+
+#availability-tbl-section tr {
+  border-bottom: 3px solid #03676e;
+}
+
+#availability-tbl-section th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #1e3d3e;
+  color: white;
+  z-index: 1;
+  position: sticky !important;
+  position: -webkit-sticky !important;
+  top: 148px !important;
+}
+
+.room-type-ttl {
+  margin-bottom: -3px;
+}
+
+.left-rooms-text {
+  font-size: 12px;
+  opacity: 0.9;
+  color: rgb(116, 13, 13);
+}
+
+.choose-bed-div {
+  margin-top: 5px;
+}
+
+#bedTypeLbl {
+  font-size: 13px;
+  margin-left: 3px;
+  padding-top: -4px !important;
+}
+
+.choose-bed-text {
+  font-size: 14px;
+}
+
+.facilities-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.facilities-ul li {
+  float: left;
+  font-size: 13px;
+  padding-right: 8px;
+}
+
+.price-span {
+  font-weight: 700;
+}
+
+.tax-para {
+  font-size: 12px;
+  color: #858585;
+}
+
+.your-choices-div {
+  color: #008009;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.your-choices-div p {
+  margin-bottom: 4px;
+}
+
+.availability-div-result {
+  display: flex;
+}
+
+.reserve-btn {
+  background-color: #005d6014;
+  margin-top: 9px;
+}
+
+.reserve-btn-content {
+  border-top: 1px solid white;
+  z-index: 1;
+  position: sticky !important;
+  position: -webkit-sticky !important;
+  top: 148px !important;
+  padding: 10px;
+}

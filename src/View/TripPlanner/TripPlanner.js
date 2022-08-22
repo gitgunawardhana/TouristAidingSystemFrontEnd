@@ -9,13 +9,13 @@ import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import React, { useEffect, useState } from "react";
+import Footer from "../../Component/Footer/Footer";
 import Navbar from "../../Component/Navbar/Navbar";
 import EasyUseBrowse from "../../Component/TripPlannerCompo/EasyUseBrowse/EasyUseBrowse";
 import Header from "../../Component/TripPlannerCompo/Header/Header";
 import PopularTripPlan from "../../Component/TripPlannerCompo/PopularTripPlan/PopularTripPlan";
 import TrendingDestinationsCard from "../../Component/TripPlannerCompo/TrendingDestinations/TrendingDestinations";
 import "./TripPlanner.css";
-import Footer from "../../Component/Footer/Footer";
 
 // Hook
 function useWindowSize() {
@@ -189,6 +189,7 @@ function TripPlanner() {
                     sx={style}
                     renderInput={(params) => (
                       <TextField
+                        size="small"
                         {...params}
                         InputLabelProps={{
                           sx: {
@@ -212,6 +213,7 @@ function TripPlanner() {
                     sx={dateStyles}
                     renderInput={(params) => (
                       <TextField
+                        size="small"
                         {...params}
                         InputLabelProps={{
                           sx: {
@@ -334,7 +336,7 @@ function TripPlanner() {
           </div>
         </Box>
       </Modal>
-        <Footer/>
+      <Footer />
     </div>
   );
 }

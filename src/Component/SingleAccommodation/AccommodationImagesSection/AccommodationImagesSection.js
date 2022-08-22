@@ -1,9 +1,6 @@
-import Button from "@mui/material/Button";
-import Grid from "@mui/material/Grid";
-import Rating from "@mui/material/Rating";
-import React from "react";
-import { Link } from "react-router-dom";
-import "./FilteredLocationSection.css";
+import React, { useState } from "react";
+import "./AccommodationImagesSection.css";
+import ImageModel from "./ImageModel";
 
 import Granbell1 from "../../../Assets/FilteredAccommodations/GranbellHotelColombo/1.jpg";
 import Granbell2 from "../../../Assets/FilteredAccommodations/GranbellHotelColombo/2.jpg";
@@ -41,11 +38,13 @@ import MandarinaColombo3 from "../../../Assets/FilteredAccommodations/MandarinaC
 import MandarinaColombo5 from "../../../Assets/FilteredAccommodations/MandarinaColombo/4.jpg";
 import MandarinaColombo4 from "../../../Assets/FilteredAccommodations/MandarinaColombo/5.jpg";
 
-import Pagination from "@mui/material/Pagination";
-import Address from "../../../Assets/AccommodationFacilityIcons/address.png";
-import FreeCancellation from "../../../Assets/AccommodationFacilityIcons/free-cancellation.png";
-import PayAtProperty from "../../../Assets/AccommodationFacilityIcons/pay-at-property.png";
-import View from "../../../Assets/AccommodationFacilityIcons/view.png";
+import imageCover4 from "../../../Assets/SingleAccommodation/252324192_1.png";
+import imageCover1 from "../../../Assets/SingleAccommodation/252324202_1.png";
+import imageCover3 from "../../../Assets/SingleAccommodation/252324209_1.png";
+import imageCover6 from "../../../Assets/SingleAccommodation/252324213_1.png";
+import imageCover7 from "../../../Assets/SingleAccommodation/252324215_1.png";
+import imageCover5 from "../../../Assets/SingleAccommodation/252324226_1.png";
+import imageCover2 from "../../../Assets/SingleAccommodation/252324299_1.png";
 
 function FilteredLocationSection() {
   const filteredLocations = [
@@ -212,164 +211,104 @@ function FilteredLocationSection() {
       price: 74000.0,
     },
   ];
+
+  const [clickedImg, setClickedImg] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(null);
+
+  const handelClick = (imageItem, index) => {
+    setClickedImg(imageItem);
+    setCurrentIndex(index);
+    handleOpen();
+  };
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
-    <div className="filtered-location-section">
-      {filteredLocations.map((item) => (
-        <div className="filtered-single-location">
-          <Grid container spacing={0}>
-            <Grid item xs={4}>
-              <Grid container spacing={0}>
-                <Grid item xs={12}>
-                  <img
-                    width="100%"
-                    height="200px"
-                    src={item.images[0]}
-                    alt="Granbell Hotel Colombo"
-                  />
-                </Grid>
-                <Grid item xs={3}>
-                  <img
-                    width="100%"
-                    height="70px"
-                    src={item.images[1]}
-                    alt="Granbell Hotel Colombo"
-                  />
-                </Grid>
-                <Grid item xs={3}>
-                  <img
-                    width="100%"
-                    height="70px"
-                    src={item.images[2]}
-                    alt="Granbell Hotel Colombo"
-                  />
-                </Grid>
-                <Grid item xs={3}>
-                  <img
-                    width="100%"
-                    height="70px"
-                    src={item.images[3]}
-                    alt="Granbell Hotel Colombo"
-                  />
-                </Grid>
-                <Grid item xs={3}>
-                  <img
-                    width="100%"
-                    height="70px"
-                    src={item.images[4]}
-                    alt="Granbell Hotel Colombo"
-                  />
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid className="filtered-location-details" item xs={6}>
-              <div className="filtered-location-name">
-                <Link to={`/single-accommodation/${item.name}`}>
-                  {item.name}
-                </Link>
-              </div>
-              <div className="filtered-location-address">
-                <img src={Address} alt="Address" />
-                {item.address}
-              </div>
-              <div className="filtered-location-facilities">
-                {item.facilities.map((facility) => (
-                  <p className="filtered-location-single-facility">
-                    {facility}
-                  </p>
-                ))}
-              </div>
-              <div className="filtered-location-size">
-                Size - {item.size} sq feet
-              </div>
-              <div className="filtered-location-bed">{item.bed}</div>
-              <div className="filtered-location-description">
-                {item.description}
-              </div>
-              <div className="filtered-location-package-facilities">
-                <div
-                  className={
-                    item.freeCancellation
-                      ? "filtered-location-package-facility free-cancellation"
-                      : "filtered-location-package-facility free-cancellation hidden"
-                  }
-                >
-                  <img src={FreeCancellation} alt="Free Cancellation" />
-                  FREE CANCELLATION
-                </div>
-                <div
-                  className={
-                    item.payAtProperty
-                      ? "filtered-location-package-facility pay-at-property"
-                      : "filtered-location-package-facility pay-at-property hidden"
-                  }
-                >
-                  <img src={PayAtProperty} alt="Pay at Property" />
-                  PAY AT THE PROPERTY
-                </div>
-                <div className="filtered-location-package-facility view">
-                  <img src={View} alt="View" />
-                  {item.view} VIEW
-                </div>
-              </div>
-            </Grid>
-            <Grid item xs={2}>
-              <div className="filtered-location-review-price">
-                <Rating
-                  name="filtered-location-rating-stars"
-                  className="filtered-location-rating-stars"
-                  defaultValue={Math.round(item.rating / 2)}
-                  precision={0.5}
-                  readOnly
-                />
-                <Grid container spacing={0}>
-                  <Grid item xs={8}>
-                    <p className="filtered-location-rating-message">
-                      {item.ratingMessage}
-                    </p>
-                    <p className="filtered-location-rating-count">
-                      {item.ratingCount} Reviews
-                    </p>
-                  </Grid>
-                  <Grid item xs={4}>
-                    <div className="filtered-location-rating-flag">
-                      <p className="filtered-location-rating">{item.rating}</p>
-                    </div>
-                  </Grid>
-                </Grid>
-                <div
-                  className={
-                    item.discount === 0
-                      ? "filtered-location-discount hidden"
-                      : "filtered-location-discount"
-                  }
-                >
-                  {Math.round(item.discount * 100)}% DISCOUNT
-                </div>
-                <div
-                  className={
-                    item.discount === 0
-                      ? "filtered-location-price hidden"
-                      : "filtered-location-price"
-                  }
-                >
-                  Rs. {item.price}.00
-                </div>
-                <div className="filtered-location-discounted-price">
-                  Rs. {Math.round(item.price * (1 - item.discount))}.00
-                  <p>Taxes included</p>
-                </div>
-                <div className="filtered-location-people">2 Adults 1 Night</div>
-                <Button fullWidth variant="contained" size="small">
-                  See Availability
-                </Button>
-              </div>
-            </Grid>
-          </Grid>
+    <div className="div-img-cover">
+      <div class="row div-img-cover-sub">
+        <div class="col-lg-8 col-md-12 mb-0 ml-0 mr-0 mb-lg-0 pl-0 pr-0 pb-0 pt-0">
+          <img
+            onClick={() => handelClick(imageCover1, 0)}
+            src={imageCover1}
+            class="w-100 h-50 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
+            alt="Boat on Calm Water"
+          />
+
+          <img
+            onClick={() => handelClick(imageCover2, 1)}
+            src={imageCover2}
+            class="w-100 h-50 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
+            alt="Wintry Mountain Landscape"
+          />
         </div>
-      ))}
-      <div className="filtered-location-pagination">
-        <Pagination count={10} variant="outlined" shape="rounded" />
+        <div
+          class="col-lg-4 mb-0 ml-0 mr-0 mb-lg-0 pl-0 pr-0 pb-0 pt-0"
+          style={{ backgroundColor: "black" }}
+        >
+          <div className="row h-25 div-img-cover-sub">
+            <div class="col-lg-8 mb-0 ml-0 mr-0 mb-lg-0 pl-0 pr-0 pb-0 pt-0">
+              <img
+                onClick={() => handelClick(imageCover4, 3)}
+                src={imageCover4}
+                class="w-100 h-100 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
+                alt="Waves at Sea"
+              />
+            </div>
+            <div class="col-lg-4 mb-0 ml-0 mr-0 mb-lg-0 pl-0 pr-0 pb-0 pt-0">
+              <img
+                onClick={() => handelClick(imageCover5, 4)}
+                src={imageCover5}
+                class="w-100 h-50 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
+                alt="Waves at Sea"
+              />
+              <img
+                onClick={() => handelClick(imageCover6, 5)}
+                src={imageCover6}
+                class="w-100 h-50 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
+                alt="Waves at Sea"
+              />
+            </div>
+          </div>
+          <img
+            onClick={() => handelClick(imageCover3, 2)}
+            src={imageCover3}
+            class="w-100 h-25 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
+            alt="Waves at Sea"
+          />
+          <img
+            onClick={() => handelClick(imageCover7, 6)}
+            src={imageCover7}
+            class="w-100 h-50 shadow-1-strong mb-0 ml-0 mr-0 cst-cvr-img-cls"
+            alt="Waves at Sea"
+            style={{ opacity: ".3" }}
+          />
+          <div class="centered">
+            <span
+              style={{
+                color: "white",
+                fontSize: "30px",
+                fontWeight: "700",
+                marginTop: "70px",
+                marginLeft: "-5px",
+              }}
+            >
+              +25 Photos
+            </span>
+          </div>
+        </div>
       </div>
+
+      {clickedImg && (
+        <ImageModel
+          handleClose={handleClose}
+          open={open}
+          clickedImg={clickedImg}
+          currentIndex={currentIndex}
+          setClickedImg={setClickedImg}
+        ></ImageModel>
+      )}
     </div>
   );
 }
