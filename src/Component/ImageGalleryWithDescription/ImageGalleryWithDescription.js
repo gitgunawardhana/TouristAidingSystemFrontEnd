@@ -31,11 +31,11 @@ function TopLocation(props) {
                     <div className="pic">
                       <Link
                         className="nav-to-place"
-                        to={`/location/${items.id}`}
+                        to={`/attraction/${items.id}`}
                       >
                         <img
                           className=""
-                          src={`http://localhost:8080/file/images/location/location-id/${items.id}/2`}
+                          src={items.locationAttractionPictures[0]}
                           alt=""
                         />
                       </Link>
@@ -50,11 +50,9 @@ function TopLocation(props) {
                     <div className="content">
                       <Link
                         className="nav-to-place-bottom"
-                        to={`/location/${items.id}`}
+                        to={`/attraction/${items.id}`}
                       >
-                        <p className="h-1 mt-4">
-                          {keyId + 1} {items.name}
-                        </p>
+                        <h5 className="h-1 mt-4 text-center">{items.name}</h5>
                       </Link>
                       <p
                         className="text-muted mt-3"
@@ -65,7 +63,7 @@ function TopLocation(props) {
                       <div className="d-flex align-items-center justify-content-between mt-3 pb-3">
                         <Link
                           className="nav-to-place"
-                          to={`/location/${items.id}`}
+                          to={`/attraction/${items.id}`}
                         >
                           <div className="btn btn-primary">
                             Read More
