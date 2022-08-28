@@ -1,0 +1,21 @@
+.user-details-body{
+    margin-top: 20px;
+    padding: 15px;
+    width: 90%;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.heading-title{
+    font-weight: bold;
+    font-size: 20px;
+
+}
+.input-field-user{
+    height: 10px;
+}
+
+.form-label-user{
+    font-size: 15px;
+}
+.input-field-user-width{
+    width: 769px;
+}

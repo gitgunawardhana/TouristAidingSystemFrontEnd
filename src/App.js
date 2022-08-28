@@ -26,9 +26,9 @@ import SignUp from "./View/SignInOrCreateAccount/SignUp";
 import SingleAccommodation from "./View/SingleAccommodation/SingleAccommodation";
 import TripPlanner from "./View/TripPlanner/TripPlanner";
 import Vehicle from "./View/Vehicle/Vehicle";
-
-import Vehicle_Home from "../src/View/Vehicle_Home/Car_Home.js";
-import Vehicle_Payment from "../src/View/Vehicle_Payment/CarDetails.js";
+import CarHome from "./View/VehicleHome/CarHome";
+import CarDetails from "./View/VehiclePayment/CarDetails";
+import SingleAccommodationBooking from "./View/SingleAccommodationBooking/SingleAccommodationBooking";
 function App() {
   return (
     <>
@@ -38,18 +38,12 @@ function App() {
           <Route path="/" exact element={<Home />} />
           <Route path="/locations" element={<Locations />} />
           <Route path="/accommodations" element={<Accommodation />} />
-          <Route
-            path="/accommodations-filter"
-            element={<AccommodationFilter />}
-          />
+          <Route path="/accommodations-filter" element={<AccommodationFilter />}/>
           <Route path="*" element={<PageNotFound />} />
           <Route path="/security" element={<Security />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/signUp" element={<SignUp />} />
-          <Route
-            path="/notificationSettings"
-            element={<NotificationSettings />}
-          />
+          <Route path="/notificationSettings" element={<NotificationSettings />}/>
           <Route path="/paymentMethod" element={<PaymentMethod />} />
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/signIn" element={<SignIn />} />
@@ -65,9 +59,11 @@ function App() {
           <Route path="/forgetPassword" element={<ForgottenPassword />} />
           <Route path="/createNewPassword" element={<CreateNewPassword />} />
           <Route path="/checkYourEmail" element={<CheckYourEmail />} />
-          <Route path="/vehicles" element={<Vehicle_Home />} />
+          <Route path="/vehicles" element={<CarHome/>}/>
+          <Route path="/vehicles-filter" element={<Vehicle />}/>
+          <Route path="/vehicles-filter/:slug" element={<CarDetails/>}/>
+          <Route path="/singleAccommodationBooking" element={<SingleAccommodationBooking/>}/>
           <Route path="/vehicles-filter" element={<Vehicle />} />
-          <Route path="/vehicles-filter/:slug" element={<Vehicle_Payment />} />
           <Route
             path="/single-accommodation/:name"
             element={<SingleAccommodation />}

@@ -1,0 +1,13 @@
+.single-acc-heading{
+    font-size: 25px;
+    font-family: Roboto;
+    font-weight: bold;
+    position: absolute;
+}
+.single-acc-heading-img{
+    width: 35px;
+    margin-left: 150px;
+}
+.single-acc-heading-div{
+    margin-left: 20px;
+}

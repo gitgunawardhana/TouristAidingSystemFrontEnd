@@ -1,7 +1,7 @@
 import { data } from 'jquery';
 import React from 'react'
 import accordianData from '../../Assets/Data/DataAccordian.js'
-import './faq.css'
+import './Faq.css'
 import { useState } from 'react';
 // import Props from './props';
 
