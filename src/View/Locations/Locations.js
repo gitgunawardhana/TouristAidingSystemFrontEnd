@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { TbArrowBarDown, TbArrowBarUp } from "react-icons/tb";
 import CarouselThingsToDo from "../../Component/Carousel/Carousel";
 import CarouselRecommended from "../../Component/Carousel/CarouselRecommended";
-import attractionDataList1 from "../../Component/FavoriteDataList";
+// import topAttractionsDataList1 from "../../Component/FavoriteDataList";
 import Footer from "../../Component/Footer/Footer";
 import AttractionPlaces from "../../Component/ImageGalleryWithDescription/ImageGalleryWithDescription";
 import Navbar from "../../Component/Navbar/Navbar";
@@ -20,7 +20,9 @@ function Location() {
 
   const [thingsToDoDataList, setThingsToDoDataList] = useState([]);
   const [recommendedDataList, setRecommendedDataList] = useState([]);
-  const [attractionDataList, setAttractionsDataList] = useState([]);
+  const [topAttractionsDataList, setTopAttractionsDataList] = useState([]);
+  const [allAttractionsDataList, setAllAttractionsDataList] = useState([]);
+  const [allLocationDataList, setAllLocationDataList] = useState([]);
 
   useEffect(() => {
     axios
@@ -37,7 +39,18 @@ function Location() {
     axios
       .get("http://localhost:8080/public-user/location/top-attractions")
       .then((res2) => {
-        setAttractionsDataList(res2.data.body);
+        setTopAttractionsDataList(res2.data.body);
+      })
+      .catch((err2) => {
+        console.log(err2);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/public-user/location/attractions")
+      .then((res2) => {
+        setAllAttractionsDataList(res2.data.body);
       })
       .catch((err2) => {
         console.log(err2);
@@ -55,11 +68,22 @@ function Location() {
       });
   }, []);
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/public-user/location/all-locations")
+      .then((res3) => {
+        setAllLocationDataList(res3.data.body);
+      })
+      .catch((err3) => {
+        console.log("err3", err3);
+      });
+  }, []);
+
   const seeAll = () => {
     setVisible((prevValue) => {
-      if (attractionDataList.length <= prevValue) {
+      if (topAttractionsDataList.length <= prevValue) {
         setDisableAll(false);
-        return attractionDataList.length;
+        return topAttractionsDataList.length;
       } else {
         setDisableLess(true);
         return prevValue + 4;
@@ -74,8 +98,8 @@ function Location() {
         return 8;
       } else {
         setDisableAll(true);
-        if (prevValue === attractionDataList.length) {
-          return prevValue - (attractionDataList.length % 4);
+        if (prevValue === topAttractionsDataList.length) {
+          return prevValue - (topAttractionsDataList.length % 4);
         }
         return prevValue - 4;
       }
@@ -88,14 +112,17 @@ function Location() {
 
   return (
     <div className="loaction-page">
-      {console.log(attractionDataList1)}
-      {console.log(attractionDataList)}
+      {/* {console.log(topAttractionsDataList1)} */}
+      {/* {console.log(topAttractionsDataList)} */}
       <Navbar></Navbar>
       <h1 className="heading main-heading" style={{ "margin-top": "60px" }}>
         Places to Visit in <span className="sp-sri-lanka">Sri Lanka</span>
       </h1>
       <div className="search-bar-custom">
-        <SearchBar></SearchBar>
+        <SearchBar
+          locateDataSet={allLocationDataList}
+          attractDataSet={allAttractionsDataList}
+        ></SearchBar>
       </div>
       <CarouselThingsToDo
         slidesToShowScroll={4}
@@ -124,7 +151,7 @@ function Location() {
             </h1>
             <AttractionPlaces
               visibleValue={visible}
-              dataList={attractionDataList}
+              dataList={topAttractionsDataList}
             ></AttractionPlaces>
             <div className="text-center">
               <button
@@ -150,7 +177,7 @@ function Location() {
       {/* 
       <AttractionPlaces
         visibleValue={visible}
-        dataList={attractionDataList}
+        dataList={topAttractionsDataList}
       ></AttractionPlaces>
       <button
         type="button"

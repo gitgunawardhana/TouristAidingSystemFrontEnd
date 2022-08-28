@@ -1,5 +1,6 @@
-.search-div-css {
-  margin: auto 20% auto 20%;
+.searchBox-with-suggestions {
+  /* margin: auto 20% auto 20%; */
+  margin: auto;
 }
 
 .search-input-css {
@@ -34,4 +35,60 @@
 .fa-search:hover,
 #search-addon:hover {
   cursor: pointer;
+}
+
+.suggestion-box {
+  /* margin-left: 25px; */
+  position: absolute;
+  z-index: 1;
+  padding-right: 16px !important;
+
+  border-radius: 50px;
+}
+
+.suggestion-item {
+  border-radius: 100px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #d3d4d663;
+  cursor: pointer;
+  border-bottom: #00424588 solid 1px;
+  transition-duration: 0.5s;
+}
+
+.suggestion-item:hover {
+  padding-left: 25px;
+  cursor: pointer;
+  border-bottom: #004145 solid 1px;
+  background-color: #03676e;
+  transform: scale(1.005);
+  color: white;
+}
+
+.anyClass {
+  height: auto;
+  max-height: 210px;
+  border-radius: 0px;
+  overflow-y: scroll;
+}
+
+.anyClass::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.anyClass::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.anyClass::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.anyClass::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
