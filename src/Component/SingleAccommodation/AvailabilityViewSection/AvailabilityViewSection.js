@@ -99,6 +99,10 @@ function AvailabilityViewSection() {
     setEndDateValue(newValue);
   };
 
+  const [availabilityClassName, setAvailabilityClassName] = useState(
+    "availability-div-result hidden-div"
+  );
+
   const filteredLocations = [
     {
       name: "Granbell Hotel Colombo",
@@ -401,6 +405,9 @@ function AvailabilityViewSection() {
               </div>
               <div className="col-lg-3 col-md-3">
                 <Button
+                  onClick={() => {
+                    setAvailabilityClassName("availability-div-result");
+                  }}
                   fullWidth
                   variant="contained"
                   size="small"
@@ -424,7 +431,7 @@ function AvailabilityViewSection() {
           </div>
         </div>
       </div>
-      <div className="availability-div-result">
+      <div className={availabilityClassName}>
         <div className="result-tbl col-md-10">
           <table id="availability-tbl-section">
             <tr>

@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import AllLocationCardView from "../../Component/AllLocationCardView/AllLocationCardView";
 import AttractionCards from "../../Component/AttractionCards/AttractionCards";
 import CheckBox from "../../Component/CheckBox/CheckBox";
-import DatasetForAttraction from "../../Component/DatasetForAttractionCards";
+// import DatasetForAttraction from "../../Component/DatasetForAttractionCards";
 import Description from "../../Component/Description/Description";
 import ImageSlider from "../../Component/ImageSlider/ImageSlider";
 import Navbar from "../../Component/Navbar/Navbar";
@@ -23,6 +23,7 @@ function Place() {
   const [filteredResult, setFilteredResult] = useState({});
   const [provincesCategory, setProvincesCategory] = useState([]);
   const [thingsToDoCategory, setThingsToDoCategory] = useState([]);
+  const [datasetForAttraction, setDatasetForAttraction] = useState([]);
 
   useEffect(() => {
     axios
@@ -55,6 +56,19 @@ function Place() {
       })
       .catch((err3) => {
         console.log("err3", err3);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(
+        `http://localhost:8080/public-user/location/${id}/rand-three-attractions`
+      )
+      .then((res4) => {
+        setDatasetForAttraction(res4.data.body);
+      })
+      .catch((err4) => {
+        console.log("err4", err4);
       });
   }, []);
 
@@ -141,7 +155,7 @@ function Place() {
 
   return (
     <div>
-      {/* {console.log("filter", locations)} */}
+      {/* {console.log("datasetForAttraction", datasetForAttraction)} */}
       <Navbar></Navbar>
       <ImageSlider covers={coverImages}></ImageSlider>
       <Description
@@ -153,9 +167,9 @@ function Place() {
       {/* <div className="container-fluid" id="top-attraction-dist"> */}
       <div className="container top-attraction-dist">
         <h4 id="filter-heading" style={{ marginBottom: "15px" }}>
-          Top attractions in {filteredResult.title}
+          Top attractions in {filteredResult.name}
         </h4>
-        <AttractionCards dataList={DatasetForAttraction}></AttractionCards>
+        <AttractionCards dataList={datasetForAttraction}></AttractionCards>
       </div>
       {/* </div> */}
 

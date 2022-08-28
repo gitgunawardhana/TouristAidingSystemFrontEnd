@@ -35,7 +35,7 @@ function Location() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/public-user/location/all-locations")
+      .get("http://localhost:8080/public-user/location/top-attractions")
       .then((res2) => {
         setAttractionsDataList(res2.data.body);
       })
