@@ -3,8 +3,60 @@ import "./EmailVerify.css"
 import fish from "../../../Assets/CreateAccount/anupam.png";
 import 'react-phone-number-input/style.css'
 import Form from 'react-bootstrap/Form';
+import axios from "axios";
+import {createSearchParams, useSearchParams} from "react-router-dom";
+import {get} from "react-hook-form";
+import Swal from "sweetalert2";
 
 function EmailVerify() {
+
+    const [code, setCode] = useState("")
+
+    const [searchParams] = useSearchParams();
+
+
+    const handleCodeChange = event => {
+        setCode(event.target.value);
+    }
+
+    const handleVerifyChange = event=> {
+        const codeAndEmail = {
+            email: searchParams.get("email"),
+            code: code
+        }
+        console.log(codeAndEmail);
+        axios.post("http://localhost:8080/user/verify", codeAndEmail)
+            .then(res => {
+                if (res.data.success) {
+                    window.location = "/signIn"
+
+                    // navigate("/emailVerification"))
+                    // navigate({
+                    //     pathname:"/emailVerification",
+                    //     search:createSearchParams({
+                    //         email:email
+                    //     }).toString()
+                    // });
+
+
+                } else {
+                    Swal.fire(
+                        res.data.message,
+                        'error'
+                    ).then(r => {
+                    })
+                }
+
+            })
+            .catch(err => {
+                Swal.fire(
+                    'Failed',
+                    'Something went wrong',
+                    'error'
+                ).then(r => {
+                })
+            })
+    }
     const [value, setValue] = useState()
     return (
         <div className="create-account-main-div">
@@ -20,7 +72,7 @@ function EmailVerify() {
                                     <div className="col-xl-6">
                                         <div className="card-body p-md-5 text-black sub-form">
                                             <div className="logo-name shadow p-3 mb-5 bg-white rounded logo-name-sub">
-                                                <p className="sub-logo-name"> RodeSign</p>
+                                                <p className="sub-logo-name"> RodeSign </p>
                                             </div>
 
 
@@ -38,15 +90,23 @@ function EmailVerify() {
                                             <div className="form-outline">
                                                 <label className="form-label" htmlFor="form3Example1w"
                                                        placeholder="Verification Code">Verification Code</label>
-                                                <input type="text" id="form3Example1w" className="form-control" placeholder="Verification Code"/>
+                                                <input type="text"
+                                                       id="form3Example1w"
+                                                       className="form-control"
+                                                       placeholder="Verification Code"
+                                                       onChange={handleCodeChange}
 
+                                                />
 
 
                                             </div>
 
 
                                             <div className="d-flex justify-content-end pt-3">
-                                                <button type="button" className="btn  btn-lg ms-2 btn-create">VERIFY
+                                                <button type="button"
+                                                        className="btn  btn-lg ms-2 btn-create"
+                                                onClick={handleVerifyChange}
+                                                >VERIFY
                                                 </button>
                                             </div>
 

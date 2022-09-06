@@ -3,9 +3,88 @@ import "./CreateAccountCom.css"
 import beach from "../../../Assets/CreateAccount/beachs.png";
 import PhoneInput from "react-phone-number-input";
 import 'react-phone-number-input/style.css'
-import {Link} from "react-router-dom";
+import {createSearchParams, Link} from "react-router-dom";
+import {eventWrapper} from "@testing-library/user-event/dist/utils";
+import axios from "axios";
+import {useNavigate} from "react-router";
+import Swal from "sweetalert2";
 
 function CreateAccountCom() {
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [mobile, setMobile] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+    const handleFirstNameChange = event => {
+        setFirstName(event.target.value);
+    }
+
+    const handleLastNameChange = event => {
+        setLastName(event.target.value);
+    }
+
+    const handleMobileChange = event => {
+        setMobile(event.target.value);
+    }
+
+    const handleEmailChange = event => {
+        setEmail(event.target.value);
+    }
+
+    const handlePasswordChange = event => {
+        setPassword(event.target.value)
+    }
+    const handleSubmit = event => {
+
+        const Details = {
+            firstName: firstName,
+            lastName: lastName,
+            mobile: mobile,
+            email: email,
+            password: password
+        }
+
+
+        axios.post("http://localhost:8080/user/register", Details)
+            .then(res => {
+                if (res.data.success) {
+                    // window.location = "/emailVerification"
+                    // navigate("/emailVerification"))
+                    navigate({
+                        pathname: "/emailVerification",
+                        search: createSearchParams({
+                            email: email
+                        }).toString()
+                    });
+
+
+                } else {
+                    Swal.fire(
+                        res.data.message,
+                        'error'
+                    ).then(r => {
+                    })
+                }
+
+            })
+            .catch(err => {
+                Swal.fire(
+                    'Failed',
+                    'Something went wrong',
+                    'error'
+                ).then(r => {
+                })
+            })
+    }
+
+    // this.props.history.push({
+    //     pathname: '/emailVerification',
+    //     state: data // your data array of objects
+    // })
+
+
     const [value, setValue] = useState()
     return (
         <div className="create-account-main-div">
@@ -39,9 +118,13 @@ function CreateAccountCom() {
                                                     <div className="form-outline">
                                                         <label className="form-label" htmlFor="form3Example1m">First
                                                             name</label>
-                                                        <input type="text" id="form3Example1m"
-                                                               className="form-control form-control-lg" placeholder="First
-                                                            name"/>
+                                                        <input type="text"
+                                                               id="form3Example1m"
+                                                               className="form-control form-control-lg"
+                                                               placeholder="First name"
+                                                               onChange={handleFirstNameChange}
+                                                               required={1}
+                                                        />
 
                                                     </div>
                                                 </div>
@@ -49,9 +132,13 @@ function CreateAccountCom() {
                                                     <div className="form-outline">
                                                         <label className="form-label" htmlFor="form3Example1n">Last
                                                             name</label>
-                                                        <input type="text" id="form3Example1n"
-                                                               className="form-control form-control-lg" placeholder="Last
-                                                            name"/>
+                                                        <input type="text"
+                                                               id="form3Example1n"
+                                                               className="form-control form-control-lg"
+                                                               placeholder="Last name"
+                                                               onChange={handleLastNameChange}
+                                                               required={1}
+                                                        />
 
                                                     </div>
                                                 </div>
@@ -62,10 +149,13 @@ function CreateAccountCom() {
                                                 <div className="form-outlin mb-4">
                                                     <div className="form-outline">
                                                         <label className="reg-ven-label">Phone Number</label>
-                                                        <PhoneInput className="form-control"
-                                                                    country="US"
-                                                                    value={value}
-                                                                    onChange={setValue}/>
+                                                        <input type="tel" className="form-control"
+                                                            // country="US"
+                                                            // value={value}
+                                                            // onChange={setValue}
+                                                               onChange={handleMobileChange}
+                                                               required={1}
+                                                        />
                                                     </div>
                                                 </div>
                                             </div>
@@ -73,24 +163,36 @@ function CreateAccountCom() {
                                             <div className="form-outline mb-4">
                                                 <label className="form-label" htmlFor="form3Example97">Email
                                                     ID</label>
-                                                <input type="text" id="form3Example97"
-                                                       className="form-control form-control-lg" placeholder="Email"/>
+                                                <input type="email"
+                                                       id="form3Example97"
+                                                       className="form-control form-control-lg"
+                                                       placeholder="Email"
+                                                       onChange={handleEmailChange}
+                                                       required={1}
+                                                />
 
                                             </div>
 
                                             <div className="form-outline mb-4">
                                                 <label className="form-label" htmlFor="form3Example4cg">Password</label>
-                                                <input type="password" id="form3Example4cg"
-                                                       className="form-control form-control-lg" placeholder="Password"/>
+                                                <input type="password"
+                                                       id="form3Example4cg"
+                                                       className="form-control form-control-lg"
+                                                       placeholder="Password"
+                                                       onChange={handlePasswordChange}
+                                                       required={1}
+                                                />
 
                                             </div>
 
 
                                             <div className="d-flex justify-content-end pt-3">
-                                                <Link className="register-btn" to="/emailVerification">
-                                                    <button type="button" className="btn  btn-lg ms-2 btn-create">Register
-                                                    </button>
-                                                </Link>
+                                                {/*<Link className="register-btn" to="/emailVerification">*/}
+                                                <button type="button"
+                                                        className="btn  btn-lg ms-2 btn-create"
+                                                        onClick={handleSubmit}>Register
+                                                </button>
+                                                {/*</Link>*/}
                                             </div>
 
                                             <p className="text-center text-muted mt-5 mb-0">Have already an
@@ -112,8 +214,8 @@ function CreateAccountCom() {
 
 
         </div>
+    )
 
-    );
 }
 
 export default CreateAccountCom;

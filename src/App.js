@@ -33,7 +33,7 @@ function App() {
   return (
     <>
       <Router>
-        <ScrollToTop></ScrollToTop>
+        <ScrollToTop/>
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/locations" element={<Location />} />

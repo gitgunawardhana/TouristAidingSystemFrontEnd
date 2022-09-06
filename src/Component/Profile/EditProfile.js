@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./EditProfile.css"
 import {Link} from "react-router-dom";
 import profilePic from "../../Assets/Profile/Ellipse 4.png"
@@ -8,9 +8,151 @@ import Stack from '@mui/material/Stack';
 import Box from "@mui/material/Box";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
+import axios from "axios";
+import Swal from "sweetalert2";
+import {useNavigate} from "react-router";
 
 
 function EditProfile() {
+
+    const [username, setUsername] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [mobile, setMobile] = useState("");
+    const [email, setEmail] = useState("");
+    const [birthday, setBirthday] = useState("");
+    const [gender, setGender] = useState("");
+    const [nationality, setNationality] = useState("");
+    const [country, setCountry] = useState("");
+    const [address, setAddress] = useState("");
+    const [town, setTown] = useState("");
+    const [zipCode, setZipCode] = useState("");
+
+    const em = "Saniduhasanka@gmail.com";
+    const navigate = useNavigate();
+
+
+    useEffect(() => {
+        getPublicUserDetails();
+    }, []);
+
+    const getPublicUserDetails = () => {
+        axios.get("http://localhost:8080/user/details", {params: {"email": em}})
+            .then(res => {
+                const response = res.data.body;
+                // console.log(response)
+                setUsername(response.username);
+                setFirstName(response.firstName);
+                setLastName(response.lastName);
+                setMobile(response.mobile);
+                setBirthday(response.birthday);
+                setGender(response.gender);
+                setNationality(response.nationality);
+                setCountry(response.country);
+                setAddress(response.address);
+                setTown(response.town);
+                setZipCode(response.zipcode);
+                setEmail(response.email);
+            })
+
+    }
+
+
+    const handleUsernameChange = event => {
+        setUsername(event.target.value);
+    }
+
+    const handleFirstNameChange = event => {
+        setFirstName(event.target.value);
+    }
+
+    const handleLastNameChange = event => {
+        setLastName(event.target.value);
+    }
+
+    const handleMobileChange = event => {
+        setMobile(event.target.value);
+    }
+
+    const handleBirthdayChange = event => {
+        setBirthday(event.target.value);
+    }
+
+    const handleGenderChange = event => {
+        setGender(event.target.value);
+    }
+
+    const handleNationalityChange = event => {
+        setNationality(event.target.value);
+    }
+
+    const handleCountryChange = event => {
+        setCountry(event.target.value);
+    }
+
+    const handleAddressChange = event => {
+        setAddress(event.target.value);
+    }
+
+    const handleTownChange = event => {
+        setTown(event.target.value);
+    }
+
+    const handleZipCodeChange = event => {
+        setZipCode(event.target.value);
+    }
+
+    const handleEmailChange = event => {
+        setEmail(event.target.value);
+    }
+
+    const handleSubmit = event => {
+
+        const Details = {
+            username: username,
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            mobile: mobile,
+            birthday: birthday,
+            gender: gender,
+            nationality: nationality,
+            country: country,
+            address: address,
+            town: town,
+            zipcode: zipCode,
+
+        }
+
+        axios.put("http://localhost:8080/user/update-details", Details)
+            .then(res => {
+                if (res.data.success) {
+                    Swal.fire(
+                        'Done',
+                        res.data.message,
+                        'success'
+                    ).then(r => navigate("/profile"))
+                } else {
+                    Swal.fire(
+                        'Failed',
+                        res.data.message,
+                        'error'
+                    ).then(r => {
+                    })
+                }
+
+            })
+            .catch(err => {
+                console.log(Details)
+                Swal.fire(
+                    'Failed',
+                    'Something went wrong',
+                    'error'
+                ).then(r => {
+                })
+            })
+    }
+
     const [values, setValues] = useState();
     return (
         <>
@@ -46,6 +188,8 @@ function EditProfile() {
                             </div>
 
                         </div>
+
+
                     </div>
                     <div className="col-xl-8">
                         {/*// <!-- Account details card-->*/}
@@ -57,8 +201,15 @@ function EditProfile() {
                                     <div className="mb-3">
                                         <label className="small mb-1" htmlFor="inputUsername">Username (how your
                                             name will appear to other users on the site)</label>
-                                        <input className="form-control" id="inputUsername" type="text"
-                                               placeholder="Enter your username"/>
+                                        <input className="form-control"
+                                               id="inputUsername"
+                                               type="text"
+                                               placeholder="Enter your username"
+                                               value={username}
+                                               onChange={handleUsernameChange}
+
+                                        />
+
                                     </div>
                                     {/*// <!-- Form Row-->*/}
                                     <div className="row gx-3 mb-3">
@@ -66,14 +217,27 @@ function EditProfile() {
                                         <div className="col-md-6">
                                             <label className="small mb-1" htmlFor="inputFirstName">First
                                                 name</label>
-                                            <input className="form-control" id="inputFirstName" type="text"
-                                                   placeholder="Enter your first name"/>
+                                            <input className="form-control"
+                                                   id="inputFirstName"
+                                                   type="text"
+                                                   placeholder="Enter your first name"
+                                                   value={firstName}
+                                                   onChange={handleFirstNameChange}
+
+                                            />
+
                                         </div>
                                         {/*// <!-- Form Group (last name)-->*/}
                                         <div className="col-md-6">
                                             <label className="small mb-1" htmlFor="inputLastName">Last name</label>
-                                            <input className="form-control" id="inputLastName" type="text"
-                                                   placeholder="Enter your last name"/>
+                                            <input className="form-control"
+                                                   id="inputLastName"
+                                                   type="text"
+                                                   placeholder="Enter your last name"
+                                                   value={lastName}
+                                                   onChange={handleLastNameChange}
+
+                                            />
                                         </div>
                                         {/*// <!-- Form Group (email address)-->*/}
 
@@ -81,8 +245,15 @@ function EditProfile() {
                                     <div className="mb-3">
                                         <label className="small mb-1" htmlFor="inputEmailAddress">Email
                                             address</label>
-                                        <input className="form-control" id="inputEmailAddress" type="email"
-                                               placeholder="Enter your email address"/>
+                                        <input className="form-control"
+                                               id="inputEmailAddress"
+                                               type="email"
+                                               placeholder="Enter your email address"
+                                               value={email}
+                                               onChange={handleEmailChange}
+
+                                        />
+
                                     </div>
                                     {/*// <!-- Form Row        -->*/}
                                     <div className="row gx-3 mb-3">
@@ -90,10 +261,13 @@ function EditProfile() {
                                         <div className="col-md-6">
                                             <div className="form-outline">
                                                 <label className="small mb-1">Phone Number</label>
-                                                <PhoneInput className="form-control" id="inputPhone"
+                                                <PhoneInput className="form-control height-form " id="inputPhone"
                                                             country="US"
-                                                            value={values}
-                                                            onChange={setValues}/>
+                                                            value={mobile}
+                                                            // onChange={handleMobileChange}
+
+                                                            />
+
                                             </div>
                                         </div>
 
@@ -110,6 +284,9 @@ function EditProfile() {
                                                     InputLabelProps={{
                                                         shrink: true,
                                                     }}
+                                                    value={birthday}
+                                                    onChange={handleBirthdayChange}
+
                                                 />
                                             </Stack>
                                         </div>
@@ -121,10 +298,14 @@ function EditProfile() {
                                         {/*// <!-- Form Group (gender)-->*/}
                                         <div className="col-md-6">
                                             <label className="small mb-1" htmlFor="selectGender">Gender</label>
-                                            <select id="inputState" className="form-control">
+                                            <select id="inputState"
+                                                    className="form-control"
+                                                    value={gender}
+                                                    onChange={handleGenderChange}
+                                            >
                                                 <option selected>Choose...</option>
-                                                <option>Male</option>
-                                                <option>Female</option>
+                                                <option value="MALE">Male</option>
+                                                <option value="FEMALE">Female</option>
                                             </select>
                                         </div>
 
@@ -132,8 +313,13 @@ function EditProfile() {
                                         {/*// <!-- Form Group (nationality)-->*/}
                                         <div className="col-md-6">
                                             <label className="small mb-1" htmlFor="inputNationality">Nationality</label>
-                                            <input className="form-control" id="inputNationality" type="text"
-                                                   placeholder="Enter your nationality"/>
+                                            <input className="form-control"
+                                                   id="inputNationality"
+                                                   type="text"
+                                                   placeholder="Enter your nationality"
+                                                   value={nationality}
+                                                   onChange={handleNationalityChange}
+                                            />
 
                                         </div>
 
@@ -145,12 +331,20 @@ function EditProfile() {
                                             <label className="small mb-1" htmlFor="inputCountry">Country</label>
                                             <Autocomplete
                                                 id="country-select-demo"
-                                                sx={{ }}
+                                                inputValue={country}
+                                                sx={{}}
+                                                // value={country}
                                                 options={countries}
+
+                                                // inputValue={country}
+                                                // onChange={handleCountryChange}
+
+
                                                 autoHighlight
                                                 getOptionLabel={(option) => option.label}
                                                 renderOption={(props, option) => (
-                                                    <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
+                                                    <Box component="li"
+                                                         sx={{'& > img': {mr: 2, flexShrink: 0}}} {...props}>
                                                         <img
                                                             loading="lazy"
                                                             width="20"
@@ -158,6 +352,7 @@ function EditProfile() {
                                                             srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
                                                             alt=""
                                                         />
+
                                                         {option.label} ({option.code}) +{option.phone}
                                                     </Box>
                                                 )}
@@ -165,15 +360,19 @@ function EditProfile() {
 
 
                                                     <TextField
-                                                        id="outlined-basic" label="Country" variant="outlined"
+                                                        id="" label="Country"
+                                                        variant="outlined"
+
                                                         {...params}
                                                         inputProps={{
                                                             ...params.inputProps,
-                                                            autoComplete: 'new-password', // disable autocomplete and autofill
+
                                                         }}
+
                                                     />
 
                                                 )}
+
                                             />
                                         </div>
 
@@ -181,8 +380,14 @@ function EditProfile() {
                                         {/*// <!-- Form Group (Address)-->*/}
                                         <div className="col-md-6">
                                             <label className="small mb-1" htmlFor="inputAddress">Address</label>
-                                            <input className="form-control" id="inputAddress" type="text"
-                                                   placeholder="Enter your address"/>
+                                            <input className="form-control"
+                                                   id="inputAddress"
+                                                   type="text"
+                                                   placeholder="Enter your address"
+                                                   value={address}
+                                                   onChange={handleAddressChange}
+
+                                            />
 
                                         </div>
 
@@ -193,23 +398,36 @@ function EditProfile() {
                                         {/*// <!-- Form Group (town)-->*/}
                                         <div className="col-md-6">
                                             <label className="small mb-1" htmlFor="inputTown">Town</label>
-                                            <input className="form-control" id="inputTown" type="text"
-                                                   placeholder="Enter your Town"/>
+                                            <input className="form-control"
+                                                   id="inputTown" type="text"
+                                                   placeholder="Enter your Town"
+                                                   value={town}
+                                                   onChange={handleTownChange}
+                                            />
                                         </div>
 
 
                                         {/*// <!-- Form Group (zip code)-->*/}
                                         <div className="col-md-6">
                                             <label className="small mb-1" htmlFor="inputZipCode">Zip Code</label>
-                                            <input className="form-control" id="inputZipCode" type="text"
-                                                   placeholder="Enter your Zip Code"/>
+                                            <input className="form-control" id="inputZipCode"
+                                                   type="text"
+                                                   placeholder="Enter your Zip Code"
+                                                   value={zipCode}
+                                                   onChange={handleZipCodeChange}
+
+                                            />
 
                                         </div>
 
                                     </div>
 
                                     {/*// <!-- Save changes button-->*/}
-                                    <button className="btn btn-primary" type="button">Save changes</button>
+                                    <button className="btn btn-primary"
+                                            type="button"
+                                            onClick={handleSubmit}
+                                    >Save changes
+                                    </button>
                                 </form>
                             </div>
                         </div>
@@ -444,7 +662,7 @@ const countries = [
     {code: 'LB', label: 'Lebanon', phone: '961'},
     {code: 'LC', label: 'Saint Lucia', phone: '1-758'},
     {code: 'LI', label: 'Liechtenstein', phone: '423'},
-    {code: 'LK', label: 'Sri Lanka', phone: '94'},
+    {code: 'LK', label: 'Sri Lanka', phone: '94', value: 'Sri Lanka'},
     {code: 'LR', label: 'Liberia', phone: '231'},
     {code: 'LS', label: 'Lesotho', phone: '266'},
     {code: 'LT', label: 'Lithuania', phone: '370'},
@@ -646,3 +864,5 @@ const countries = [
     {code: 'ZM', label: 'Zambia', phone: '260'},
     {code: 'ZW', label: 'Zimbabwe', phone: '263'},
 ];
+
+
