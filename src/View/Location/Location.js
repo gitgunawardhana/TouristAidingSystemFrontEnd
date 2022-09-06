@@ -5,9 +5,7 @@ import { useParams } from "react-router-dom";
 import AllLocationCardView from "../../Component/AllLocationCardView/AllLocationCardView";
 import AttractionCards from "../../Component/AttractionCards/AttractionCards";
 import CheckBox from "../../Component/CheckBox/CheckBox";
-import provincesCategory from "../../Component/CheckBox/ProvincesCategory";
-import thingsToDoCategory from "../../Component/CheckBox/ThingsToDoCategory";
-import DatasetForAttraction from "../../Component/DatasetForAttractionCards";
+// import DatasetForAttraction from "../../Component/DatasetForAttractionCards";
 import Description from "../../Component/Description/Description";
 import ImageSlider from "../../Component/ImageSlider/ImageSlider";
 import Navbar from "../../Component/Navbar/Navbar";
@@ -23,8 +21,9 @@ function Place() {
 
   const [allLocationDataList, setAllLocationDataList] = useState([]);
   const [filteredResult, setFilteredResult] = useState({});
-  console.log("allLocationDataList declare", allLocationDataList);
-  // const filteredResult = allLocationDataList.find((e) => e.id == id);
+  const [provincesCategory, setProvincesCategory] = useState([]);
+  const [thingsToDoCategory, setThingsToDoCategory] = useState([]);
+  const [datasetForAttraction, setDatasetForAttraction] = useState([]);
 
   useEffect(() => {
     axios
@@ -38,8 +37,40 @@ function Place() {
       });
   }, []);
 
-  console.log("allLocationDataList", allLocationDataList);
-  console.log("filteredResult", filteredResult);
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/public-user/province")
+      .then((res2) => {
+        setProvincesCategory(res2.data.body);
+      })
+      .catch((err2) => {
+        console.log("err2", err2);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/public-user/activity/all-activities")
+      .then((res3) => {
+        setThingsToDoCategory(res3.data.body);
+      })
+      .catch((err3) => {
+        console.log("err3", err3);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(
+        `http://localhost:8080/public-user/location/${id}/rand-three-attractions`
+      )
+      .then((res4) => {
+        setDatasetForAttraction(res4.data.body);
+      })
+      .catch((err4) => {
+        console.log("err4", err4);
+      });
+  }, []);
 
   const coverImages = [
     [filteredResult.id, 0],
@@ -66,13 +97,13 @@ function Place() {
         case "PROVINCE":
           setFilter({
             ...filter,
-            provincesCategory: [...filter.provincesCategory, item.province],
+            provincesCategory: [...filter.provincesCategory, item.id],
           });
           break;
         case "THINGSTODO":
           setFilter({
             ...filter,
-            thingsToDoCategory: [...filter.thingsToDoCategory, item.thingsToDo],
+            thingsToDoCategory: [...filter.thingsToDoCategory, item.id],
           });
           break;
         default:
@@ -81,13 +112,13 @@ function Place() {
       switch (type) {
         case "PROVINCE":
           const newProvinceCategory = filter.provincesCategory.filter(
-            (e) => e !== item.province
+            (e) => e !== item.id
           );
           setFilter({ ...filter, provincesCategory: newProvinceCategory });
           break;
         case "THINGSTODO":
           const newThingsToDoCategory = filter.thingsToDoCategory.filter(
-            (e) => e !== item.thingsToDo
+            (e) => e !== item.id
           );
           setFilter({ ...filter, thingsToDoCategory: newThingsToDoCategory });
           break;
@@ -102,13 +133,15 @@ function Place() {
     let temp = locationList;
 
     if (filter.provincesCategory.length > 0) {
-      temp = temp.filter((e) => filter.provincesCategory.includes(e.province));
+      temp = temp.filter((e) =>
+        filter.provincesCategory.includes(e.provinceId)
+      );
     }
 
     if (filter.thingsToDoCategory.length > 0) {
       temp = temp.filter((e) => {
-        const check = e.thingsToDo.find((thingsToDo) =>
-          filter.thingsToDoCategory.includes(thingsToDo)
+        const check = e.locationActivitiesId.find((id) =>
+          filter.thingsToDoCategory.includes(id)
         );
         return check !== undefined;
       });
@@ -122,7 +155,7 @@ function Place() {
 
   return (
     <div>
-      {/* {console.log("filter", locations)} */}
+      {/* {console.log("datasetForAttraction", datasetForAttraction)} */}
       <Navbar></Navbar>
       <ImageSlider covers={coverImages}></ImageSlider>
       <Description
@@ -134,9 +167,9 @@ function Place() {
       {/* <div className="container-fluid" id="top-attraction-dist"> */}
       <div className="container top-attraction-dist">
         <h4 id="filter-heading" style={{ marginBottom: "15px" }}>
-          Top attractions in {filteredResult.title}
+          Top attractions in {filteredResult.name}
         </h4>
-        <AttractionCards dataList={DatasetForAttraction}></AttractionCards>
+        <AttractionCards dataList={datasetForAttraction}></AttractionCards>
       </div>
       {/* </div> */}
 
@@ -150,24 +183,22 @@ function Place() {
                 <h5>Provinces</h5>
                 {provincesCategory.map((item, index) => (
                   <CheckBox
-                    label={item.display}
+                    label={item.name}
                     onChange={(input) =>
                       filterSelect("PROVINCE", input.checked, item)
                     }
-                    checked={filter.provincesCategory.includes(item.province)}
+                    checked={filter.provincesCategory.includes(item.id)}
                   ></CheckBox>
                 ))}
                 <hr />
                 <h5>Things To Do</h5>
                 {thingsToDoCategory.map((item, index) => (
                   <CheckBox
-                    label={item.display}
+                    label={item.activityName}
                     onChange={(input) =>
                       filterSelect("THINGSTODO", input.checked, item)
                     }
-                    checked={filter.thingsToDoCategory.includes(
-                      item.thingsToDo
-                    )}
+                    checked={filter.thingsToDoCategory.includes(item.id)}
                   ></CheckBox>
                 ))}
                 <hr />
@@ -211,11 +242,11 @@ function Place() {
                   <h5>Provinces</h5>
                   {provincesCategory.map((item, index) => (
                     <CheckBox
-                      label={item.display}
+                      label={item.name}
                       onChange={(input) =>
                         filterSelect("PROVINCE", input.checked, item)
                       }
-                      checked={filter.provincesCategory.includes(item.province)}
+                      checked={filter.provincesCategory.includes(item.id)}
                     ></CheckBox>
                   ))}
                   <hr />

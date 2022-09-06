@@ -1,14 +1,14 @@
 import Aos from "aos";
 import "aos/dist/aos.css";
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import kandyCover3 from "../../Assets/Cover/kandyCover3.png";
-import kandyCover4 from "../../Assets/Cover/kandyCover4.png";
-import kandyCover5 from "../../Assets/Cover/kandyCover5.png";
+// import cover3 from "../../Assets/Cover/cover3.png";
+// import cover4 from "../../Assets/Cover/cover4.png";
+// import cover5 from "../../Assets/Cover/cover5.png";
 import RecommendedAccommodations from "../../Component/Accommodation/RecommendedAccommodations/RecommendedAccommodations";
-import allLocationDataList from "../../Component/AllLocationDataList";
 import AttractionCards from "../../Component/AttractionCards/AttractionCards";
-import DatasetForAttraction from "../../Component/DatasetForAttractionCards";
+// import DatasetForAttraction from "../../Component/DatasetForAttractionCards";
 import Description from "../../Component/Description/Description";
 import Navbar from "../../Component/Navbar/Navbar";
 import useMediaQuery from "../../Component/useMediaQuery";
@@ -17,18 +17,57 @@ import "./Attraction.css";
 function Attraction() {
   const { id } = useParams();
 
-  const filteredResult = allLocationDataList.find((e) => e.id == id);
+  const [datasetForAttraction, setDatasetForAttraction] = useState([]);
+  const [cover0, setCover0] = useState();
+  const [cover1, setCover1] = useState();
+  const [cover2, setCover2] = useState();
+  const [locationId, setLocationId] = useState();
+  const [filteredResult, setFilteredResult] = useState({});
+  const [mainImage, setMainImage] = useState();
+  const [allLocationAttractionDataList, setAllLocationAttractionDataList] =
+    useState([]);
 
-  const coverImages = [
-    filteredResult.coverImg0,
-    filteredResult.coverImg1,
-    filteredResult.coverImg2,
-    filteredResult.title,
-  ];
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/public-user/location/attractions")
+      .then((res1) => {
+        setAllLocationAttractionDataList(res1.data.body);
+        setFilteredResult(res1.data.body.find((e) => e.id == id));
+        setMainImage(
+          res1.data.body.find((e) => e.id == id).locationAttractionPictures[0]
+        );
+        setCover0(
+          res1.data.body.find((e) => e.id == id).locationAttractionPictures[0]
+        );
+        setCover1(
+          res1.data.body.find((e) => e.id == id).locationAttractionPictures[1]
+        );
+        setCover2(
+          res1.data.body.find((e) => e.id == id).locationAttractionPictures[2]
+        );
+        setLocationId(res1.data.body.find((e) => e.id == id).locationId);
+      })
+      .catch((err1) => {
+        console.log("err1", err1);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(
+        `http://localhost:8080/public-user/location/${locationId}/three-attractions`
+      )
+      .then((res3) => {
+        if (datasetForAttraction != []) {
+          setDatasetForAttraction(res3.data.body);
+        }
+      })
+      .catch((err3) => {
+        console.log("err3", err3);
+      });
+  });
 
   const matches = useMediaQuery("(min-width: 768px)");
-
-  const [mainImage, setMainImage] = useState(kandyCover4);
 
   useEffect(() => {
     Aos.init({ duration: 2000 });
@@ -39,7 +78,7 @@ function Attraction() {
       <Navbar></Navbar>
       <div className="row mt-5 mx-2 header-slider">
         <div className="col-md-9 main-im">
-          <img src={mainImage} alt={filteredResult.title} />
+          <img src={mainImage} alt={filteredResult.name} height="100%" />
         </div>
         <div
           className={
@@ -54,9 +93,9 @@ function Attraction() {
             }
           >
             <img
-              src={kandyCover4}
-              alt={filteredResult.title}
-              onClick={() => setMainImage(kandyCover4)}
+              src={cover0}
+              alt={filteredResult.name}
+              onClick={() => setMainImage(cover0)}
             />
           </div>
           <div
@@ -67,9 +106,9 @@ function Attraction() {
             }
           >
             <img
-              src={kandyCover3}
-              alt={filteredResult.title}
-              onClick={() => setMainImage(kandyCover3)}
+              src={cover1}
+              alt={filteredResult.name}
+              onClick={() => setMainImage(cover1)}
             />
           </div>
           <div
@@ -80,23 +119,23 @@ function Attraction() {
             }
           >
             <img
-              src={kandyCover5}
-              alt={filteredResult.title}
-              onClick={() => setMainImage(kandyCover5)}
+              src={cover2}
+              alt={filteredResult.name}
+              onClick={() => setMainImage(cover2)}
             />
           </div>
         </div>
       </div>
       <Description
-        title={filteredResult.title}
+        title={filteredResult.name}
         description={filteredResult.description}
         display={"none"}
       ></Description>
       <div data-aos="fade-up" className="container top-attraction-dist">
         <h4 id="filter-heading" style={{ marginBottom: "15px" }}>
-          Explore other attractions in {filteredResult.title}
+          Explore other attractions in {filteredResult.name}
         </h4>
-        <AttractionCards dataList={DatasetForAttraction}></AttractionCards>
+        <AttractionCards dataList={datasetForAttraction}></AttractionCards>
       </div>
       <div className="container-fluid attraction-page-recommended-acco">
         <RecommendedAccommodations></RecommendedAccommodations>
