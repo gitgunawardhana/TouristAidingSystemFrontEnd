@@ -26,6 +26,7 @@ import Button from "@mui/material/Button";
 import axios from "axios";
 import Autocomplete from "@mui/material/Autocomplete";
 import Swal from "sweetalert";
+import moment from "moment";
 
 function AccommodationFilter() {
 
@@ -37,6 +38,8 @@ function AccommodationFilter() {
 
     useEffect(() => {
         loadLocations();
+        loadAccommodationTypes();
+        loadFacilities();
         searchAccommodations();
     }, []);
 
@@ -50,47 +53,34 @@ function AccommodationFilter() {
     //filter section
     const [locations, setLocations] = useState([]);
 
-    const [accommodationTypes, setAccommodationTypes] = useState(["Hotels", "Apartments", "Resorts", "Villas", "Cabins", "Cottages", "Camping", "Homestays", "Guest Houses"]);
-    const [ratings, setRatings] = useState(["5 stars", "4 stars", "3 stars", "2 stars", "1 star", "Unrated"]);
+    // const [accommodationTypes, setAccommodationTypes] = useState(["Hotels", "Apartments", "Resorts", "Villas", "Cabins", "Cottages", "Camping", "Homestays", "Guest Houses"]);
+    const [accommodationTypes, setAccommodationTypes] = useState([]);
     const [distances, setDistances] = useState(["Less than 1 km", "Between 1 km and 3 km", "Between 3 km and 5 km", "Between 5 km and 10 km", "More than 10 km"]);
     const [reviewScore, setReviewScore] = useState(["Exceptional 9+", "Excellent 8+", "Very Good 7+", "Good 6+", "Passable 5+"]);
-    const [housingFacilities, setHousingFacilities] = useState(["Parking", "Restaurant", "Pets Allowed", "Room Service", "24-Hour Fron Desk", "Free WiFi", "Non-Smoking Rooms", "Fitness Center"]);
+    // const [housingFacilities, setHousingFacilities] = useState(["Parking", "Restaurant", "Pets Allowed", "Room Service", "24-Hour Fron Desk", "Free WiFi", "Non-Smoking Rooms", "Fitness Center"]);
+    const [housingFacilities, setHousingFacilities] = useState([]);
 
-    const [selectedAccommodationTypes, setSelectedAccommodationTypes] = useState();
-    const [selectedRatings, setSelectedRatings] = useState();
-    const [selectedDistances, setSelectedDistances] = useState();
-    const [selectedReviewScore, setSelectedReviewScore] = useState();
-    const [selectedHousingFacilities, setSelectedHousingFacilities] = useState();
+    const [selectedAccommodationTypes, setSelectedAccommodationTypes] = useState([]);
+    const [selectedDistances, setSelectedDistances] = useState([]);
+    const [selectedReviewScore, setSelectedReviewScore] = useState([]);
+    const [selectedHousingFacilities, setSelectedHousingFacilities] = useState([]);
 
     const [destination, setDestination] = useState(state.destination);
-    const [checkInTime, setCheckInTime] = useState(state.checkInTime);
-    const [checkOutTime, setCheckOutTime] = useState(state.checkOutTime);
+    const [checkInDate, setCheckInDate] = useState(state.checkInDate);
+    const [checkOutDate, setCheckOutDate] = useState(state.checkOutDate);
     const [noOfPeople, setNoOfPeople] = useState(state.noOfPeople);
     const [noOfRooms, setNoOfRooms] = useState(state.noOfRooms);
-
-    const [parking, setParking] = useState(false);
-    const [privateCheckInOut, setPrivateCheckInOut] = useState(false);
-    const [twentyFourHourCheckInOut, setTwentyFourHourCheckInOut] = useState(false);
-    const [frontDesk, setFrontDesk] = useState(false);
-    const [petsAllowed, setPetsAllowed] = useState(false);
-    const [freeWiFi, setFreeWiFi] = useState(false);
-    const [roomService, setRoomService] = useState(false);
-    const [bar, setBar] = useState(false);
-    const [smokingRoom, setSmokingRoom] = useState(false);
-    const [restaurant, setRestaurant] = useState(false);
-    const [gym, setGym] = useState(false);
-    const [swimmingPool, setSwimmingPool] = useState(false);
 
     const handleDestination = (newValue) => {
         setDestination(newValue)
     }
 
     const handleCheckInTime = (newValue) => {
-        setCheckInTime(newValue);
+        setCheckInDate(newValue);
     };
 
     const handleCheckOutTime = (newValue) => {
-        setCheckOutTime(newValue);
+        setCheckOutDate(newValue);
     };
 
     const handleNoOfPeople = (newValue) => {
@@ -101,20 +91,152 @@ function AccommodationFilter() {
         setNoOfRooms(newValue)
     }
 
-    const handleParking=(newValue)=>{setParking(newValue);}
-    const handlePrivateCheckInOut=(newValue)=>{setPrivateCheckInOut(newValue);}
-    const handleTwentyFourHourCheckInOut=(newValue)=>{setTwentyFourHourCheckInOut(newValue);}
-    const handleFrontDesk=(newValue)=>{setFrontDesk(newValue);}
-    const handlePetsAllowed=(newValue)=>{setPetsAllowed(newValue);}
-    const handleFreeWiFi=(newValue)=>{setFreeWiFi(newValue);}
-    const handleRoomService=(newValue)=>{setRoomService(newValue);}
-    const handleBar=(newValue)=>{setBar(newValue);}
-    const handleSmokingRoom=(newValue)=>{setSmokingRoom(newValue);}
-    const handleRestaurant=(newValue)=>{setRestaurant(newValue);}
-    const handleGym=(newValue)=>{setGym(newValue);}
-    const handleSwimmingPool=(newValue)=>{setSwimmingPool(newValue);}
+    // const [parking, setParking] = useState(false);
+    // const [privateCheckInOut, setPrivateCheckInOut] = useState(false);
+    // const [twentyFourHourCheckInOut, setTwentyFourHourCheckInOut] = useState(false);
+    // const [frontDesk, setFrontDesk] = useState(false);
+    // const [petsAllowed, setPetsAllowed] = useState(false);
+    // const [freeWiFi, setFreeWiFi] = useState(false);
+    // const [roomService, setRoomService] = useState(false);
+    // const [bar, setBar] = useState(false);
+    // const [smokingRoom, setSmokingRoom] = useState(false);
+    // const [restaurant, setRestaurant] = useState(false);
+    // const [gym, setGym] = useState(false);
+    // const [swimmingPool, setSwimmingPool] = useState(false);
+    //
+    // const handleParking = (newValue) => {
+    //     setParking(newValue);
+    // }
+    // const handlePrivateCheckInOut = (newValue) => {
+    //     setPrivateCheckInOut(newValue);
+    // }
+    // const handleTwentyFourHourCheckInOut = (newValue) => {
+    //     setTwentyFourHourCheckInOut(newValue);
+    // }
+    // const handleFrontDesk = (newValue) => {
+    //     setFrontDesk(newValue);
+    // }
+    // const handlePetsAllowed = (newValue) => {
+    //     setPetsAllowed(newValue);
+    // }
+    // const handleFreeWiFi = (newValue) => {
+    //     setFreeWiFi(newValue);
+    // }
+    // const handleRoomService = (newValue) => {
+    //     setRoomService(newValue);
+    // }
+    // const handleBar = (newValue) => {
+    //     setBar(newValue);
+    // }
+    // const handleSmokingRoom = (newValue) => {
+    //     setSmokingRoom(newValue);
+    // }
+    // const handleRestaurant = (newValue) => {
+    //     setRestaurant(newValue);
+    // }
+    // const handleGym = (newValue) => {
+    //     setGym(newValue);
+    // }
+    // const handleSwimmingPool = (newValue) => {
+    //     setSwimmingPool(newValue);
+    // }
+
+    const handleAccommodationTypesChange = (value) => event => {
+        let items = [];
+        const isFound = selectedAccommodationTypes.some(element => {
+            const result = element === value;
+            items.push(element);
+            return result;
+        });
+        if (isFound) {
+            setSelectedAccommodationTypes(current =>
+                current.filter(element => {
+                    return element !== value;
+                }),
+            );
+        } else {
+            items.push(value);
+            setSelectedAccommodationTypes(items);
+        }
+    }
+
+    const handleDistances = (value) => event => {
+        let items = [];
+        const isFound = selectedDistances.some(element => {
+            const result = element === value;
+            items.push(element);
+            return result;
+        });
+        if (isFound) {
+            setSelectedDistances(current =>
+                current.filter(element => {
+                    return element !== value;
+                }),
+            );
+        } else {
+            items.push(value);
+            setSelectedDistances(items);
+        }
+    }
+
+    const handleReviewScore = (value) => event => {
+        let items = [];
+        const isFound = selectedReviewScore.some(element => {
+            const result = element === value;
+            items.push(element);
+            return result;
+        });
+        if (isFound) {
+            setSelectedReviewScore(current =>
+                current.filter(element => {
+                    return element !== value;
+                }),
+            );
+        } else {
+            items.push(value);
+            setSelectedReviewScore(items);
+        }
+    }
+
+    const handleHousingFacilitiesChange = (value) => event => {
+        let items = [];
+        const isFound = selectedHousingFacilities.some(element => {
+            const result = element === value;
+            items.push(element);
+            return result;
+        });
+        if (isFound) {
+            setSelectedHousingFacilities(current =>
+                current.filter(element => {
+                    return element !== value;
+                }),
+            );
+        } else {
+            items.push(value);
+            setSelectedHousingFacilities(items);
+        }
+    }
+
 
     //backend calls
+    const loadAccommodationTypes = () => {
+        axios.get("http://localhost:8080/public-user/accommodation/types")
+            .then(res => {
+                if (res.data.success) {
+                    setAccommodationTypes(res.data.body)
+                }
+            })
+    }
+
+    const loadFacilities = () => {
+        axios.get("http://localhost:8080/public-user/accommodation/facilities")
+            .then(res => {
+                if (res.data.success) {
+                    setHousingFacilities(res.data.body)
+                }
+            })
+    }
+
     const loadLocations = () => {
         axios.get("http://localhost:8080/public-user/location/names")
             .then(res => {
@@ -125,14 +247,34 @@ function AccommodationFilter() {
     }
 
     const searchAccommodations = () => {
+        let sortingOption = "BEST";
+
+        if (best) {
+            sortingOption = "BEST";
+        } else if (review) {
+            sortingOption = "REVIEW";
+        } else if (distance) {
+            sortingOption = "DISTANCE";
+        } else if (lowPrice) {
+            sortingOption = "LOW_PRICE";
+        } else if (highPrice) {
+            sortingOption = "HIGH_PRICE";
+        }
+
         const data = {
             destination: destination,
-            checkInTime: checkInTime,
-            checkOutTime: checkOutTime,
+            checkInDate: moment(checkInDate).format('YYYY-MM-DD'),
+            checkOutDate: moment(checkOutDate).format('YYYY-MM-DD'),
             noOfPeople: noOfPeople,
-            noOfRooms: noOfRooms
+            noOfRooms: noOfRooms,
+            accommodationTypes: selectedAccommodationTypes,
+            distances: selectedDistances,
+            reviewScore: selectedReviewScore,
+            housingFacilities: selectedHousingFacilities,
+            sortingOption: sortingOption
         }
-        axios.post("http://localhost:8080/public-user/location/search", data)
+        console.log(data)
+        axios.post("http://localhost:8080/public-user/accommodation/search", data)
             .then(res => {
                 if (res.data.success) {
                     console.log(res.data.body)
@@ -196,9 +338,12 @@ function AccommodationFilter() {
                                             <Autocomplete
                                                 disablePortal
                                                 id="destination"
+                                                value={destination}
                                                 options={locations}
                                                 sx={{m: 1, width: '99%'}}
-                                                onChange={handleDestination}
+                                                onChange={(event, newValue) => {
+                                                    setDestination(newValue);
+                                                }}
                                                 renderInput={(params) => <TextField {...params}
                                                                                     label="Enter the destination"/>}
                                             />
@@ -214,8 +359,8 @@ function AccommodationFilter() {
                                             <Grid item xs={11}>
                                                 <DatePicker
                                                     label="Start day of your travel"
-                                                    inputFormat="DD/MM/yyyy"
-                                                    value={checkInTime}
+                                                    inputFormat="yyyy-MM-DD"
+                                                    value={checkInDate}
                                                     onChange={handleCheckInTime}
                                                     renderInput={(params) => <TextField {...params}
                                                                                         sx={{m: 1, width: '99%'}}/>}
@@ -231,8 +376,8 @@ function AccommodationFilter() {
                                             <Grid item xs={11}>
                                                 <DatePicker
                                                     label="End day of your travel"
-                                                    inputFormat="DD/MM/yyyy"
-                                                    value={checkOutTime}
+                                                    inputFormat="yyyy-MM-DD"
+                                                    value={checkOutDate}
                                                     onChange={handleCheckOutTime}
                                                     renderInput={(params) => <TextField {...params}
                                                                                         sx={{m: 1, width: '99%'}}/>}
@@ -282,16 +427,9 @@ function AccommodationFilter() {
                             <FormGroup>
                                 {accommodationTypes.map((item) => (
                                     <FormControlLabel
-                                        control={<Checkbox sx={{'& .MuiSvgIcon-root': {fontSize: 18}}}/>} label={item}/>
-                                ))}
-                            </FormGroup>
-                            <Divider/>
-                            <br/>
-                            <h5>Start Rating</h5>
-                            <FormGroup>
-                                {ratings.map((item) => (
-                                    <FormControlLabel
-                                        control={<Checkbox sx={{'& .MuiSvgIcon-root': {fontSize: 18}}}/>} label={item}/>
+                                        control={<Checkbox sx={{'& .MuiSvgIcon-root': {fontSize: 18}}}
+                                                           onChange={handleAccommodationTypesChange(item.id)}/>}
+                                        label={item.name}/>
                                 ))}
                             </FormGroup>
                             <Divider/>
@@ -318,7 +456,9 @@ function AccommodationFilter() {
                             <FormGroup>
                                 {housingFacilities.map((item) => (
                                     <FormControlLabel
-                                        control={<Checkbox sx={{'& .MuiSvgIcon-root': {fontSize: 18}}}/>} label={item}/>
+                                        control={<Checkbox sx={{'& .MuiSvgIcon-root': {fontSize: 18}}}
+                                                           onChange={handleHousingFacilitiesChange(item.id)}/>}
+                                        label={item.name}/>
                                 ))}
                             </FormGroup>
                         </div>

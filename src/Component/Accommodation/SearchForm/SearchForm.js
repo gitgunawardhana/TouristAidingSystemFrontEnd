@@ -3,7 +3,7 @@ import BackgroundImageSet from "../BackgroundImageSet/BackgroundImageSet";
 import "./SearchForm.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import {LocalizationProvider, MobileDatePicker} from "@mui/x-date-pickers";
+import {DatePicker, LocalizationProvider} from "@mui/x-date-pickers";
 import {AdapterMoment} from "@mui/x-date-pickers/AdapterMoment";
 import Grid from "@mui/material/Grid";
 import {styled} from '@mui/material/styles';
@@ -16,6 +16,7 @@ import People from "../../../Assets/AccommodationFilterFormIcons/people.png";
 import Room from "../../../Assets/AccommodationFilterFormIcons/room.png";
 import Autocomplete from '@mui/material/Autocomplete';
 import axios from "axios";
+import moment from "moment";
 
 function SearchForm() {
 
@@ -25,23 +26,27 @@ function SearchForm() {
         loadLocations();
     }, []);
 
-    const [destination, setDestination] = useState();
-    const [checkInTime, setCheckInTime] = useState(Date.now());
-    const [checkOutTime, setCheckOutTime] = useState(Date.now());
-    const [noOfPeople, setNoOfPeople] = useState();
-    const [noOfRooms, setNoOfRooms] = useState();
+
     const [locations, setLocations] = useState([]);
 
-    const handleDestination = (newValue) => {
+    const currentDate = moment(Date.now());
+    const endDate = moment(Date.now()).add(3, "days");
+    const [destination, setDestination] = useState(locations[0]);
+    const [checkInDate, setCheckInDate] = useState(currentDate);
+    const [checkOutDate, setCheckOutDate] = useState(endDate);
+    const [noOfPeople, setNoOfPeople] = useState(2);
+    const [noOfRooms, setNoOfRooms] = useState(1);
+
+    const handleDestination = (event) => (newValue) => {
         setDestination(newValue)
     }
 
-    const handleCheckInTime = (newValue) => {
-        setCheckInTime(newValue);
+    const handleCheckInDate = (newValue) => {
+        setCheckInDate(newValue);
     };
 
-    const handleCheckOutTime = (newValue) => {
-        setCheckOutTime(newValue);
+    const handleCheckOutDate = (newValue) => {
+        setCheckOutDate(newValue);
     };
 
     const handleNoOfPeople = (newValue) => {
@@ -55,8 +60,8 @@ function SearchForm() {
     const navigateToAccommodationFilter = () => {
         const data = {
             destination: destination,
-            checkInTime: checkInTime,
-            checkOutTime: checkOutTime,
+            checkInDate: checkInDate.toDate(),
+            checkOutDate: checkOutDate.toDate(),
             noOfPeople: noOfPeople,
             noOfRooms: noOfRooms
         }
@@ -112,9 +117,13 @@ function SearchForm() {
                             <Autocomplete
                                 disablePortal
                                 id="destination"
+                                defaultValue={destination}
                                 options={locations}
+                                getOptionLabel={option => option.label}
                                 sx={{m: 1, width: '99%'}}
-                                onChange={handleDestination}
+                                onChange={(event, newValue) => {
+                                    setDestination(newValue);
+                                }}
                                 renderInput={(params) => <TextField {...params} label="Enter the destination"/>}
                             />
                         </Grid>
@@ -126,11 +135,11 @@ function SearchForm() {
                                 <img src={StartDate} alt="Start Date" className="form-icon"/>
                             </Grid>
                             <Grid item xs={5}>
-                                <MobileDatePicker
+                                <DatePicker
                                     label="Start day of your travel"
-                                    inputFormat="DD/MM/yyyy"
-                                    value={checkInTime}
-                                    onChange={handleCheckInTime}
+                                    inputFormat="yyyy-MM-DD"
+                                    value={checkInDate}
+                                    onChange={handleCheckInDate}
                                     renderInput={(params) => <TextField {...params} sx={{m: 1, width: '99%'}}/>}
                                 />
                             </Grid>
@@ -138,11 +147,11 @@ function SearchForm() {
                                 <img src={EndDate} alt="Start Date" className="form-icon"/>
                             </Grid>
                             <Grid item xs={5}>
-                                <MobileDatePicker
+                                <DatePicker
                                     label="End day of your travel"
-                                    inputFormat="DD/MM/yyyy"
-                                    value={checkOutTime}
-                                    onChange={handleCheckOutTime}
+                                    inputFormat="yyyy-MM-DD"
+                                    value={checkOutDate}
+                                    onChange={handleCheckOutDate}
                                     renderInput={(params) => <TextField {...params} sx={{m: 1, width: '99%'}}/>}
                                 />
                             </Grid>
@@ -157,7 +166,10 @@ function SearchForm() {
                                 id="numberOfPeople"
                                 label="Number of people"
                                 type="number"
-                                onChange={handleNoOfPeople}
+                                value={noOfPeople}
+                                onChange={(event, newValue) => {
+                                    setNoOfPeople(newValue);
+                                }}
                                 sx={{m: 1, width: '99%'}}/>
                         </Grid>
                         <Grid item xs={1}>
@@ -168,7 +180,10 @@ function SearchForm() {
                                 id="numberOfRooms"
                                 label="Number of rooms"
                                 type="number"
-                                onChange={handleNoOfRooms}
+                                value={noOfRooms}
+                                onChange={(event, newValue) => {
+                                    setNoOfRooms(newValue);
+                                }}
                                 sx={{m: 1, width: '99%'}}/>
                         </Grid>
                     </Grid>

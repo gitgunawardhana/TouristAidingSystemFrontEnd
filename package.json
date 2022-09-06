@@ -75,6 +75,7 @@
     ]
   },
   "devDependencies": {
-    "reactstrap": "^9.1.2"
+    "reactstrap": "^9.1.2",
+    "sweetalert": "^2.1.2"
   }
 }
