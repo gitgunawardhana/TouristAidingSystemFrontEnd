@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import BackgroundImageSet from "../BackgroundImageSet/BackgroundImageSet";
 import "./SearchForm.css";
 import Box from "@mui/material/Box";
@@ -6,7 +6,6 @@ import TextField from "@mui/material/TextField";
 import {LocalizationProvider, MobileDatePicker} from "@mui/x-date-pickers";
 import {AdapterMoment} from "@mui/x-date-pickers/AdapterMoment";
 import Grid from "@mui/material/Grid";
-import * as FaIcons from "react-icons/fa";
 import {styled} from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import {useNavigate} from "react-router";
@@ -15,17 +14,70 @@ import StartDate from "../../../Assets/AccommodationFilterFormIcons/start-date.p
 import EndDate from "../../../Assets/AccommodationFilterFormIcons/end-date.png";
 import People from "../../../Assets/AccommodationFilterFormIcons/people.png";
 import Room from "../../../Assets/AccommodationFilterFormIcons/room.png";
+import Autocomplete from '@mui/material/Autocomplete';
+import axios from "axios";
 
 function SearchForm() {
-    const [checkInTime, setCheckInTime] = React.useState(Date.now());
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        loadLocations();
+    }, []);
+
+    const [destination, setDestination] = useState();
+    const [checkInTime, setCheckInTime] = useState(Date.now());
+    const [checkOutTime, setCheckOutTime] = useState(Date.now());
+    const [noOfPeople, setNoOfPeople] = useState();
+    const [noOfRooms, setNoOfRooms] = useState();
+    const [locations, setLocations] = useState([]);
+
+    const handleDestination = (newValue) => {
+        setDestination(newValue)
+    }
+
     const handleCheckInTime = (newValue) => {
         setCheckInTime(newValue);
     };
-    const [checkOutTime, setCheckOutTime] = React.useState(Date.now());
+
     const handleCheckOutTime = (newValue) => {
         setCheckOutTime(newValue);
     };
 
+    const handleNoOfPeople = (newValue) => {
+        setNoOfPeople(newValue)
+    }
+
+    const handleNoOfRooms = (newValue) => {
+        setNoOfRooms(newValue)
+    }
+
+    const navigateToAccommodationFilter = () => {
+        const data = {
+            destination: destination,
+            checkInTime: checkInTime,
+            checkOutTime: checkOutTime,
+            noOfPeople: noOfPeople,
+            noOfRooms: noOfRooms
+        }
+        navigate('/accommodations-filter',
+            {
+                state: data
+            });
+
+    };
+
+    //backend calls
+    const loadLocations = () => {
+        axios.get("http://localhost:8080/public-user/location/names")
+            .then(res => {
+                if (res.data.success) {
+                    setLocations(res.data.body)
+                }
+            })
+    }
+
+    //styled components
     const SearchButton = styled(Button)(({theme}) => ({
         position: 'absolute',
         backgroundColor: '#00565b',
@@ -40,11 +92,6 @@ function SearchForm() {
         boxShadow: '1px 1px 5px rgba(0, 0, 0, 0.4)',
         padding: '10px',
     }));
-
-    const navigate = useNavigate();
-    const navigateToAccommodationFilter = () => {
-        navigate('/accommodations-filter');
-    };
 
     return (
         <div className="search-form-main">
@@ -62,8 +109,14 @@ function SearchForm() {
                             <img src={LocationIcon} alt="Start Date" className="form-icon"/>
                         </Grid>
                         <Grid item xs={11}>
-                            <TextField id="destination" label="Enter the destination" type="text"
-                                       sx={{m: 1, width: '99%'}}/>
+                            <Autocomplete
+                                disablePortal
+                                id="destination"
+                                options={locations}
+                                sx={{m: 1, width: '99%'}}
+                                onChange={handleDestination}
+                                renderInput={(params) => <TextField {...params} label="Enter the destination"/>}
+                            />
                         </Grid>
                     </Grid>
 
@@ -100,19 +153,28 @@ function SearchForm() {
                             <img src={People} alt="Start Date" className="form-icon"/>
                         </Grid>
                         <Grid item xs={5}>
-                            <TextField id="numberOfPeople" label="Number of people" type="text"
-                                       sx={{m: 1, width: '99%'}}/>
+                            <TextField
+                                id="numberOfPeople"
+                                label="Number of people"
+                                type="number"
+                                onChange={handleNoOfPeople}
+                                sx={{m: 1, width: '99%'}}/>
                         </Grid>
                         <Grid item xs={1}>
                             <img src={Room} alt="Start Date" className="form-icon"/>
                         </Grid>
                         <Grid item xs={5}>
-                            <TextField id="numberOfRooms" label="Number of rooms" type="text"
-                                       sx={{m: 1, width: '99%'}}/>
+                            <TextField
+                                id="numberOfRooms"
+                                label="Number of rooms"
+                                type="number"
+                                onChange={handleNoOfRooms}
+                                sx={{m: 1, width: '99%'}}/>
                         </Grid>
                     </Grid>
                 </div>
-                <SearchButton onClick={navigateToAccommodationFilter}>Find the Best Results</SearchButton>
+                <SearchButton
+                    onClick={navigateToAccommodationFilter}>Find the Best Results</SearchButton>
             </Box>
         </div>
     );

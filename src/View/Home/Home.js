@@ -21,6 +21,7 @@ function Home() {
     axios
       .get("http://localhost:8080/public-user/location/top-locations")
       .then((res) => {
+        console.log(res.data.body)
         setTopLocationDataList(res.data.body);
       })
       .catch((err) => {
