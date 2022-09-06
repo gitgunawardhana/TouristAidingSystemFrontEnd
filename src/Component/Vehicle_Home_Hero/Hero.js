@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Hero.module.css";
 import { useNavigate } from "react-router";
 import { AiOutlineSearch } from "react-icons/ai";
+import Vehiclehomesearch from "../vehicleHomeSearch/SearchForm.js"
 // import { withStyles } from "@material-ui/core/styles";
 // import Button from "@material-ui/core/Button";
 // import IconButton from "@material-ui/core/IconButton";
@@ -15,7 +16,8 @@ const Hero = () => {
   };
   return (
     <div className={styles.hero}>
-      <form className={styles.HeroForm}>
+      <Vehiclehomesearch />
+      {/* <form className={styles.HeroForm}>
         <div className={styles.text}>
           <label>Where</label>
           <input
@@ -42,11 +44,11 @@ const Hero = () => {
             placeholder="How many"
           />
         </div>
-        <div className={styles.search_btn}>
-          {/* <AiOutlineSearch className={styles.icon} /> */}
-          <button className={styles.btn} onClick={navigateToVehicleFilter}>Search</button>
+        <div className={styles.search_btn}> */}
+      {/* <AiOutlineSearch className={styles.icon} /> */}
+      {/* <button className={styles.btn} onClick={navigateToVehicleFilter}>Search</button>
         </div>
-      </form>
+      </form> */}
     </div>
   );
 };
