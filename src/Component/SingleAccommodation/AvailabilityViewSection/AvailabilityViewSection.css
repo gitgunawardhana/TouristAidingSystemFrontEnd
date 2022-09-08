@@ -1,0 +1,45 @@
+.package-accommodation-name{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.package-accommodation-bed-detail{
+    color: gray;
+}
+
+.package-accommodation-left-count{
+    color: darkred;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.package-accommodation-people{
+    font-weight: bold;
+    text-align: center;
+}
+
+.package-accommodation-price{
+    padding: 5px;
+    font-size: 17px;
+    font-weight: normal;
+    color: #9B0404;
+    text-decoration: line-through;
+}
+
+.package-accommodation-discount{
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: darkolivegreen;
+}
+
+.package-accommodation-discounted-price{
+    padding: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: darkgreen;
+}
+
+.package-accommodation-facility{
+    color: green;
+}

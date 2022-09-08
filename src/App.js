@@ -62,10 +62,10 @@ function App() {
           <Route path="/vehicles" element={<CarHome/>}/>
           <Route path="/vehicles-filter" element={<Vehicle />}/>
           <Route path="/vehicles-filter/:slug" element={<CarDetails/>}/>
-          <Route path="/singleAccommodationBooking" element={<SingleAccommodationBooking/>}/>
+          <Route path="/reservation" element={<SingleAccommodationBooking/>}/>
           <Route path="/vehicles-filter" element={<Vehicle />} />
           <Route
-            path="/single-accommodation/:name"
+            path="/single-accommodation/:id"
             element={<SingleAccommodation />}
           />
         </Routes>

@@ -105,7 +105,7 @@
     height: 90%;
     margin-left: 20%;
     margin-top: 5%;
-    background-image: url("../../../Assets/RecommendedAccommodations/rating-flag.png");
+    background-image: url("../../Assets/RecommendedAccommodations/rating-flag.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -175,7 +175,7 @@
 }
 
 .hidden {
-    display: none;
+    display: none;  
 }
 
 .filtered-location-pagination {

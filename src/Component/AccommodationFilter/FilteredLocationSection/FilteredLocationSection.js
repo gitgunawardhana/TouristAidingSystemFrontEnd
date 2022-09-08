@@ -47,15 +47,15 @@ import FreeCancellation from "../../../Assets/AccommodationFacilityIcons/free-ca
 import PayAtProperty from "../../../Assets/AccommodationFacilityIcons/pay-at-property.png";
 import View from "../../../Assets/AccommodationFacilityIcons/view.png";
 
-function FilteredLocationSection() {
+function FilteredLocationSection(props) {
   const filteredLocations = [
     {
-      name: "Granbell Hotel Colombo",
+      accommodationName: "Granbell Hotel Colombo",
       address: "Kollupitiya, Colombo",
-      images: [Granbell1, Granbell2, Granbell3, Granbell4, Granbell5],
-      facilities: ["FREE PARKING", "PETS ALLOWED", "BREAKFAST", "FREE WIFI"],
+      pictures: [Granbell1, Granbell2, Granbell3, Granbell4, Granbell5],
+      housingFacilities: ["FREE PARKING", "PETS ALLOWED", "BREAKFAST", "FREE WIFI"],
       size: 24,
-      bed: "One extra-large double bed",
+      bedDetail: "One extra-large double bed",
       description:
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
       freeCancellation: true,
@@ -68,16 +68,16 @@ function FilteredLocationSection() {
       price: 36630.0,
     },
     {
-      name: "Talo Urbon Colombo",
+      accommodationName: "Talo Urbon Colombo",
       address: "Colombo",
-      images: [
+      pictures: [
         TaloUrbonColombo1,
         TaloUrbonColombo2,
         TaloUrbonColombo3,
         TaloUrbonColombo4,
         TaloUrbonColombo5,
       ],
-      facilities: ["FREE PARKING", "PETS ALLOWED", "BREAKFAST", "FREE WIFI"],
+      housingFacilities: ["FREE PARKING", "PETS ALLOWED", "BREAKFAST", "FREE WIFI"],
       size: 24,
       bed: "One extra-large double bed",
       description:
@@ -92,16 +92,16 @@ function FilteredLocationSection() {
       price: 8806.0,
     },
     {
-      name: "Zylan Luxury Villa",
+      accommodationName: "Zylan Luxury Villa",
       address: "Cinnamon Gardens, Colombo",
-      images: [
+      pictures: [
         ZylanLuxuryVilla1,
         ZylanLuxuryVilla2,
         ZylanLuxuryVilla3,
         ZylanLuxuryVilla4,
         ZylanLuxuryVilla5,
       ],
-      facilities: ["FREE PARKING", "PETS ALLOWED", "BREAKFAST", "FREE WIFI"],
+      housingFacilities: ["FREE PARKING", "PETS ALLOWED", "BREAKFAST", "FREE WIFI"],
       size: 24,
       bed: "One extra-large double bed",
       description:
@@ -116,16 +116,16 @@ function FilteredLocationSection() {
       price: 74000.0,
     },
     {
-      name: "Cinnamon Red Colombo",
+      accommodationName: "Cinnamon Red Colombo",
       address: "Kollupitiya, Colombo",
-      images: [
+      pictures: [
         CinnamonRedColombo1,
         CinnamonRedColombo2,
         CinnamonRedColombo3,
         CinnamonRedColombo4,
         CinnamonRedColombo5,
       ],
-      facilities: ["FREE PARKING", "PETS ALLOWED", "BREAKFAST", "FREE WIFI"],
+      housingFacilities: ["FREE PARKING", "PETS ALLOWED", "BREAKFAST", "FREE WIFI"],
       size: 24,
       bed: "One extra-large double bed",
       description:
@@ -140,16 +140,16 @@ function FilteredLocationSection() {
       price: 24050.0,
     },
     {
-      name: "The Beehive Colombo",
+      accommodationName: "The Beehive Colombo",
       address: "Colombo",
-      images: [
+      pictures: [
         TheBeehiveColombo1,
         TheBeehiveColombo2,
         TheBeehiveColombo3,
         TheBeehiveColombo4,
         TheBeehiveColombo5,
       ],
-      facilities: ["FREE PARKING", "PETS ALLOWED", "BREAKFAST", "FREE WIFI"],
+      housingFacilities: ["FREE PARKING", "PETS ALLOWED", "BREAKFAST", "FREE WIFI"],
       size: 24,
       bed: "One extra-large double bed",
       description:
@@ -164,16 +164,16 @@ function FilteredLocationSection() {
       price: 3001.0,
     },
     {
-      name: "Mandarina Colombo",
+      accommodationName: "Mandarina Colombo",
       address: "Colombo",
-      images: [
+      pictures: [
         MandarinaColombo1,
         MandarinaColombo2,
         MandarinaColombo3,
         MandarinaColombo4,
         MandarinaColombo5,
       ],
-      facilities: ["FREE PARKING", "PETS ALLOWED", "BREAKFAST", "FREE WIFI"],
+      housingFacilities: ["FREE PARKING", "PETS ALLOWED", "BREAKFAST", "FREE WIFI"],
       size: 24,
       bed: "One extra-large double bed",
       description:
@@ -188,16 +188,16 @@ function FilteredLocationSection() {
       price: 40867.0,
     },
     {
-      name: "Zylan Luxury Villa",
+      accommodationName: "Zylan Luxury Villa",
       address: "Cinnamon Gardens, Colombo",
-      images: [
+      pictures: [
         ZylanLuxuryVilla1,
         ZylanLuxuryVilla2,
         ZylanLuxuryVilla3,
         ZylanLuxuryVilla4,
         ZylanLuxuryVilla5,
       ],
-      facilities: ["FREE PARKING", "PETS ALLOWED", "BREAKFAST", "FREE WIFI"],
+      housingFacilities: ["FREE PARKING", "PETS ALLOWED", "BREAKFAST", "FREE WIFI"],
       size: 24,
       bed: "One extra-large double bed",
       description:
@@ -223,48 +223,48 @@ function FilteredLocationSection() {
                   <img
                     width="100%"
                     height="200px"
-                    src={item.images[0]}
-                    alt="Granbell Hotel Colombo"
+                    src={item.pictures[0]}
+                    alt="Hotel Image"
                   />
                 </Grid>
                 <Grid item xs={3}>
                   <img
                     width="100%"
                     height="70px"
-                    src={item.images[1]}
-                    alt="Granbell Hotel Colombo"
+                    src={item.pictures[1]}
+                    alt="Hotel Image"
                   />
                 </Grid>
                 <Grid item xs={3}>
                   <img
                     width="100%"
                     height="70px"
-                    src={item.images[2]}
-                    alt="Granbell Hotel Colombo"
+                    src={item.pictures[2]}
+                    alt="Hotel Image"
                   />
                 </Grid>
                 <Grid item xs={3}>
                   <img
                     width="100%"
                     height="70px"
-                    src={item.images[3]}
-                    alt="Granbell Hotel Colombo"
+                    src={item.pictures[3]}
+                    alt="Hotel Image"
                   />
                 </Grid>
                 <Grid item xs={3}>
                   <img
                     width="100%"
                     height="70px"
-                    src={item.images[4]}
-                    alt="Granbell Hotel Colombo"
+                    src={item.pictures[4]}
+                    alt="Hotel Image"
                   />
                 </Grid>
               </Grid>
             </Grid>
             <Grid className="filtered-location-details" item xs={6}>
               <div className="filtered-location-name">
-                <Link to={`/single-accommodation/${item.name}`}>
-                  {item.name}
+                <Link to={`/single-accommodation/${item.accommodationId}`}>
+                  {item.accommodationName}
                 </Link>
               </div>
               <div className="filtered-location-address">
@@ -272,7 +272,7 @@ function FilteredLocationSection() {
                 {item.address}
               </div>
               <div className="filtered-location-facilities">
-                {item.facilities.map((facility) => (
+                {item.housingFacilities.map((facility) => (
                   <p className="filtered-location-single-facility">
                     {facility}
                   </p>
@@ -308,7 +308,7 @@ function FilteredLocationSection() {
                 </div>
                 <div className="filtered-location-package-facility view">
                   <img src={View} alt="View" />
-                  {item.view} VIEW
+                  {item.view}
                 </div>
               </div>
             </Grid>
