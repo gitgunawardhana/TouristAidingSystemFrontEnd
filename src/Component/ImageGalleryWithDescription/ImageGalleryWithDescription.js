@@ -58,7 +58,7 @@ function TopLocation(props) {
                         className="text-muted mt-3"
                         style={{ height: "130px" }}
                       >
-                        {items.description}
+                        {items.description.slice(0, 330)}...
                       </p>
                       <div className="d-flex align-items-center justify-content-between mt-3 pb-3">
                         <Link

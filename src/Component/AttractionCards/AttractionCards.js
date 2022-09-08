@@ -37,7 +37,7 @@ function AttractionCards(props) {
                     class="card-text text-center card-dsc"
                     style={{ marginBottom: "20px" }}
                   >
-                    {item.description}
+                    {item.description.slice(0, 330)}...
                   </p>
                   <Link className="nav-to-place" to={`/attraction/${item.id}`}>
                     <p
